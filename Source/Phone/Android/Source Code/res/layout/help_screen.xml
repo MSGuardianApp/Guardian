@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black" >
+
+    <ImageView
+        android:id="@+id/imageBack"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/back" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/helpFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/BottomRelOut"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="#F96511" />
+
+    <RelativeLayout
+        android:id="@+id/BottomRelOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black" >
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/textcount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_50"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageNext"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/next" />
+
+</RelativeLayout>

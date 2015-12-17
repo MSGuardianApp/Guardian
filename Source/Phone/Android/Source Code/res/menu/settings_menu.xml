@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.guardian.HomeScreenActivity" >
+
+    <item
+        android:id="@+id/unregisterSettings"
+        android:title="@string/unregister_settings"/>
+
+</menu>

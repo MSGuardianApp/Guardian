@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:39018/GeoUpdate.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GeoTags">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Accuracy" nillable="true" type="q1:ArrayOfdouble" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Alt" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IsSOS" nillable="true" type="q3:ArrayOfboolean" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Lat" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="LocCnt" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Long" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element minOccurs="0" name="PID" type="xs:long" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Spd" nillable="true" type="q6:ArrayOfint" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TS" nillable="true" type="q7:ArrayOflong" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoTags" nillable="true" type="tns:GeoTags" />
+  <xs:complexType name="GeoTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accuracy" type="xs:double" />
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Command" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeoDirection" type="tns:Direction" />
+      <xs:element minOccurs="0" name="IsSOS" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Long" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MediaContent" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="MediaUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileID" type="xs:long" />
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Speed" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoTag" nillable="true" type="tns:GeoTag" />
+  <xs:simpleType name="Direction">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Direction" nillable="true" type="tns:Direction" />
+  <xs:complexType name="IncidentTag">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GeoTag">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IncidentTag" nillable="true" type="tns:IncidentTag" />
+</xs:schema>

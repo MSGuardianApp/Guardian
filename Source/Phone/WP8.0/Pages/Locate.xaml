@@ -1,0 +1,64 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SOS.Phone.Pages.Locate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UC="clr-namespace:SOS.Phone.UserControls"   
+    mc:Ignorable="d"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    >
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush  ImageSource="/assets/bg.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        <StackPanel>
+            <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="3,1,0,0" Orientation="Horizontal">
+                <StackPanel  Orientation="Horizontal">
+                    <Image Source="/Assets/applicationicon.png"  Height="32" Width="32" />
+                    <TextBlock x:Name="AppTitle" Text="LOCATE" Style="{StaticResource SubMenuStyle}" />
+                </StackPanel>
+            </StackPanel>
+            <Popup IsOpen="{Binding IsInProgress}" >
+                <StackPanel Orientation="Vertical" Width="400" Margin="12,5,0,0"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <!--<TextBlock Text="Loading..." TextAlignment="Center" Foreground="White"></TextBlock>-->
+                    <ProgressBar x:Name="progbar"  Background="Black"  Value="0" SmallChange="1" LargeChange="5" VerticalAlignment="Top" IsEnabled="True"   IsIndeterminate="{Binding IsInProgress}" Margin="0,0,-47,0" >
+                    </ProgressBar>
+                </StackPanel>
+            </Popup>
+            <StackPanel x:Name="RegisterPanel" Visibility="Collapsed" Margin="0,5,0,0">
+                <TextBlock Height="220"></TextBlock>
+                <TextBlock Text="To track people who added you as their buddy and to help them when they are in need," TextWrapping="Wrap"></TextBlock>
+                <UC:LoginControl x:Name="LiveLoginControl" ></UC:LoginControl>
+            </StackPanel>
+            <StackPanel x:Name="BuddyPanel" Visibility="Collapsed" Margin="0,5,0,0">
+                <StackPanel>
+                    <TextBlock Margin="12,5,0,0" TextWrapping="Wrap" Text="{Binding Message}"></TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <ScrollViewer>
+                        <StackPanel Orientation="Vertical">
+                            <phone:LongListSelector x:Name="llsBuddies" Margin="12,0,12,0"  ItemsSource="{Binding LocateBuddies}" Height="550" >
+                                <phone:LongListSelector.ItemTemplate >
+                                    <DataTemplate>
+                                        <UC:BuddyView x:Name="ucPeople" TrackHandler="BuddyUC_TrackNavigationHandler" IsMyBuddy="False" IsLocateBuddy="True" IsGroup="False"></UC:BuddyView>
+                                    </DataTemplate>
+                                </phone:LongListSelector.ItemTemplate>
+                            </phone:LongListSelector>
+                        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/images/refresh.png" Text="refresh" Click="Refresh_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/bg_edittext">
+    
+     <LinearLayout 
+     android:id="@+id/createProfLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="13dp"
+    android:orientation="vertical" 
+ 	>
+       <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addGroupTxt"
+        android:textColor="#FFFFFF"/>"
+
+  <EditText
+        android:id="@+id/editTxt_check"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:ems="10" 
+        android:background="#C0C0C0">
+
+        <requestFocus />
+</EditText>
+
+  <Button
+      android:id="@+id/btnAdd"
+       android:layout_width="60dp"
+      android:layout_height="35dp"
+      android:background="@drawable/bg_edittext"
+      android:textColor="#FFFFFF"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="20dp"
+      android:text="@string/add_buddy" />
+
+</LinearLayout>
+</LinearLayout>
+

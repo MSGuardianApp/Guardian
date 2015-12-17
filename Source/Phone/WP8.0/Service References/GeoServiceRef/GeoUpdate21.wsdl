@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.microsoft.com/sos/2013/02" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.microsoft.com/sos/2013/02" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.microsoft.com/sos/2013/02/Imports">
+      <xsd:import schemaLocation="http://localhost:39018/GeoUpdate.svc?xsd=xsd0" namespace="http://www.microsoft.com/sos/2013/02" />
+      <xsd:import schemaLocation="http://localhost:39018/GeoUpdate.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:39018/GeoUpdate.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GeoService_PostMyLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostMyLocation" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_PostMyLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostMyLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_StopPostings_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopPostings" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_StopPostings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopPostingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_StopAllPostings_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopAllPostings" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_StopAllPostings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopAllPostingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_ReportTease_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportTease" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_ReportTease_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportTeaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GeoService">
+    <wsdl:operation name="PostMyLocation">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/PostMyLocation" message="tns:GeoService_PostMyLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/PostMyLocationResponse" message="tns:GeoService_PostMyLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopPostings">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/StopPostings" message="tns:GeoService_StopPostings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/StopPostingsResponse" message="tns:GeoService_StopPostings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopAllPostings">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/StopAllPostings" message="tns:GeoService_StopAllPostings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/StopAllPostingsResponse" message="tns:GeoService_StopAllPostings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportTease">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/ReportTease" message="tns:GeoService_ReportTease_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/ReportTeaseResponse" message="tns:GeoService_ReportTease_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

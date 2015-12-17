@@ -1,0 +1,142 @@
+﻿.fragment {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.Settings {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 60px 10px 1fr;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+}
+
+.marshalTable td {
+    width: 25%;
+}
+
+.DeleteImage:hover {
+    cursor: pointer;
+}
+
+.tableDisplay thead {
+    color: #ed7d31;
+}
+
+.Settings .Banner {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    display: -ms-grid;
+    -ms-grid-columns: 20% 10px 30% 8px 1fr;
+    -ms-grid-rows: 50px 30px;
+    border-bottom-color: green;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    padding-bottom: 5px;
+    border-top-color: #ED7D31;
+    border-top-width: 4px;
+    border-top-style: solid;
+    padding-bottom: 5px;
+}
+
+    .Settings .Banner .pagetitle {
+        font-size: 26pt;
+        line-height: 1.4;
+        font-weight: lighter;
+        color: #000000;
+        margin-left: 20px;
+    }
+
+.Settings .middlepanel .sectiontitle {
+    font-size: 16pt;
+    line-height: 1.4;
+    font-weight: lighter;
+    color: #ED7D31;
+    vertical-align: top;
+}
+
+.Settings .middlepanel .sectiondetails {
+    margin-top: 10px;
+}
+
+.Settings .MainArea {
+    display: -ms-grid;
+    -ms-grid-columns: 200px 10px 760px;
+    -ms-grid-rows: 1fr;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+}
+
+    .Settings .MainArea .leftpanel {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 5;
+        -ms-grid-column: 1;
+        border-right: solid 2px #000000;
+        height: 690px;
+    }
+
+    .Settings .MainArea .middlepanel {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+
+    .Settings .MainArea .leftpanel .leftpanelitemheader {
+        list-style-type: none;
+        text-align: left;
+    }
+
+    .Settings .MainArea .leftpanel .menuitem {
+        cursor: pointer;
+        padding: 2px 5px 2px 5px;
+        margin: 2px 0px 2px 0px;
+        color: #000000;
+        font-size: 16px;
+        /*border-bottom-color:#000000;border-bottom-width:2px;border-bottom-style:solid;padding-bottom:5px;*/
+        border-top-color: #000000;
+        border-top-width: 2px;
+        border-top-style: solid;
+        padding-bottom: 5px;
+    }
+
+        .Settings .MainArea .leftpanel .menuitem:hover {
+            background-color: #d4d4d4;
+            color: white;
+        }
+
+.button {
+    border-top: 1px solid #96d1f8;
+    background: #65a9d7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+    background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+    background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+    background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+    background: -o-linear-gradient(top, #3e779d, #65a9d7);
+    padding: 5px 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 14px;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+    .button:hover {
+        border-top-color: #28597a;
+        background: #28597a;
+        color: #ccc;
+        cursor: pointer;
+    }
+
+    .button:active {
+        border-top-color: #1b435e;
+        background: #1b435e;
+    }

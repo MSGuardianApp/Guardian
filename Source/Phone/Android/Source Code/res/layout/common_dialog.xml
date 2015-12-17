@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_edittext"
+    android:orientation="vertical" >
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/title"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/font_size_twenty"
+        android:textStyle="bold" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_msgAleart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/msg"
+        android:textColor="#FFFFFF" />
+
+    <LinearLayout
+        android:id="@+id/ll_aleartBtns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnOK"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:background="@drawable/bg_edittext"
+            android:text="@string/button_ok"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/bg_edittext"
+            android:text="@string/button_cancel"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</LinearLayout>

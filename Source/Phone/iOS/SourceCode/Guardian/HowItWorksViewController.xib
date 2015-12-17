@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HowItWorksViewController">
+            <connections>
+                <outlet property="textView" destination="vZW-aw-odM" id="Iux-WU-f6l"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="bg.jpg" id="jMB-Nt-OUB">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="vZW-aw-odM">
+                    <rect key="frame" x="23" y="30" width="289" height="456"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <string key="text">If you are a registered user,
+
+ -When you are in panic, just click SOS tile or SOS icon on the app bar. You can pin SOS  tile to Start screen for one click SOS start.
+
+ - If GPRS or phone network is available, SOS call 
+  Will reach Guardian Server, which will send 
+  SMS/ emails/ FB messages(as set in preferences) to
+  all your buddies on your behalf.
+
+  -Guardian will keep relaying SOS alerts with 
+  location and tracking details to all your buddies at
+  regular intervals, until you stop SOS.
+                            
+  - Your buddies and groups can locate you in real-time
+  and can help or reach to the nearest Police Stations,
+  Hospitals etc.. for help.
+                            
+  - Your buddies and groups can get your dynamic 
+  location and directions to reach you to help.
+                           
+  - Reaching your buddies or security groups for help
+  via Call/ SMS/ email will be a click away with
+  standard SOS templates. 
+                            
+  - While in SOS, you can capture evidences which will 
+  be stored in cloud.
+                            
+  - You can join security groups which will monitor you
+  in SOS mode and send their marshals for help, in 
+  case you need. Security Groups can be public like 
+  police or private like your organization’s security
+  group.
+                            
+  - You can reach out to us at 
+  GuardianApp@outlook.com if your organization 
+  wants to setup a security group with Guardian, to
+  monitor your own employees/ personnel.
+                            
+  - After you have set-up the app from settings,
+  whenever you are apprehensive about your security 
+  while commuting, you can start tracking yourself to 
+  ensure you are heading towards your destination. 
+  As soon as you sense a danger, you can trigger SOS
+  by clicking SOS.
+                            
+  - All the tracking details will be maintained in history 
+  on the portal at http://aka.ms/GuardianPortal for 
+  3 months, post which the data will be purged. 
+                            
+  - You can locate your friends who have added you as 
+  a Buddy in Locate page and get real-time directions 
+  to reach/ help them, if they are in need.
+                            
+  - With Report Incident feature, you can also report 
+  any incident like accident, harassment, theft etc.
+  happening around you along with evidence and this 
+  information will be shared with Public groups like 
+  Police.
+  Disclaimer:
+  - Guardian or Guardian Team is not responsible for any damage caused. 
+- SMS delivery is subjected to the operator congestion and network availability.                            
+- Location details are mostly accurate to 100 meters. But, it is not guaranteed that the location is correct as it depends on various factors like hardware used to capture GPS location in devices, availability of GPS information etc.</string>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+        </view>
+        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HowItWorks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PJf-do-qCP">
+            <rect key="frame" x="0.0" y="0.0" width="132" height="24"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <nil key="highlightedColor"/>
+        </label>
+    </objects>
+    <resources>
+        <image name="bg.jpg" width="1600" height="1200"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

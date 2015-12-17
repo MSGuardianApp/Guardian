@@ -1,0 +1,180 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SOS.Phone.Pages.SOSPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:UC="clr-namespace:SOS.Phone.UserControls"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    BackKeyPress="SosApplicationPage_BackKeyPress">
+
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="localhelpItemTemplate">
+            <Border  BorderThickness="2" BorderBrush="White"  Margin="0,5,0,0">
+                <StackPanel Orientation="Vertical"  >
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="310"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel  Tap="localhelpLongList_Tap" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Image Width="55" Height="40" Margin="10" Stretch="Uniform" Source="/assets/Images/police.png" Visibility="{Binding IsPolice}" />
+                            <Image Width="55" Height="40" Margin="10" Stretch="Uniform" Source="/assets/Images/medical.png" Visibility="{Binding IsHospital}" />
+                        </StackPanel>
+
+
+                        <StackPanel x:Name="LocalHelpPanel" Grid.Column="1" Tap="localhelpLongList_Tap" Width="310" Orientation="Vertical"  HorizontalAlignment="Left" >
+                            <TextBlock Foreground="White" Text="{Binding Name}"  FontSize="15"  FontWeight="Bold">
+                            </TextBlock>
+                            <TextBlock  Foreground="White" Text="{Binding Vicinity}" TextWrapping="Wrap" FontSize="15" FontWeight="Bold">
+                            </TextBlock>
+                        </StackPanel>
+
+                        <Border x:Name="FirstIconBorder" VerticalAlignment="Center" Grid.Column="2"  HorizontalAlignment="Right" Margin="0,0,5,0" BorderThickness="0" BorderBrush="White" Width="40" Visibility="{Binding DialEnabled}" Tap="LocalHelpCall_Click">
+                            <Image Height="40" Width="40" HorizontalAlignment="Center"  x:Name="FirstIconImage" Source="/assets/Images/call.png" Style="{StaticResource BuddyListIconStyle}"/>
+                        </Border>
+
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot"  >
+        <Grid.Background>
+            <ImageBrush  ImageSource="/assets/bg.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+
+        <phone:Pivot x:Name="PagePivot" HeaderTemplate="{StaticResource PivotItemTitleStyle}" >
+            <phone:PivotItem Header="My Buddies" >
+                <StackPanel>
+                    <StackPanel x:Name="AddBuddyPanel" Margin="0,200,0,0" Visibility="Collapsed" >
+                        <TextBlock Text="You have not added any buddies. Add buddies who can help you in an emergency!" TextWrapping="Wrap" />
+                        <TextBlock Text="Click here to add buddies"  FontSize="15"  FontWeight="Bold" HorizontalAlignment="Center"  />
+                    </StackPanel>
+
+                    <ScrollViewer Height="370">
+                        <phone:LongListSelector ItemsSource="{Binding Buddies}" Height="370">
+                            <phone:LongListSelector.ItemTemplate>
+                                <DataTemplate>
+                                    <UC:BuddyView x:Name="ucPeople" TrackHandler="BuddyUC_TrackNavigationHandler" IsMyBuddy="True" IsLocateBuddy="False" IsGroup="False"></UC:BuddyView>
+                                </DataTemplate>
+                            </phone:LongListSelector.ItemTemplate>
+                        </phone:LongListSelector>
+                    </ScrollViewer>
+                    <TextBlock x:Name="RetryFailedLabel" Foreground="OrangeRed" Text="{Binding ErrorMessage}" Visibility="{Binding ErrorMessageVisibility}" FontSize="20" TextWrapping="Wrap" Padding="0"/>
+
+                    <StackPanel x:Name="UrgentContactsBar" Orientation="Vertical" Margin="0,0,0,0">
+                        <StackPanel x:Name="UrgentContacts" Orientation="Horizontal" Height="65">
+                            <Image x:Name="imgPolice" Source="/assets/Images/police.png" Height="60" Width="82" Margin="55,0,0,0" MouseEnter="imgPolice_MouseEnter" />
+                            <Image x:Name="imgAmbulance" Source="/assets/Images/medical.png" Height="60" Width="82" Margin="40,0,0,0" MouseEnter="imgAmbulance_MouseEnter" />
+                            <Image x:Name="imgFire" Source="/assets/Images/firebrigade.png" Height="60" Width="85" Margin="40,3,0,2" MouseEnter="imgFire_MouseEnter" />
+                        </StackPanel>
+                        <StackPanel x:Name="UrgentContactsName" Orientation="Horizontal">
+                            <TextBlock x:Name="Police" Text="Police" FontSize="20" Padding="0" Margin="70,0,0,0" />
+                            <TextBlock x:Name="Ambulance" Text="Ambulance" FontSize="20" Padding="0" Margin="45,0,0,0" />
+                            <TextBlock x:Name="FireBrigade" Text="Fire Brigade" FontSize="20" Margin="25,0,0,0" />
+                        </StackPanel>
+                        <TextBlock x:Name="UrgentHeader" FontSize="40" Text="EMERGENCY CALLS" Padding="0" TextAlignment="Center" Foreground="Yellow" FontWeight="bold" />
+                    </StackPanel>
+                </StackPanel>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="My Groups" >
+                <StackPanel>
+                    <StackPanel x:Name="GroupRegisterPanel" Margin="0,120,0,0" Visibility="Collapsed" >
+                        <TextBlock Margin="12,0,0,0" Style="{StaticResource PhoneTextSmallStyle}" Text="Groups can help you faster when you are in need. You need to be a registered Guardian user to add groups to your profile." TextWrapping="Wrap" />
+                        <UC:LoginControl x:Name="LiveLoginControl" ></UC:LoginControl>
+                    </StackPanel>
+                    <StackPanel x:Name="JoinGroupPanel" Margin="0,200,0,0" Visibility="Visible" >
+                        <TextBlock Text="You have not joined any group. Groups can help you faster when you are in need." TextWrapping="Wrap" />
+                        <HyperlinkButton Content="Click here to Join Groups"  FontSize="15"  FontWeight="Bold"  HorizontalAlignment="Center" Click="JoinGroupsButton_Click"/>
+                    </StackPanel>
+                    <StackPanel x:Name="GroupListPanel">
+                        <ScrollViewer >
+                            <phone:LongListSelector x:Name="GroupsList" ItemsSource="{Binding Groups}">
+                                <phone:LongListSelector.ItemTemplate>
+                                    <DataTemplate>
+                                        <UC:BuddyView x:Name="ucGroup" TrackHandler="GroupUC_TrackNavigationHandler" IsMyBuddy="False" IsLocateBuddy="False" IsGroup="True"></UC:BuddyView>
+                                    </DataTemplate>
+                                </phone:LongListSelector.ItemTemplate>
+                            </phone:LongListSelector>
+                        </ScrollViewer>
+                    </StackPanel>
+                </StackPanel>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="Get Local Help">
+                <StackPanel>
+                    <TextBlock Name="getlocalhelpProgressMsgTxt" Text="Loading local help..." TextAlignment="Center" Foreground="White"></TextBlock>
+                    <ProgressBar x:Name="getlocalhelpProgressBar"  Value="50" Foreground="Orange"  SmallChange="1" LargeChange="10" VerticalAlignment="Top" IsEnabled="True" IsIndeterminate="True" Height="20" >
+                    </ProgressBar>
+                    <ScrollViewer>
+                        <phone:LongListSelector x:Name="localhelpLongList" Visibility="Visible" IsGroupingEnabled="False" LayoutMode="List" HideEmptyGroups="False" ItemTemplate="{StaticResource localhelpItemTemplate}" Height="530"   />
+                    </ScrollViewer>
+                    <TextBlock Name="NoDataMsgText" Visibility="Collapsed" TextWrapping="Wrap">
+                        No data available currently either due to lack of network or other technical issue.Kindly try after sometime.
+                    </TextBlock>
+                </StackPanel>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="Helplines" >
+                <ScrollViewer>
+                    <phone:LongListSelector x:Name="HelplinesList" ItemsSource="{Binding Helplines}">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel  >
+                                    <Border BorderThickness="1" BorderBrush="White">
+                                        <StackPanel Orientation="Vertical" >
+                                            <StackPanel Orientation="Horizontal">
+                                                <StackPanel Tap="btnCall_click"  Orientation="Horizontal" Width="325" >
+                                                    <StackPanel x:Name="NamePanel" Orientation="Vertical" Width="325">
+                                                        <TextBlock Foreground="White" Text="{Binding Name}"  Margin="5,0,0,0"  FontSize="22"  FontWeight="Bold"  >
+                                                        </TextBlock>
+                                                        <TextBlock  Foreground="White" Text="{Binding PhoneNumber}"  Margin="5,0,0,0"  FontSize="22"  FontWeight="Bold"  >
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                                <StackPanel Margin="10,0,0,0" Tap="btnCall_click" >
+                                                    <Border  BorderThickness="2" BorderBrush="White" Height="60">
+                                                        <Image x:Name="imgCall" Source="\Assets\Images\call.png" Style="{StaticResource BuddyListIconStyle}"/>
+                                                    </Border>
+                                                </StackPanel>
+                                                <StackPanel  Margin="10,0,0,0" Tap="btnSMS_click" >
+                                                    <Border BorderThickness="2" BorderBrush="White" Height="60">
+                                                        <Image  x:Name="imgSMS" Source="\Assets\Images\sms.png" Style="{StaticResource BuddyListIconStyle}"/>
+                                                    </Border>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border BorderThickness="5" BorderBrush="Black"></Border>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+                </ScrollViewer>
+            </phone:PivotItem>
+        </phone:Pivot>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,0,0,12" Orientation="Vertical">
+            <StackPanel  Orientation="Horizontal" Height="40" >
+                <Image Source="/Assets/applicationicon.png"  Height="32" Width="32" VerticalAlignment="Top" />
+                <TextBlock x:Name="AppTitle" Text="SOS" Margin="0,3,0,0" Style="{StaticResource SubMenuStyle}" />
+                <Button x:Name="SwitchOnSosButton" Width="250" Content="Click to Switch ON GPS" Height="54" FontSize="20" BorderThickness="2" Padding="2,-3,2,3" VerticalAlignment="Bottom" Margin="160,-4,0,-10" MouseEnter="SwitchOnGPS_OnMouseEnter" Background="#FFF96511" BorderBrush="#FF10AA1E" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/Images/stopsos.png" Text="stop sos" Click="ToggleSosAppBarItem_OnClick"  />
+            <shell:ApplicationBarIconButton x:Name="TrackingIconButton" IconUri="/Assets/Images/stoptrack.png" Text="stop tracking" Click="ToggleTrackingAppBarItem_OnClick"  />
+            <shell:ApplicationBarIconButton x:Name="CaptureButton" IconUri="/Assets/Images/camera.png" Text="capture" Click="PhotoButton_OnClick" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

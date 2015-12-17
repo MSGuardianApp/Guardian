@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="test/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="jquery-2.1.1.js" type="text/javascript"></script>    
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0">
+    </script>
+    <script type="text/javascript">
+        Microsoft.Maps.registerModule('BingMapsAndroid');</script>
+
+    <script type="text/javascript" src="BingMapsAndroid.js">
+    </script>
+
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: arial;
+            font-size: 12px;
+            background-color: #000;
+        }
+
+        .MicrosoftMap {
+            background-color: #000 !important;
+        }
+
+        .title {
+            overflow: hidden;
+            width: 170px;
+        }
+    </style>
+
+
+
+        <script type="text/javascript">
+            var _map;
+
+        $(document).ready(function () {
+            // Create a Bing map
+            alert("In ready ");
+            
+            console.log("In ready");
+            var refURL = window.location.href;
+            console.log(refURL);
+            $("#lbl").val("REF URL:"+refURL);
+            _map = new Microsoft.Maps.Map(document.getElementById("mapDiv"),
+                { credentials: "AmXVM6msjaWe9ataCTYo5jRtKa6hMKYtaoR0Rquo93OnQxproiZt04PPuAxmLBoG" });
+
+
+            var location = new Microsoft.Maps.Location(17.5,77.5);
+            _map.setView({ zoom: 1, center: location });
+
+            // Add a pushpin to the map representing the current location
+            var pin = new Microsoft.Maps.Pushpin(location);
+            _map.entities.push(pin);
+            // Get the current position from the browser
+            if (!navigator.geolocation)
+                alert("This browser doesn't support geolocation");
+            else
+                navigator.geolocation.getCurrentPosition(onPositionReady, onError);
+        });
+
+        function onPositionReady(position) {
+            // Apply the position to the map
+            var location = new Microsoft.Maps.Location(position.coords.latitude,
+                position.coords.longitude);
+            _map.setView({ zoom: 10, center: location });
+
+            // Add a pushpin to the map representing the current location
+            var pin = new Microsoft.Maps.Pushpin(location);
+            _map.entities.push(pin);
+        }
+
+        function onError(err) {
+            switch (err.code) {
+                case 0:
+                    alert("Unknown error");
+                    break;
+                case 1:
+                    alert("The user said no!");
+                    break;
+                case 2:
+                    alert("Location data unavailable");
+                    break;
+                case 3:
+                    alert("Location request timed out");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+    <div id="lbl1" style="width:100%;">
+    <input type="text" id="lbl" value="hello" height="200" width="300"/>
+    </div>
+    <br/>
+    <div id="mapDiv" style="width:100px;height:100px;" />
+    </div>
+</body>
+</html>

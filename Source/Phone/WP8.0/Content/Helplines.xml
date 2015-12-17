@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Helplines>
+  <Country Name="India" IsdCode="+91">
+    <Helpline Name="Women Helpline Center" PhoneNumber="1091" />
+    <Helpline Name="Child Care" PhoneNumber="1098" />
+    <Helpline Name="Emergency Disaster Management" PhoneNumber="108" />
+    <Helpline Name="Central Accident and Trauma Services" PhoneNumber="1099" />
+    <Helpline Name="Emergency medical service in local area" PhoneNumber="1056" />
+    <Helpline Name="Women in Distress(Delhi)" PhoneNumber="181" />
+    <Helpline Name="Crime Against Women(Delhi)" PhoneNumber="1096" />
+    <Helpline Name="Missing Children and Women(Delhi)" PhoneNumber="1094" />
+    <Helpline Name="Anti Extortion(Delhi)" PhoneNumber="1097" />
+    <Helpline Name="Police Headquarter Helpline(UP)" PhoneNumber="1090" />
+  </Country>
+</Helplines>

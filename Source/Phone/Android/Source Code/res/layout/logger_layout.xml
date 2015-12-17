@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/bg">
+    
+ <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_VerHistory_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+       android:text="@string/Str_logger_text"
+        android:textColor="@color/white"/>
+
+ <Button
+     android:id="@+id/sendReportBut"
+     android:layout_width="@dimen/dp_120"
+     android:layout_height="@dimen/dp_30"
+     android:layout_gravity="center_horizontal"
+     android:background="@drawable/bg_tanble_green"
+     android:text="@string/send_report" 
+     android:textColor="@color/white"/>
+
+</LinearLayout>

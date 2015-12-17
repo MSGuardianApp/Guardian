@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_light" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/flip_cycle_tile_large" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/Loadingtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="72dp"
+        android:text="@string/loading_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_twelve" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_microsoft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/ms_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_twelve"
+        android:textStyle="bold" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_powrdby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_microsoft"
+        android:layout_alignBottom="@+id/tv_microsoft"
+        android:layout_marginRight="5sp"
+        android:layout_toLeftOf="@+id/tv_microsoft"
+        android:text="@string/powered_by"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_twelve" />
+
+</RelativeLayout>

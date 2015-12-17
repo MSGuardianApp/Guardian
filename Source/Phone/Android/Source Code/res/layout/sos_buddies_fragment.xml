@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/lv_buddiesList"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:dividerHeight="@dimen/dp_2"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:listSelector="@android:color/transparent" />
+
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="#000000"
+        android:textColor="@android:color/white"
+        android:text="@string/empty_buddies_list" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/unable_to_reach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:text="@string/unable_to_reach"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/rel_Emergency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="bottom"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rel_EmergencyButtens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <LinearLayout
+                android:id="@+id/btnPolice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/imgPolice"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/police" />
+
+                <com.guardianapp.views.CusFntTextView
+                    android:id="@+id/tv_Police"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="Police"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_twelve"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnAmbulance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_toRightOf="@+id/btnPolice"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/imgAmbulance"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/medical" />
+
+                <com.guardianapp.views.CusFntTextView
+                    android:id="@+id/tv_Ambulance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="Ambulance"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_twelve"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnFire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_toRightOf="@+id/btnAmbulance"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/img_btnFire"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/firebrigade" />
+
+                <com.guardianapp.views.CusFntTextView
+                    android:id="@+id/tv_Fire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="Fire Brigade"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_twelve"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_emergencyCalls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="EMERGENCY CALLS"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/dp_25"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

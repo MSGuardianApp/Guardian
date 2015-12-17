@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.microsoft.com/sos/2013/02" elementFormDefault="qualified" targetNamespace="http://www.microsoft.com/sos/2013/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:39018/MembershipService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" />
+  <xs:element name="GetProfileByProfileID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfileByProfileIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetProfileByProfileIDResult" nillable="true" type="q1:Profile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfileLiteByProfileID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfileLiteByProfileIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetProfileLiteByProfileIDResult" nillable="true" type="q2:ProfileLite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSOSMembers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MasterAuthKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSOSMembersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetAllSOSMembersResult" nillable="true" type="q3:ProfileLiteList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTrackingMembers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MasterAuthKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTrackingMembersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetAllTrackingMembersResult" nillable="true" type="q4:ProfileLiteList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfilesForLiveID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthenticatedLiveID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfilesForLiveIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetProfilesForLiveIDResult" nillable="true" type="q5:ProfileList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnBuddy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BuddyUserID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnBuddyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePhoneValidator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="PhoneValidationIP" nillable="true" type="q6:PhoneValidation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePhoneValidatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="CreatePhoneValidatorResult" nillable="true" type="q7:PhoneValidation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="BareProfile" nillable="true" type="q8:Profile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="CreateProfileResult" nillable="true" type="q9:Profile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProfilePhone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="Profile2Update" nillable="true" type="q10:Profile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProfilePhoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="UpdateProfilePhoneResult" nillable="true" type="q11:Profile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="Profile2Update" nillable="true" type="q12:Profile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="UpdateProfileResult" nillable="true" type="q13:Profile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPendingUpdates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastUpdateDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPendingUpdatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="CheckPendingUpdatesResult" nillable="true" type="q14:HealthUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

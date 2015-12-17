@@ -1,0 +1,261 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SOS.Phone.Pages.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush  ImageSource="/assets/bg.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="3,1,0,0" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/applicationicon.png"  Height="32" Width="32" VerticalAlignment="Top" />
+                <TextBlock Text="GUARDIAN" Style="{StaticResource SubMenuStyle}" />
+            </StackPanel>
+        </StackPanel>
+        <phone:Pivot x:Name="PagePivot" HeaderTemplate="{StaticResource PivotItemTitleStyle}">
+            <phone:PivotItem Header="About" >
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,0,10,0">
+                    <ScrollViewer>
+                        <StackPanel Orientation="Vertical" >
+                            <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White">
+                    Guardian is the ultimate security app in your hand. Being easy to configure and the power of being tracked by buddies and security groups simultaneously, ensures multi-fold security for you
+                            </TextBlock >
+                            <TextBlock></TextBlock>
+                            <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center" FontWeight="Bold" FontSize="28" Foreground="White"> Guardian</TextBlock>
+                            <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="14"> Security. Anytime. Anywhere</TextBlock>
+                            <Image Source="/Assets/ApplicationIcon.png" Height="98"></Image>
+                            <TextBlock></TextBlock>
+                            <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center"  TextDecorations="Underline" Foreground="White">Version</TextBlock>
+                            <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">2.0 release</TextBlock>
+                            <TextBlock></TextBlock>
+                            <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">Post your feedback to</TextBlock>
+                            <HyperlinkButton FontSize="17" MouseEnter="MailTo_MouseEnter">GuardianApp@outlook.com</HyperlinkButton>
+                            <TextBlock></TextBlock>
+                            
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="450" Margin="0,40,10,0">
+                            
+                                <TextBlock Style="{StaticResource PhoneTextSmallStyle}" Margin="180,4,5,0">Powered by</TextBlock>
+                                <TextBlock Text="Microsoft IT India" Margin="0,4,0,0" Style="{StaticResource PhoneTextSmallStyle}" Foreground="White" />
+                            </StackPanel>                            
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem Header="HowItWorks" >
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" >
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="10,0,0,0">
+If you are a registered user,
+                        </TextBlock>
+                        <TextBlock xml:space="preserve" Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="10,-20,0,0">
+ - When you are in panic, just click SOS tile or SOS 
+   icon on the app bar. You can pin SOS tile to Start 
+   screen for one click SOS start.
+                            
+- If GPRS or phone network is available, SOS call 
+  Will reach Guardian Server, which will send 
+  SMS/ emails to all your buddies on your behalf. 
+  <Bold>Please note that for international countries other 
+  than India, Guardian will not send SMS due to monetory constraints </Bold> 
+
+- Guardian will keep relaying SOS alerts with 
+  location and tracking details to all your buddies at
+  regular intervals, until you stop SOS.
+                            
+- Your buddies and groups can locate you in real-time
+  and can help or reach to the nearest Police Stations,
+  Hospitals etc.. for help.
+                            
+- Your buddies and groups can get your dynamic 
+  location and directions to reach you to help.
+                           
+- Reaching your buddies or security groups for help
+  via Call/ SMS/ emai will be a click away with
+  standard SOS templates. 
+                            
+- While in SOS, you can capture evidences which will 
+  be stored in cloud.
+                            
+- You can join security groups which will monitor you
+  in SOS mode and send their marshals for help, in 
+  case you need. Security Groups can be public like 
+  police or private like your organization’s security
+  group.
+                            
+- You can reach out to us at 
+  GuardianApp@outlook.com if your organization 
+  wants to setup a security group with Guardian, to
+  monitor your own employees/ personnel.
+                            
+- After you have set-up the app from settings,
+  whenever you are apprehensive about your security 
+  while commuting, you can start tracking yourself to 
+  ensure you are heading towards your destination. 
+  As soon as you sense a danger, you can trigger SOS
+  by clicking SOS.
+                            
+- All the tracking details will be maintained in history 
+  on the portal at http://aka.ms/GuardianPortal for 
+  3 months, post which the data will be purged. 
+                            
+- You can locate your friends who have added you as 
+  a Buddy in Locate page and get real-time directions 
+  to reach/ help them, if they are in need.
+                            
+- With Report Incident feature, you can also report 
+  any incident like accident, harassment, theft etc.
+  happening around you along with evidence and this 
+  information will be shared with Public groups like 
+  Police.
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="10,0,0,0">
+Disclaimer:
+                        </TextBlock>
+                        <TextBlock xml:space="preserve" Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="20,-20,0,0">
+- Guardian or Guardian Team is not responsible for any damage caused. 
+- SMS delivery is subjected to the operator congestion and network availability.                            
+- Location details are mostly accurate to 100 meters. But, it is not guaranteed that the location is correct as it depends on various factors like hardware used to capture GPS location in devices, availability of GPS information etc.
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+            <phone:PivotItem Header="Features" >
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" >
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" FontSize="22" Foreground="#FF10AA1E" FontWeight="Bold">
+                            Non-registered user
+                        </TextBlock>
+                        <TextBlock xml:space="preserve" Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="10,-15,0,0">
+1.	Setup buddies and preferences through phone
+2.	Self-Tracking and showing route
+3.	Ability to send SOS signals
+    -	Pre-defined SMS with location to buddies<!---	Posting to FB (to a private group)-->
+4.	One click call/SMS/Email to buddies while in SOS
+5.	Local help (Police, Hospitals)
+6.	Route to Local Help
+7.	Local Emergency Numbers
+
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" FontSize="22" Foreground="#FF10AA1E" FontWeight="Bold">
+                          Registered user
+                        </TextBlock>
+                        <TextBlock xml:space="preserve" Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="10,-15,0,0"> 
+1.	All features of Non-Registered Users
+2.	Allowing buddies to acknowledge (taking care of 
+    privacy)
+3.	Adding Security groups to monitor you in real-time, 
+    when needed
+4.	Ability to send SOS signals
+    -	Initiating immediate call with a buddy
+    -	Sending automated emails with your location to 
+        your buddies
+    -  SMS with Tracking trail to buddies
+    -	Sending pictures to the buddies
+    -	Sending pictures to your Security Groups
+5.	Continuous SOS notifications via SMS, Email to buddies 
+    at regular interval, at absolutely NO COST
+6.	Send SOS in the event of the phone being 
+    destroyed/ switched off
+7.	Start SOS notifications by sending SMS when 
+    GPRS(internet) is unavailable
+8.	Safety message after turning Off SOS
+9.	Tracking people who have added you as Buddies,  
+     on your mobile devices
+10. Being tracked by your buddies in real-time on 
+     their mobile devices
+11. Being tracked by more than one organization's 
+     security group in real-time when you need
+12. Ability to save SOS photos in cloud for evidence
+13. Incident reporting like Eve-tease, accidents etc. 
+     along with evidence in cloud
+14. Security groups can help you by having ability 
+     to send Police/Medical Help to you when in SOS
+15. Allowing security groups to assign their marshals 
+     to rescue you on the fly with real-time tracking
+16. One click to start SOS - Pin SOS tile to Start page                            
+17. One click to restore all your buddies, preferences 
+     and settings on a new device
+18. <Run FontWeight="Bold">One Drive</Run> access requested during registration
+     is to archive your tracking information while
+     we use data periodically. This feature will 
+     be part of future release. We DO NOT access
+     any of your personal or public data/ information
+     from onedrive now nor would do in future.                            
+19. You can track your buddies from anywhere, 
+     anytime by simply login as user in 
+                        </TextBlock>
+                        <HyperlinkButton Margin="-62,-30,0,0" FontSize="20" NavigateUri="https://guardianportal.cloudapp.net" Content="https://guardianportal.cloudapp.net" ></HyperlinkButton>
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+            
+            <phone:PivotItem Header="Version History">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" >
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" FontSize="20" Foreground="#FF10AA1E" FontWeight="Bold">
+                          Version 2.0 (June 24, 2015)
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,10">Allows international registrations. Additional enhancements for accuracy, reliability, scalability and optimizations
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" FontSize="20" Foreground="#FF10AA1E" FontWeight="Bold">
+                          Version 1.3 (May 20, 2014)
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,10">Enhancements and bug fixes
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" FontSize="20" Foreground="#FF10AA1E" FontWeight="Bold">
+                          Version 1.2 (December 15, 2013)
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,10"> Minor enhancements and minor bug fixes
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" FontSize="20" Foreground="#FF10AA1E" FontWeight="Bold">
+                          Version 1.1 (November 22, 2013)
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,10"> Bug fixes and minor enhancements
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" FontSize="20" Foreground="#FF10AA1E" FontWeight="Bold">
+                          Version 1.0 (November 12, 2013)
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White" Margin="20,0,0,0"> First release
+                        </TextBlock>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+            <phone:PivotItem Header="Logger">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" >
+                        <TextBlock Style="{StaticResource PhoneTextSmallStyle}" TextWrapping="Wrap" Foreground="White">
+                            Please click send report to send the detailed error log to the Guardian Core team
+                        </TextBlock >
+                        <Button BorderBrush="Orange" Background="#FF10AA1E" Click="SendReport_Click" Width="200" >
+                            Send Report
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+        </phone:Pivot>
+         </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" >
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/feature.email.png" Text="send link" Click="SendLinkAppBarItem_OnClick"  />
+            <shell:ApplicationBarIconButton x:Name="TrackingIconButton" IconUri="/Assets/Images/sms.png" Text="message link"  Click="MessageLinkAppBarItem_OnClick"  />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/share.png" Text="share link" Click="ShareLinkAppBarItem_OnClick"  />
+            <shell:ApplicationBarIconButton  IconUri="/Assets/AppBar/like.png" Text="rate" Click="RatenReviewAppBarItem_OnClick"  />
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_createProfHeadding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:textColor="#787878" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_createProfDescript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:text="@string/createProfie_Description"
+        android:textColor="#787878" />
+
+    <Button
+        android:id="@+id/btn_connectToMSLive"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_margin="13dp"
+        android:background="#FFFFFF"
+        android:drawableLeft="@drawable/mslogo"
+        android:text="@string/connect_to_ms_live" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_createProfHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:text="@string/createProfie_hint"
+        android:textColor="#787878" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/hyperLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/privacyPolicy"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+</LinearLayout>

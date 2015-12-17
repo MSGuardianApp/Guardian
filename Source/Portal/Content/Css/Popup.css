@@ -1,0 +1,118 @@
+﻿
+.popup {
+    background-color:aliceblue;
+    
+}
+.popup .ui-dialog-titlebar-close {display:none; }
+/*.ui-dialog ui-widget ui-widget-content ui-corner-all ui-front popup {
+            position:fixed!important;
+}*/
+.ui-dialog-titlebar{
+        width: 400px!important;
+}
+#smsPopup {
+    position:absolute;
+    width: 400px!important;
+    
+}
+
+
+
+.popup.ui-dialog-titlebar 
+{ 
+	background-color: red;
+}
+.popup .txtSmsInput
+{
+    height:50px;
+	width:350px;
+	margin:3px 0px 3px 0px;
+    
+}
+.popup .ui-dialog-titlebar 
+{ 
+	background-color: gray;
+    outline-color:black;color:white;
+} 
+#smsPopup > div
+	{
+        color: red;   
+	    margin:5px 5px 5px 5px;
+	}
+.popup .buttons
+	{
+		float:right;
+		margin:10px 20px 0px 0px;
+	}
+
+.popup #submitbtn,
+.popup #cancel
+	{
+		width:100px;
+		height:25px;
+		cursor:pointer;
+        background-color:green;
+	}
+	
+.popup #submitbtn:hover,
+.popup #cancel:hover
+	{
+		background-color:#3ADF00;
+	}
+/*.submitorderdialog {
+background-color:aliceblue;
+}
+.txtSmsInput
+{
+	width:300px;
+	margin:3px 0px 3px 0px;
+}
+.submitorderdialog .ui-dialog-titlebar 
+{ 
+	background-color: gray;
+} 
+.submitorderdialog .ui-dialog-titlebar-close {display: none }
+
+#submitorderdialog
+{
+	display:none;
+	font-family: "Segoe UI";
+	font-size: 14px;
+}
+
+	#submitorderdialog > div
+	{
+        font-size: 22px;
+	    margin:0px 10px 20px 0px;
+	}
+
+	#submitorderdialog > div:nth-child(2)
+	{
+		margin:10px 10px 10px 0px;
+	}
+
+	#submitorderdialog > div:nth-child(3)
+	{
+		margin:10px 10px 10px 0px;
+	}
+
+	#submitorderdialog .buttons
+	{
+		float:right;
+		margin:10px 20px 0px 0px;
+	}
+
+	#submitorderdialog #submitbtn,
+	#submitorderdialog #cancel
+	{
+		width:130px;
+		height:25px;
+		cursor:pointer;
+        background-color:green;
+	}
+	
+	#submitorderdialog #submitbtn:hover,
+	#submitorderdialog #cancel:hover
+	{
+		background-color:#FACC2E;
+	}*/

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:orientation="vertical" 
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:id="@+id/createProfLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_15"
+        android:orientation="vertical" >
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/editTxt_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:background="#C0C0C0"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_loggedInLiveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:text="@string/logged_in_live"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/editTxt_loggedInLiveAccount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:background="#C0C0C0"
+            android:ems="10"
+            android:focusable="false" >
+
+            <requestFocus />
+        </EditText>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_createProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:text="@string/create_profile"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_mobileNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/mob_num"
+            android:textColor="#FFFFFF" />
+
+        <RelativeLayout
+            android:id="@+id/validate_mob_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5" >
+
+            <EditText
+                android:id="@+id/editTxt_Countcode"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_30"
+                android:background="@drawable/bg_edittext"
+                android:focusable="false"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/font_size_fifteen" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/editTxt_phoneNum"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/editTxt_Countcode"
+                android:background="#C0C0C0"
+                android:digits="0123456789"
+                android:ems="7"
+                android:inputType="phone" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/btn_validate"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/editTxt_phoneNum"
+                android:background="@drawable/bg_edittext"
+                android:text="@string/validate"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/font_size_fifteen" />
+        </RelativeLayout>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_validDesscrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/resgiterSec_codeDescription_1"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_securityCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="Security Code"
+            android:textColor="#FFFFFF" />
+
+        <RelativeLayout
+            android:id="@+id/createSecCodeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5" >
+
+            <EditText
+                android:id="@+id/editTxt_secCode"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:background="#C0C0C0"
+                android:ems="9"
+                android:inputType="textPassword" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/btn_Confirm"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/editTxt_secCode"
+                android:background="@drawable/bg_edittext"
+                android:text="@string/confirm"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/font_size_fifteen" />
+        </RelativeLayout>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_validCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/resgiterSec_codeDescription_2"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/createProfLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_15"
+        android:background="#00000000"
+        android:orientation="vertical" >
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:background="#C0C0C0"
+            android:ems="10" >
+        </EditText>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_loggedInLiveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:text="@string/email_id"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/et_loggedInLiveAccount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:background="#C0C0C0"
+            android:ems="10"
+            android:focusable="false" >
+
+            <requestFocus />
+        </EditText>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_mobileNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/mob_num"
+            android:textColor="#FFFFFF" />
+
+        <RelativeLayout
+            android:id="@+id/edit_profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5" >
+
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:src="@drawable/edit" />
+
+            <EditText
+                android:id="@+id/et_phoneNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/iv_edit"
+                android:layout_alignParentLeft="true"
+                android:layout_alignTop="@id/iv_edit"
+                android:layout_toLeftOf="@id/iv_edit"
+                android:background="#C0C0C0"
+                android:ems="8"
+                android:focusable="false"
+                android:inputType="phone" >
+
+                <requestFocus />
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/createSecCodeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10" >
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_lastSynced"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/last_sync_on"
+                android:textColor="#787878"
+                android:textSize="@dimen/font_size_twenty" />
+
+            <ImageView
+                android:id="@+id/iv_synced"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/sync" />
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_lastDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_lastSynced"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="@string/date_time"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_syncedNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/iv_synced"
+                android:text="@string/sync_now"
+                android:textColor="#787878"
+                android:textSize="@dimen/font_size_twelve" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

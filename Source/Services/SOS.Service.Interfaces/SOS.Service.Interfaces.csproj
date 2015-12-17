@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B0D9B6C-DF95-46AC-A4CB-E4C3CD604130}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOS.Service.Interfaces</RootNamespace>
+    <AssemblyName>SOS.Service.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\DataContracts\Geography.cs" />
+    <Compile Include="Interfaces\DataContracts\Groups.cs" />
+    <Compile Include="Interfaces\DataContracts\History.cs" />
+    <Compile Include="Interfaces\DataContracts\InBound\DispatchInfo.cs" />
+    <Compile Include="Interfaces\DataContracts\InBound\MemberInfo.cs" />
+    <Compile Include="Interfaces\DataContracts\Incident.cs" />
+    <Compile Include="Interfaces\DataContracts\MediaService.cs" />
+    <Compile Include="Interfaces\DataContracts\OutBound\LiveUserStatus.cs" />
+    <Compile Include="Interfaces\DataContracts\OutBound\Member.cs" />
+    <Compile Include="Interfaces\DataContracts\OutBound\GroupDTO.cs" />
+    <Compile Include="Interfaces\DataContracts\OutBound\BasicProfile.cs" />
+    <Compile Include="Interfaces\DataContracts\OutBound\Result.cs" />
+    <Compile Include="Interfaces\DataContracts\OutBound\TileCounts.cs" />
+    <Compile Include="Interfaces\DataContracts\Persona.cs" />
+    <Compile Include="Interfaces\DataContracts\PhoneValidation.cs" />
+    <Compile Include="Interfaces\DataContracts\Security.cs" />
+    <Compile Include="Interfaces\DataContracts\Settings.cs" />
+    <Compile Include="Interfaces\DataContracts\UnAssignMarshal.cs" />
+    <Compile Include="Interfaces\Enums.cs" />
+    <Compile Include="Interfaces\DataContracts\ActiveSOSReports.cs" />
+    <Compile Include="Interfaces\DataContracts\DemographyReport.cs" />
+    <Compile Include="Interfaces\ServiceContracts\IAuthorization.cs" />
+    <Compile Include="Interfaces\ServiceContracts\IHistoryService.cs" />
+    <Compile Include="Interfaces\ServiceContracts\IGeoUpdates.cs" />
+    <Compile Include="Interfaces\ServiceContracts\IGroupService.cs" />
+    <Compile Include="Interfaces\ServiceContracts\ILocationService.cs" />
+    <Compile Include="Interfaces\ServiceContracts\IMediaService.cs" />
+    <Compile Include="Interfaces\ServiceContracts\IMembership.cs" />
+    <Compile Include="Interfaces\ServiceContracts\IReportService.cs" />
+    <Compile Include="Interfaces\DataContracts\OutBound\SOSTrackCounts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\DataContracts\Class Diagrams\" />
+    <Folder Include="Interfaces\FaultContracts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

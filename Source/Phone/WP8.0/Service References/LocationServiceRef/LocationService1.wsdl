@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.microsoft.com/sos/2013/02" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.microsoft.com/sos/2013/02" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.microsoft.com/sos/2013/02/Imports">
+      <xsd:import schemaLocation="http://localhost:39018/LocationService.svc?xsd=xsd0" namespace="http://www.microsoft.com/sos/2013/02" />
+      <xsd:import schemaLocation="http://localhost:39018/LocationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:39018/LocationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:39018/LocationService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:39018/LocationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="LocationService_GetUserLocationArray_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocationArray" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetUserLocationArray_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocationArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetUserLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocations" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetUserLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetUserLocationsByToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocationsByToken" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetUserLocationsByToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocationsByTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetBuddiesToLocate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuddiesToLocate" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetBuddiesToLocate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuddiesToLocateResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetBuddiesToLocateLastLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuddiesToLocateLastLocation" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetBuddiesToLocateLastLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuddiesToLocateLastLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetSOSTrackCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSOSTrackCount" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetSOSTrackCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSOSTrackCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetSOSTrackCountByGroupId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSOSTrackCountByGroupId" />
+  </wsdl:message>
+  <wsdl:message name="LocationService_GetSOSTrackCountByGroupId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSOSTrackCountByGroupIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LocationService">
+    <wsdl:operation name="GetUserLocationArray">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetUserLocationArray" message="tns:LocationService_GetUserLocationArray_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetUserLocationArrayResponse" message="tns:LocationService_GetUserLocationArray_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLocations">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetUserLocations" message="tns:LocationService_GetUserLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetUserLocationsResponse" message="tns:LocationService_GetUserLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLocationsByToken">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetUserLocationsByToken" message="tns:LocationService_GetUserLocationsByToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetUserLocationsByTokenResponse" message="tns:LocationService_GetUserLocationsByToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuddiesToLocate">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetBuddiesToLocate" message="tns:LocationService_GetBuddiesToLocate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetBuddiesToLocateResponse" message="tns:LocationService_GetBuddiesToLocate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuddiesToLocateLastLocation">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetBuddiesToLocateLastLocation" message="tns:LocationService_GetBuddiesToLocateLastLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetBuddiesToLocateLastLocationResponse" message="tns:LocationService_GetBuddiesToLocateLastLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSOSTrackCount">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetSOSTrackCount" message="tns:LocationService_GetSOSTrackCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetSOSTrackCountResponse" message="tns:LocationService_GetSOSTrackCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSOSTrackCountByGroupId">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetSOSTrackCountByGroupId" message="tns:LocationService_GetSOSTrackCountByGroupId_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/LocationService/GetSOSTrackCountByGroupIdResponse" message="tns:LocationService_GetSOSTrackCountByGroupId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

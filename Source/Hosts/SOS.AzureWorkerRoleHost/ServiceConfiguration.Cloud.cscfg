@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="SOS.AzureWorkerRoleHost" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2014-06.2.4">
+  <Role name="SOS.Worker.Broadcaster">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="QueueConnection" value="DefaultEndpointsProtocol=https;AccountName=guardianstoragedev;AccountKey=/TOREPLACE-KEY/" />
+      <Setting name="TableConnection" value="DefaultEndpointsProtocol=https;AccountName=guardianstoragedev;AccountKey=/TOREPLACE-KEY/" />
+      <Setting name="BlobConnection" value="DefaultEndpointsProtocol=https;AccountName=guardianstoragedev;AccountKey=/TOREPLACE-KEY/" />
+      <Setting name="AzureSQLConnectionString" value="Server=tcp:n6axhlg9lz.database.windows.net,1433;Database=Guardian;User ID=guardian@n6axhlg9lz;Password=/TOREPLACE-PASSWORD/;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" />
+      <Setting name="EventHubConnectionString" value="Endpoint=sb://ehdevelopment.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=/TOREPLACE-EVENTHUBKEY/" />
+      <Setting name="EventHubName" value="LiveLocations" />
+      <Setting name="SMSDefaultFromnumber" value="GUARDN" />
+      <Setting name="GuardianPortalUri" value="https://guardianportal-dev.cloudapp.net" />
+      <Setting name="V1GuardianPortalUri" value="https://guardian.cloudapp.net" />
+      <Setting name="TinyServiceUri" value="http://tinyurl.com/api-create.php" />     
+      <Setting name="SMSPostGap" value="15" />
+      <Setting name="FacebookPostGap" value="15" />
+      <Setting name="EmailPostGap" value="15" />
+      <Setting name="SendSms" value="False" />
+      <Setting name="UseEventHubs" value="True" />
+      <Setting name="SubGroupAllocationIntervalInMinutes" value="5" />
+      <Setting name="BroadcastRunIntervalInSeconds" value="60" />
+      <Setting name="ArchiveTimeGapInMinutes" value="240" />
+      <Setting name="ArchiveRunIntervalInMinutes" value="10" />
+      <Setting name="SMSServiceUserID" value="microsofthtp" />
+      <Setting name="SMSServicePassword" value="/TOREPLACE-SMSPASSWORD/" />
+      <Setting name="sendGridUserID" value="/TOREPLACE-EMAILUSERNAME/" />
+      <Setting name="sendGridPassword" value="/TOREPLACE-PASSWORD/" />
+      <Setting name="IntlSMSServiceUserID" value="microsofthtp" />
+      <Setting name="IntlSMSServicePassword" value="/TOREPLACE-SMSPASSWORD/" />
+      <Setting name="BingKey" value="/TOREPLACE-BINGKEY/" />           
+      <Setting name="ClientSecret" value="/TOREPLACE-LIVECLIENTSECRET/,/TOREPLACE-LIVECLIENTSECRET/" />
+      <Setting name="LiveAppUri" value="guardianportal-dev.cloudapp.net" />
+      <Setting name="RandomNumberDigits" value="5" />     
+      <Setting name="TimeToResetCacheInMinutes" value="240" />
+      <Setting name="IncludeActiveMembers" value="true" />
+      <Setting name="DefaultGroupID" value="1" />
+      <Setting name="AppInsightsKey" value="/TOREPLACE-EMPTYORAIKEY/" />
+      <Setting name="AppInsightsTag" value="Dev" />
+      <Setting name="IsEnterpriseBuild" value="False" />
+      <Setting name="HasDataMigrated" value="True" />
+      <Setting name="EnterpriseDomain" value="@microsoft.com" />
+      <Setting name="GoogleClientID" value="/TOREPLACE-GOOGLECLIENTID/.apps.googleusercontent.com" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.microsoft.com/sos/2013/02" elementFormDefault="qualified" targetNamespace="http://www.microsoft.com/sos/2013/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:39018/GeoUpdate.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" />
+  <xs:element name="PostMyLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GeoTag" nillable="true" type="q1:GeoTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostMyLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopPostings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopPostingsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopAllPostings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopAllPostingsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportTease">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GeoTag" nillable="true" type="q2:GeoTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportTeaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReportTeaseResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

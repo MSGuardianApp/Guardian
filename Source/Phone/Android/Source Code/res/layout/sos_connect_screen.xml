@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_SOSconnect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_light" >
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/textHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:text="@string/tag_line"
+        android:textColor="#FFFFFF" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/textSOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textHome"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:text="@string/starting_sos"
+        android:textColor="@color/orange" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/textSOSDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textSOS"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:text="@string/str_SosDesc"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_twelve" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_counting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="T"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/font_size_twofifty"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnCancelSOS"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@+id/tv_counting"
+        android:layout_centerHorizontal="true"
+        android:background="@color/green"
+        android:text="@string/cancel_sos"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_eighteen" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_SOSbtnDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCancelSOS"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/str_SOsbtnDes"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_twelve" />
+
+</RelativeLayout>

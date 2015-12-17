@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/directionsInputView">
+<LinearLayout
+	android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="5px"
+	android:paddingRight="5px">
+		<TextView android:text="From"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
+				
+		<EditText android:id="@+id/directionsFromInput"
+				android:singleLine="true"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
+		
+		<TextView android:text="To"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
+				
+		<EditText android:id="@+id/directionsToInput"
+				android:singleLine="true"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
+	</LinearLayout>
+</ScrollView>

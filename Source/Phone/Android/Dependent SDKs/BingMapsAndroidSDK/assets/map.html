@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//WEC//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="test/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+	<style type="text/css">
+		*{padding:0;margin:0;}
+		html, body{height:100%;font-family:arial;font-size:12px;background-color:#000;}
+		.MicrosoftMap{background-color:#000 !important;}
+		.title{overflow:hidden;width:170px;}
+	</style>
+</head>
+<body>
+	<div id="mapDiv" style="position:relative;width:100%;height:100%;"></div>	
+
+	<script type="text/javascript">
+		function __checkBingMapsLoaded(){
+			if(typeof(window['Microsoft']) != "undefined" && Microsoft != null && Microsoft.Maps.registerModule != null){
+				Microsoft.Maps.registerModule('mapModule', 'file:///android_asset/BingMapsAndroid.js');
+				<!--Microsoft.Maps.registerModule('mapModule', 'BingMapsAndroid.js');-->
+
+				Microsoft.Maps.loadModule('mapModule', { callback: function(){ BingMapsAndroid.LoadMap('mapDiv'); } });
+			}else{
+				setTimeout(__checkBingMapsLoaded,100);
+			}
+		}
+		
+		(function (){
+			var regex = new RegExp("[\\?&]mkt=([^&#]*)"),
+				qs = regex.exec(window.location.href),
+				mkt;
+	
+			if (qs == null || qs.length < 2) {
+				mkt = 'en-US';
+			}
+			else {
+				mkt = qs[1];
+			}
+			
+			var script = document.createElement("script");
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", 'http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&mkt=' + mkt);
+            document.body.appendChild(script);
+			
+			__checkBingMapsLoaded();
+		})();
+	</script>
+</body>
+</html>

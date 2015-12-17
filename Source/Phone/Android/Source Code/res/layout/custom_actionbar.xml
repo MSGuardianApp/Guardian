@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/application_icon" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/sos_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/imageView1"
+        android:text="SOS"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/switch_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_30"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@color/orange"
+        android:text="Click to Switch ON GPS"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:textSize="@dimen/dp_15" />
+
+</RelativeLayout>

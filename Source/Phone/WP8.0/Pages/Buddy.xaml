@@ -1,0 +1,36 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SOS.Phone.Pages.Buddy"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UC="clr-namespace:SOS.Phone.UserControls"   
+    mc:Ignorable="d"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot"  Background="White">
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,5,0,0" Orientation="Horizontal">
+            <TextBlock Text="Buddy" FontSize="40" Foreground="Black" Margin="10,0" />
+        </StackPanel>
+
+        <phone:Pivot HeaderTemplate="{StaticResource PivotItemTitleStyle}" >
+            <!--Pivot item one-->
+            <phone:PivotItem Header="All">
+                <StackPanel Orientation="Vertical">
+                    <phone:LongListSelector x:Name="llsBuddies" Margin="0,0,0,0"  ItemsSource="{Binding Buddies}"  >
+                        <phone:LongListSelector.ItemTemplate >
+                            <DataTemplate>
+                                <UC:BuddyView x:Name="ucPeople" TrackHandler="BuddyUC_TrackNavigationHandler" IsMyBuddy="True" IsLocateBuddy="False" IsGroup="False" ></UC:BuddyView>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+                    <TextBlock Margin="12,5,0,0" TextWrapping="Wrap" Text="{Binding MessageToView}"></TextBlock>
+                </StackPanel>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>

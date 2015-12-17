@@ -1,0 +1,691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F31262D-7B6F-4E9C-BD58-CB3BCE47C4B3}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOS.Phone</RootNamespace>
+    <AssemblyName>SOS.Phone</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SOS_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SOS.Phone.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>6ea42c6d</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControls\LoginControl.xaml.cs">
+      <DependentUpon>LoginControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilites\Converters\AddBracketsToString.cs" />
+    <Compile Include="Utilites\GeoHelpers\AngleConverter.cs" />
+    <Compile Include="Utilites\GeoHelpers\DistanceConverter.cs" />
+    <Compile Include="Utilites\GeoHelpers\DistanceUnit.cs" />
+    <Compile Include="Utilites\GeoHelpers\GeoConstants.cs" />
+    <Compile Include="Utilites\GeoHelpers\IAngleConverter.cs" />
+    <Compile Include="Utilites\GeoHelpers\IBearingCalculator.cs" />
+    <Compile Include="Utilites\GeoHelpers\IDistanceCalculator.cs" />
+    <Compile Include="Utilites\GeoHelpers\IDistanceConverter.cs" />
+    <Compile Include="Utilites\GeoHelpers\IRhumbBearingCalculator.cs" />
+    <Compile Include="Utilites\GeoHelpers\IRhumbDistanceCalculator.cs" />
+    <Compile Include="Utilites\GeoHelpers\Position.cs" />
+    <Compile Include="Utilites\GeoHelpers\PositionHandler.cs" />
+    <Compile Include="MVVM\Model\ContactsModel.cs" />
+    <Compile Include="MVVM\Model\LocateBuddyTableEntity.cs" />
+    <Compile Include="MVVM\Model\MapAddressModel.cs" />
+    <Compile Include="MVVM\ViewModel\SOSViewModel.cs" />
+    <Compile Include="Pages\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportIncident.xaml.cs">
+      <DependentUpon>ReportIncident.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShowRouteMap.xaml.cs">
+      <DependentUpon>ShowRouteMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegisterMessage.xaml.cs">
+      <DependentUpon>RegisterMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Model\HealthTableEntity.cs" />
+    <Compile Include="MVVM\ViewModel\HealthViewModel.cs" />
+    <Compile Include="Utilites\Algorithms\GPSFilter.cs" />
+    <Compile Include="Utilites\Algorithms\ReportIntervalCalculator.cs" />
+    <Compile Include="Utilites\HelperEntities\Callee.cs" />
+    <Compile Include="Utilites\HelperEntities\GeoLocation.cs" />
+    <Compile Include="Utilites\HelperEntities\EmailMessage.cs" />
+    <Compile Include="Utilites\HelperEntities\EncrptyAndDecrypt.cs" />
+    <Compile Include="Utilites\HelperEntities\PhoneGeoTag.cs" />
+    <Compile Include="Utilites\HelperEntities\SMSMessage.cs" />
+    <Compile Include="Utilites\ServiceWrapper\MembershipServiceWrapper.cs" />
+    <Compile Include="Utilites\ServiceWrapper\ResultInterpreter.cs" />
+    <Compile Include="Utilites\UtilityClasses\Config.cs" />
+    <Compile Include="Utilites\UtilityClasses\Constants.cs" />
+    <Compile Include="Utilites\UtilityClasses\CustomMessage.cs" />
+    <Compile Include="Utilites\UtilityClasses\ExceptionHandler.cs" />
+    <Compile Include="Utilites\UtilityClasses\HelperClasses.cs" />
+    <Compile Include="Utilites\UtilityClasses\PhotoResizer.cs" />
+    <Compile Include="Utilites\UtilityClasses\Retrier.cs" />
+    <Compile Include="Utilites\UtilityClasses\StateUtility.cs" />
+    <Compile Include="Utilites\ClassExtensions\ObservableCollectionExtensions.cs" />
+    <Compile Include="Utilites\ClassExtensions\StringExtensions.cs" />
+    <Compile Include="Utilites\ClassExtensions\MapExtensions.cs" />
+    <Compile Include="Utilites\ClassExtensions\GeoCoordinateExtensions.cs" />
+    <Compile Include="Utilites\UtilityClasses\Globals.cs" />
+    <Compile Include="Utilites\UtilityClasses\IStoragePropertyHelper.cs" />
+    <Compile Include="Utilites\UtilityClasses\Toast.cs" />
+    <Compile Include="Utilites\UtilityClasses\UriAssociationMapper.cs" />
+    <Compile Include="Utilites\UtilityClasses\Utility.cs" />
+    <Compile Include="Utilites\ClassExtensions\WebClientExtensions.cs" />
+    <Compile Include="MVVM\Model\_DataContext.cs" />
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Model\ProfileTableEntity.cs" />
+    <Compile Include="MVVM\Model\UserTableEntity.cs" />
+    <Compile Include="MVVM\Model\GroupTableEntity.cs" />
+    <Compile Include="Pages\StartSOS.xaml.cs">
+      <DependentUpon>StartSOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Video.xaml.cs">
+      <DependentUpon>Video.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MembershipServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Buddy.xaml.cs">
+      <DependentUpon>Buddy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Locate.xaml.cs">
+      <DependentUpon>Locate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewModel\ProfileViewModel.cs" />
+    <Compile Include="MVVM\View\BuddyView.xaml.cs">
+      <DependentUpon>BuddyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SOS.xaml.cs">
+      <DependentUpon>SOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TrackMe.xaml.cs">
+      <DependentUpon>TrackMe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GeoServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GroupServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LocationServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Model\BuddyTableEntity.cs" />
+    <Compile Include="Utilites\ServiceWrapper\LocationServiceWrapper.cs" />
+    <Compile Include="Utilites\StorageWrapper\LocalStorageWrapper.cs" />
+    <Compile Include="MVVM\ViewModel\BuddyViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\UserViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\GroupsViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\LocateBuddyViewModel.cs" />
+    <Compile Include="Utilites\UtilityClasses\WPClogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="CustomTheme\System.Windows.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomTheme\ThemeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Buddy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Help.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ReportIncident.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ShowRouteMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Locate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MapPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\BuddyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\RegisterMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SOS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StartSOS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TrackMe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserControls\LoginControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Video.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Helplines.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SOSVoiceCommandDefinition-8.1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Assets\AppBar\feature.email.png" />
+    <Content Include="Assets\AppBar\like.png" />
+    <Content Include="Assets\AppBar\share.png" />
+    <Content Include="Assets\HelpImages\1.png" />
+    <Content Include="Assets\HelpImages\10.png" />
+    <Content Include="Assets\HelpImages\11.png" />
+    <Content Include="Assets\HelpImages\12.png" />
+    <Content Include="Assets\HelpImages\13.png" />
+    <Content Include="Assets\HelpImages\14.png" />
+    <Content Include="Assets\HelpImages\15.png" />
+    <Content Include="Assets\HelpImages\16.png" />
+    <Content Include="Assets\HelpImages\17.png" />
+    <Content Include="Assets\HelpImages\18.png" />
+    <Content Include="Assets\HelpImages\19.png" />
+    <Content Include="Assets\HelpImages\2.png" />
+    <Content Include="Assets\HelpImages\20.png" />
+    <Content Include="Assets\HelpImages\21.png" />
+    <Content Include="Assets\HelpImages\22.png" />
+    <Content Include="Assets\HelpImages\23.png" />
+    <Content Include="Assets\HelpImages\24.png" />
+    <Content Include="Assets\HelpImages\25.png" />
+    <Content Include="Assets\HelpImages\26.png" />
+    <Content Include="Assets\HelpImages\3.png" />
+    <Content Include="Assets\HelpImages\4.png" />
+    <Content Include="Assets\HelpImages\5.png" />
+    <Content Include="Assets\HelpImages\6.png" />
+    <Content Include="Assets\HelpImages\7.png" />
+    <Content Include="Assets\HelpImages\8.png" />
+    <Content Include="Assets\HelpImages\9.png" />
+    <Content Include="Assets\Images\deletebox.png" />
+    <Content Include="Assets\Images\destpin.png" />
+    <Content Include="Assets\Images\firebrigade.png" />
+    <Content Include="Assets\Images\hospital.png" />
+    <Content Include="Assets\Images\me.png" />
+    <Content Include="Assets\Images\celldataoff.png" />
+    <Content Include="Assets\Images\celldataon.png" />
+    <Content Include="Assets\Images\close.png" />
+    <Content Include="Assets\Images\delete.png" />
+    <None Include="Service References\GeoServiceRef\GeoUpdate.disco" />
+    <None Include="Service References\GeoServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\GeoServiceRef\configuration.svcinfo" />
+    <None Include="Service References\GeoServiceRef\GeoUpdate2.wsdl" />
+    <None Include="Service References\GeoServiceRef\GeoUpdate3.wsdl" />
+    <None Include="Service References\GeoServiceRef\GeoUpdate3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeoServiceRef\GeoUpdate33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeoServiceRef\GeoUpdate4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeoServiceRef\GeoUpdate5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeoServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\GeoServiceRef\SOS.Phone.GeoServiceRef.IncidentList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GroupServiceRef\GroupService.disco" />
+    <None Include="Service References\GroupServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\GroupServiceRef\configuration.svcinfo" />
+    <None Include="Service References\GroupServiceRef\GroupService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GroupServiceRef\GroupService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GroupServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Assets\Images\direction.png" />
+    <Content Include="Assets\Images\edit.png" />
+    <Content Include="Assets\Images\locationoff.png" />
+    <Content Include="Assets\Images\locationon.png" />
+    <Content Include="Assets\Images\LocOffImage.png" />
+    <Content Include="Assets\Images\LocOnImage.png" />
+    <Content Include="Assets\Images\medical.png" />
+    <Content Include="Assets\Images\mslogo.png" />
+    <Content Include="Assets\Images\police.png" />
+    <Content Include="Assets\Images\refreshbox.png" />
+    <Content Include="Assets\Images\route.png" />
+    <Content Include="Assets\Images\password_reveal.png" />
+    <Content Include="Assets\Images\refresh.png" />
+    <Content Include="Assets\Images\searchblack.png" />
+    <Content Include="Assets\Images\sospin.png" />
+    <Content Include="Assets\Images\stopme.png" />
+    <Content Include="Assets\Images\sync.png" />
+    <Content Include="Assets\Images\trackpin.png" />
+    <None Include="Service References\GroupServiceRef\SOS.Phone.GroupServiceRef.Admin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GroupServiceRef\SOS.Phone.GroupServiceRef.Group.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GroupServiceRef\SOS.Phone.GroupServiceRef.GroupList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GroupServiceRef\SOS.Phone.GroupServiceRef.ProfileLite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GroupServiceRef\SOS.Phone.GroupServiceRef.ResultInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LocationServiceRef\LocationService.wsdl" />
+    <None Include="Service References\LocationServiceRef\LocationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationServiceRef\LocationService1.wsdl" />
+    <None Include="Service References\LocationServiceRef\LocationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationServiceRef\LocationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationServiceRef\LocationService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationServiceRef\LocationService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationServiceRef\LocationService.disco" />
+    <None Include="Service References\LocationServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\LocationServiceRef\configuration.svcinfo" />
+    <None Include="Service References\LocationServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Assets\Images\trackpinend.png" />
+    <Content Include="Assets\Images\wifioff.png" />
+    <Content Include="Assets\Images\wifion.png" />
+    <Content Include="Assets\locate.png" />
+    <Content Include="Assets\bg.jpg" />
+    <Content Include="Assets\people.png" />
+    <Content Include="Assets\sos.png" />
+    <Content Include="Assets\sospintile.png" />
+    <Content Include="Assets\tease.png" />
+    <None Include="Service References\LocationServiceRef\SOS.Phone.LocationServiceRef.BasicProfile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LocationServiceRef\SOS.Phone.LocationServiceRef.GeoTagList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LocationServiceRef\SOS.Phone.LocationServiceRef.GeoTags.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LocationServiceRef\SOS.Phone.LocationServiceRef.ProfileLiteList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LocationServiceRef\SOS.Phone.LocationServiceRef.SOSTrackCounts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MembershipServiceRef\MemberService.wsdl" />
+    <None Include="Service References\MembershipServiceRef\MembershipService.disco" />
+    <None Include="Service References\MembershipServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\MembershipServiceRef\configuration.svcinfo" />
+    <None Include="Service References\MembershipServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\GeoServiceRef\GeoUpdate1.disco" />
+    <Content Include="Content\CountryISDCodes.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\GeoServiceRef\GeoUpdate.wsdl" />
+    <None Include="Service References\GeoServiceRef\GeoUpdate.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeoServiceRef\GeoUpdate1.wsdl" />
+    <None Include="Service References\GeoServiceRef\GeoUpdate1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeoServiceRef\GeoUpdate2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GroupServiceRef\GroupService.wsdl" />
+    <None Include="Service References\GroupServiceRef\GroupService1.wsdl" />
+    <None Include="Service References\GroupServiceRef\GroupService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GroupServiceRef\GroupService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MembershipServiceRef\MembershipService.wsdl" />
+    <None Include="Service References\MembershipServiceRef\MembershipService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MembershipServiceRef\MembershipService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MembershipServiceRef\MembershipService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MembershipServiceRef\MembershipService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MembershipServiceRef\SOS.Phone.MembershipServiceRef.HealthUpdate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MembershipServiceRef\SOS.Phone.MembershipServiceRef.PhoneValidation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MembershipServiceRef\SOS.Phone.MembershipServiceRef.Profile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MembershipServiceRef\SOS.Phone.MembershipServiceRef.ProfileList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MembershipServiceRef\SOS.Phone.MembershipServiceRef.ProfileLite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MembershipServiceRef\SOS.Phone.MembershipServiceRef.ResultInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MembershipServiceRef\SOS.Phone.MembershipServiceRef.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\add_user.png" />
+    <Content Include="Assets\Images\add_user_icon.png" />
+    <Content Include="Assets\Images\camera.png" />
+    <Content Include="Assets\Images\cancel.png" />
+    <Content Include="Assets\Images\help.png" />
+    <Content Include="Assets\Images\mapicon.png" />
+    <Content Include="Assets\Images\ok.png" />
+    <Content Include="Assets\Images\remove_user.png" />
+    <Content Include="Assets\Images\email.png" />
+    <Content Include="Assets\Images\call.png" />
+    <Content Include="Assets\Images\add.png" />
+    <Content Include="Assets\Images\back.png" />
+    <Content Include="Assets\Images\check.png" />
+    <Content Include="Assets\Images\fb_login.png" />
+    <Content Include="Assets\Images\live_login.png" />
+    <Content Include="Assets\Images\minus.png" />
+    <Content Include="Assets\Images\next.png" />
+    <Content Include="Assets\Images\rightarrow.png" />
+    <Content Include="Assets\Images\right_round.png" />
+    <Content Include="Assets\Images\search.png" />
+    <Content Include="Assets\Images\save.png" />
+    <Content Include="Assets\Images\settings.png" />
+    <Content Include="Assets\Images\sms.png" />
+    <Content Include="Assets\Images\sos.png" />
+    <Content Include="Assets\Images\stopsos.png" />
+    <Content Include="Assets\Images\stoptrack.png" />
+    <Content Include="Assets\Images\stream.png" />
+    <Content Include="Assets\Images\track.png" />
+    <Content Include="Assets\Images\video.png" />
+    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\TrackMeOff.png" />
+    <Content Include="Assets\TrackMeOn.png" />
+    <Content Include="SOSVoiceCommandDefinition-8.0.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Toolkit.Controls">
+      <HintPath>..\..\External DLLs\CustomUIControls\Coding4Fun.Toolkit.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Live">
+      <HintPath>..\..\External DLLs\LiveAuthentication\Microsoft.Live.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Live.Controls">
+      <HintPath>..\..\External DLLs\LiveAuthentication\Microsoft.Live.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GeoServiceRef\" />
+    <WCFMetadataStorage Include="Service References\GroupServiceRef\" />
+    <WCFMetadataStorage Include="Service References\LocationServiceRef\" />
+    <WCFMetadataStorage Include="Service References\MembershipServiceRef\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utilites\Config\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+</Project>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SOS.Web.ServiceProxy" CodeBehind="ServiceProxy.svc.cs" %>

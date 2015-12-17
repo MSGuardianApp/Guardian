@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.microsoft.com/sos/2013/02" elementFormDefault="qualified" targetNamespace="http://www.microsoft.com/sos/2013/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:39018/LocationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" />
+  <xs:import schemaLocation="http://localhost:39018/LocationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" />
+  <xs:import schemaLocation="http://localhost:39018/LocationService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetUserLocationArray">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserLocationArrayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetUserLocationArrayResult" nillable="true" type="q1:GeoTags" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserLocations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserLocationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetUserLocationsResult" nillable="true" type="q2:GeoTagList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserLocationsByToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserLocationsByTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="GetUserLocationsByTokenResult" nillable="true" type="q3:BasicProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuddiesToLocate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuddiesToLocateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetBuddiesToLocateResult" nillable="true" type="q4:ProfileLiteList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuddiesToLocateLastLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DummyTicks" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuddiesToLocateLastLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetBuddiesToLocateLastLocationResult" nillable="true" type="q5:ProfileLiteList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSOSTrackCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DummyTicks" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSOSTrackCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSOSTrackCountResult" nillable="true" type="q6:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSOSTrackCountByGroupId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSOSTrackCountByGroupIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetSOSTrackCountByGroupIdResult" nillable="true" type="q7:SOSTrackCounts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

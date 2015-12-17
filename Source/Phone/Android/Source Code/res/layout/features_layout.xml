@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrlView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:id="@+id/creatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="vertical" >
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_featureNonReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="@string/non_registered"
+            android:textColor="@color/green"
+            android:textSize="@dimen/font_size_thirteen" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_non_register_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/Str_NonRegisterText"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_reg_user_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/registered"
+            android:textColor="@color/green"
+            android:textSize="@dimen/font_size_thirteen" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_featureDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/Str_RegisterUserText"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_twelve" />
+    </LinearLayout>
+
+</ScrollView>

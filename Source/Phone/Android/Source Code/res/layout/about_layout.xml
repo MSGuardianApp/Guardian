@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_aboutDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/str_AboutDes"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_guardian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_aboutDes"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_twenty"
+            android:textStyle="bold" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_guardian_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_guardian"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_2"
+            android:text="@string/tag_line"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_ten" />
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_70"
+            android:layout_below="@id/tv_guardian_tag"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:src="@drawable/iconic_tile_small" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/version"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_fifteen" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_versionno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_version"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_2"
+            android:text="@string/release"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_pfb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_versionno"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/post_feedback_to"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_pfbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_pfb"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_2"
+            android:text="@string/guardian_email"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_pwdBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_pfbl"
+            android:layout_marginTop="@dimen/dp_25"
+            android:layout_toLeftOf="@+id/tv_pwdCom"
+            android:text="@string/powered_by"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_pwdCom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_pfbl"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_25"
+            android:text="@string/ms_text"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_twelve" />
+    </RelativeLayout>
+
+</ScrollView>

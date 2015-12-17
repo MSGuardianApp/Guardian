@@ -1,0 +1,466 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black" >
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true" >
+
+        <RelativeLayout
+            android:id="@+id/sosLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" >
+
+            <ImageView
+                android:id="@+id/imageSoSBtn"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_launcher" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/trackmeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_toRightOf="@+id/sosLayout" >
+
+            <ImageView
+                android:id="@+id/imageTrack"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_launcher" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomLayout" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/textHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:text="@string/tag_line"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/tile_subtitle_font"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/SOSRelOut"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_2"
+                android:background="@drawable/bg_table_main_orange" >
+
+                <LinearLayout
+                    android:id="@+id/SOSLineLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_5" >
+
+                    <RelativeLayout
+                        android:id="@+id/SosTextRel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:id="@+id/imageSoS_menu"
+                            android:layout_width="@dimen/dp_30"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/sos_menu" />
+
+                        <com.guardianapp.views.CusFntTextView
+                            android:id="@+id/textSOSMenuText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:layout_toRightOf="@+id/imageSoS_menu"
+                            android:text="@string/sos_text"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/sos_tile_font"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <com.guardianapp.views.CusFntTextView
+                        android:id="@+id/textSOSMenuDesText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tap_this_text"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/tile_subtitle_font"
+                        android:textStyle="bold" />
+
+                    <com.guardianapp.views.CusFntTextView
+                        android:id="@+id/textSOSOnOFF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/sos_off"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/sos_tile_font" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/TrackLocateRelOut"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginTop="@dimen/tile_divider_dim" >
+
+                <LinearLayout
+                    android:id="@+id/TrackMeRelOut"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_table_main_orange"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_5" >
+
+                    <com.guardianapp.views.CusFntTextView
+                        android:id="@+id/textTrackMeMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/track_me_tile"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/tile_title_font"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/imageTrackMe"
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_70"
+                            android:background="@drawable/trackme_off" />
+
+                        <com.guardianapp.views.CusFntTextView
+                            android:id="@+id/textTrackmeStatus"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:gravity="right"
+                            android:text="@string/sos_off"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/tile_title_font" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageDivider"
+                    android:layout_width="@dimen/tile_divider_dim"
+                    android:layout_height="fill_parent"
+                    android:background="@android:color/black" />
+
+                <LinearLayout
+                    android:id="@+id/LocateRelOut"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_table_main_orange"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_5" >
+
+                    <com.guardianapp.views.CusFntTextView
+                        android:id="@+id/textLocateMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/locate_tile_text"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/tile_title_font"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageLocateMenu"
+                        android:layout_width="@dimen/dp_40"
+                        android:layout_height="@dimen/dp_40"
+                        android:src="@drawable/locate" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom|right"
+                        android:gravity="bottom"
+                        android:orientation="vertical" >
+
+                        <com.guardianapp.views.CusFntTextView
+                            android:id="@+id/textSOSLocate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:text="@string/sos_na"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/tile_subtitle_font" />
+
+                        <com.guardianapp.views.CusFntTextView
+                            android:id="@+id/textTracking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:text="@string/tracking_na"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/tile_subtitle_font" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ReportSettingsRelOut"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginTop="@dimen/tile_divider_dim"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:id="@+id/ReportRelOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_table_main_orange"
+                    android:padding="@dimen/dp_5" >
+
+                    <com.guardianapp.views.CusFntTextView
+                        android:id="@+id/textRepInceText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/report_inc"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/tile_title_font"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageReportIncident"
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_below="@+id/textRepInceText"
+                        android:src="@drawable/tease" />
+
+                    <com.guardianapp.views.CusFntTextView
+                        android:id="@+id/textReportIncident"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/textRepInceText"
+                        android:layout_below="@+id/imageReportIncident"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="@string/report_with_evi"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/tile_subsubtitle_font" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imageDivider1"
+                    android:layout_width="@dimen/tile_divider_dim"
+                    android:layout_height="fill_parent"
+                    android:background="#000000" />
+
+                <LinearLayout
+                    android:id="@+id/SettingsRelOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#000000"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/SettingsRelOut1"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <RelativeLayout
+                            android:id="@+id/wifiSettingsLaout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_table_main_orange"
+                            android:padding="@dimen/dp_5" >
+
+                            <ImageView
+                                android:id="@+id/imageWifi"
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wifioff" />
+
+                            <com.guardianapp.views.CusFntTextView
+                                android:id="@+id/textWifi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageWifi"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="bottom"
+                                android:text="@string/wifi_tile"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/tile_subsubtitle_font" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/imageHorizontalDivider1"
+                            android:layout_width="@dimen/tile_divider_dim"
+                            android:layout_height="fill_parent"
+                            android:background="#000000" />
+
+                        <RelativeLayout
+                            android:id="@+id/SIMSettingsLaout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_table_main_orange"
+                            android:padding="@dimen/dp_5" >
+
+                            <ImageView
+                                android:id="@+id/imageSIM"
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/celldataon" />
+
+                            <com.guardianapp.views.CusFntTextView
+                                android:id="@+id/textSIM"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageSIM"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="bottom"
+                                android:text="@string/cell_data_tile"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/tile_subsubtitle_font" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imagehorizontlebar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/tile_divider_dim"
+                        android:background="#000000" />
+
+                    <LinearLayout
+                        android:id="@+id/SettingsRelOut2"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <RelativeLayout
+                            android:id="@+id/GPSSettingsLaout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_table_main_orange"
+                            android:padding="@dimen/dp_5" >
+
+                            <ImageView
+                                android:id="@+id/imageGPS"
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/locationoff" />
+
+                            <com.guardianapp.views.CusFntTextView
+                                android:id="@+id/textGPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageGPS"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/gps_tile"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/tile_subsubtitle_font" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/imageHorizontalDivider2"
+                            android:layout_width="@dimen/tile_divider_dim"
+                            android:layout_height="fill_parent"
+                            android:background="#000000" />
+
+                        <RelativeLayout
+                            android:id="@+id/SettingsLaout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_table_main_orange"
+                            android:padding="@dimen/dp_5" >
+
+                            <ImageView
+                                android:id="@+id/ImageSettings"
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/settings" />
+
+                            <com.guardianapp.views.CusFntTextView
+                                android:id="@+id/textSettings"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ImageSettings"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/settings_tile"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/tile_subsubtitle_font" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/MainTextLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tile_divider_dim"
+                android:background="@android:color/black" >
+
+                <com.guardianapp.views.CusFntTextView
+                    android:id="@+id/textCurrentLocationHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="@string/curr_loc"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/tile_subtitle_font"
+                    android:textStyle="bold" />
+
+                <com.guardianapp.views.CusFntTextView
+                    android:id="@+id/textCurrentLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textCurrentLocationHeading"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="@string/disp_curr_loc"
+                    android:textColor="#54C758"
+                    android:textSize="@dimen/tile_subtitle_font" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

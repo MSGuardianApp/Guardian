@@ -1,0 +1,39 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SOS.Phone.Pages.StartSOS"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    BackKeyPress="StartSosApplicationPage_BackKeyPress">
+
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush  ImageSource="/assets/bg.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,0,0,12" Orientation="Vertical">
+            <StackPanel  Orientation="Horizontal">
+                <Image Source="/Assets/applicationicon.png" Height="32" Width="32" />
+                <TextBlock x:Name="AppTitle" Text="GUARDIAN" Style="{StaticResource SubMenuStyle}" />
+            </StackPanel>
+            <TextBlock x:Name="AppCaption" Text="Security. Anytime. Anywhere" Margin="35,0,0,0" Style="{StaticResource AppCaptionStyle}" />
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text=" Starting SOS..."  Foreground="#FFF96511" FontWeight="Bold" Margin="0,60,0,0" />
+            <TextBlock x:Name="InfoTextBlock" Text="This will send SMS to all your buddy mobiles notifying about your emergency along with your current location. Guardian continuously sends emails to the buddy email ids and also posts to your private facebook group, if registered." TextWrapping="Wrap" FontSize="18" HorizontalAlignment="Center"  Margin="0,0,0,0" />
+            <TextBlock x:Name="StartCounterTextBlock" FontFamily="Times New Roman" Text="5" Tap="StartSOS_Tap" FontSize="550" Margin="0,-100,0,0" HorizontalAlignment="Center"  Foreground="#FFF96511" Height="510" />
+            <Button x:Name="CancelSOS"  HorizontalAlignment="Center" Tap="CancelSOS_Tap" Background="#FF10AA1E" BorderBrush="Black" Width="230" Margin="0,70,0,0">
+                <TextBlock x:Name="CancelTextBlock" Text="Cancel SOS" FontSize="22" HorizontalAlignment="Center"  />
+            </Button>
+            <TextBlock x:Name="StartTextBlock" Text="Tap on the number to start SOS immediately" FontSize="20" HorizontalAlignment="Center"   />
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>

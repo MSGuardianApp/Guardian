@@ -1,0 +1,66 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SOS.Phone.LocateMap"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maptk="clr-namespace:Microsoft.Phone.Maps.Toolkit;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot"  Background="White" Margin="0,10,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="643*"/>
+        </Grid.RowDefinitions>
+
+        <ProgressBar x:Name="PageProgressBar" IsIndeterminate="True" Visibility="Collapsed"  Margin="0,0,0,675" />
+        <maps:Map x:Name="MyMap" Opacity="1" ZoomLevel="16" 
+                  Pitch="25"
+                  PedestrianFeaturesEnabled="True"
+                  LandmarksEnabled="True" Grid.RowSpan="2"
+                  CartographicMode="Aerial">
+            <maptk:MapExtensions.Children>
+                <maptk:Pushpin x:Name="RouteDirectionsPushPin" Visibility="Collapsed" />
+                <maptk:UserLocationMarker x:Name="UserLocationMarker" Visibility="Collapsed" />
+            </maptk:MapExtensions.Children>
+        </maps:Map>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+            <TextBlock x:Name="BuddyName" Text="Loading..." FontSize="26" Foreground="Black" FontWeight="Black" Margin="10,0" Opacity="1" TextWrapping="Wrap" Width="Auto" Height="Auto" />
+            <TextBlock x:Name="StatusTextBlock" FontSize="20" Foreground="Green" Opacity="1" FontWeight="Black" HorizontalAlignment="Right" Margin="0,5,0,0" Width="210" Height="Auto"   />
+        </StackPanel>
+        <Grid Grid.Row="1"  VerticalAlignment="Bottom">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="SpeedText" Text="Moving @ the speed(km/h):" Foreground="Black"  FontWeight="Bold" HorizontalAlignment="Left" Margin="12,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" />
+                    <TextBlock  x:Name="PaceBox" Text="0" Foreground="Black" FontWeight="Bold" TextAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Width="53"  RenderTransformOrigin="0.5,0.5" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Text="Recent location time:"  Foreground="Black"  FontWeight="Bold" TextAlignment="Right"  Margin="12,5,0,0" Height="34"  />
+                    <TextBlock x:Name="RecentTimeTextBlock"  Foreground="Black"  FontWeight="Bold" TextAlignment="Right"  Margin="10,0,0,0" Height="34"  />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Text="Accuracy:"  Foreground="Black"  FontWeight="Bold" TextAlignment="Right"  Margin="12,0,0,0" Height="34"  />
+                    <TextBlock x:Name="AccuracyTextBlock"  Foreground="Black"  FontWeight="Bold" TextAlignment="Right"  Margin="10,0,0,0" Height="34"  />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/Images/direction.png" Text="Show Route" Click="OnShowRouteClick"  />
+            <shell:ApplicationBarIconButton IconUri="/Assets/Images/route.png" Text="Show Directions" Click="OnDirectionsClick"  />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem  Text="Road View" Click="ViewAppBarItem_OnClick"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

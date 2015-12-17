@@ -1,0 +1,2374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CountryCodes>
+
+    <Country
+        IsdCode="+940"
+        Name="Abkhazia" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+93"
+        Name="Afghanistan" >
+
+        <Properties
+            Ambulance="102"
+            Fire="119"
+            MaxPhoneDigits="15"
+            Police="119" />
+    </Country>
+
+    <Country
+        IsdCode="+355"
+        Name="Albania" >
+
+        <Properties
+            Ambulance="128"
+            Fire="127"
+            MaxPhoneDigits="15"
+            Police="129" />
+    </Country>
+
+    <Country
+        IsdCode="+213"
+        Name="Algeria" >
+
+        <Properties
+            Ambulance="14"
+            Fire="14"
+            MaxPhoneDigits="15"
+            Police="17" />
+    </Country>
+
+    <Country
+        IsdCode="+684"
+        Name="American Samoa" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+376"
+        Name="Andorra" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+244"
+        Name="Angola" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1264"
+        Name="Anguilla" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1268"
+        Name="Antigua" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+54"
+        Name="Argentine Republic" >
+
+        <Properties
+            Ambulance="107"
+            Fire="100"
+            MaxPhoneDigits="15"
+            Police="101" />
+    </Country>
+
+    <Country
+        IsdCode="+374"
+        Name="Armenia" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+297"
+        Name="Aruba" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+61"
+        Name="Australia" >
+
+        <Properties
+            Ambulance="000"
+            Fire="000"
+            MaxPhoneDigits="15"
+            Police="000" />
+    </Country>
+
+    <Country
+        IsdCode="+43"
+        Name="Austria" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+994"
+        Name="Azerbaijani Republic" >
+
+        <Properties
+            Ambulance="103"
+            Fire="101"
+            MaxPhoneDigits="15"
+            Police="102" />
+    </Country>
+
+    <Country
+        IsdCode="+1242"
+        Name="Bahamas" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+973"
+        Name="Bahrain" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+880"
+        Name="Bangladesh" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+1246"
+        Name="Barbados" >
+
+        <Properties
+            Ambulance="511"
+            Fire="311"
+            MaxPhoneDigits="15"
+            Police="211" />
+    </Country>
+
+    <Country
+        IsdCode="+375"
+        Name="Belarus" >
+
+        <Properties
+            Ambulance="103"
+            Fire="101"
+            MaxPhoneDigits="15"
+            Police="102" />
+    </Country>
+
+    <Country
+        IsdCode="+32"
+        Name="Belgium" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+501"
+        Name="Belize" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+229"
+        Name="Benin" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1441"
+        Name="Bermuda" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+975"
+        Name="Bhutan" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+591"
+        Name="Bolivia" >
+
+        <Properties
+            Ambulance="118"
+            Fire="119"
+            MaxPhoneDigits="15"
+            Police="110" />
+    </Country>
+
+    <Country
+        IsdCode="+387"
+        Name="Bosnia and Herzegowina" >
+
+        <Properties
+            Ambulance="124"
+            Fire="123"
+            MaxPhoneDigits="15"
+            Police="122" />
+    </Country>
+
+    <Country
+        IsdCode="+267"
+        Name="Botswana" >
+
+        <Properties
+            Ambulance="997"
+            Fire="998"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+55"
+        Name="Brazil" >
+
+        <Properties
+            Ambulance="192"
+            Fire="193"
+            MaxPhoneDigits="15"
+            Police="190" />
+    </Country>
+
+    <Country
+        IsdCode="+673"
+        Name="Brunei Darussalam" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+359"
+        Name="Bulgaria" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+226"
+        Name="Burkina Faso" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+257"
+        Name="Burundi" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+855"
+        Name="Cambodia" >
+
+        <Properties
+            Ambulance="117"
+            Fire="117"
+            MaxPhoneDigits="15"
+            Police="117" />
+    </Country>
+
+    <Country
+        IsdCode="+237"
+        Name="Cameroon" >
+
+        <Properties
+            Ambulance="119"
+            Fire="18"
+            MaxPhoneDigits="15"
+            Police="17" />
+    </Country>
+
+    <Country
+        IsdCode="+1"
+        Name="Canada/ USA" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="10"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+238"
+        Name="Cape Verde" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1345"
+        Name="Cayman Island" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+236"
+        Name="Central African Republic" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+235"
+        Name="Chad" >
+
+        <Properties
+            Ambulance=""
+            Fire="18"
+            MaxPhoneDigits="15"
+            Police="17" />
+    </Country>
+
+    <Country
+        IsdCode="+56"
+        Name="Chile" >
+
+        <Properties
+            Ambulance="131"
+            Fire="132"
+            MaxPhoneDigits="15"
+            Police="133" />
+    </Country>
+
+    <Country
+        IsdCode="+86"
+        Name="China" >
+
+        <Properties
+            Ambulance="120"
+            Fire="119"
+            MaxPhoneDigits="15"
+            Police="110" />
+    </Country>
+
+    <Country
+        IsdCode="+57"
+        Name="Colombia" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+242"
+        Name="Congo" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+243"
+        Name="Congo  Democratic Republic" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+682"
+        Name="Cook Islands" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+506"
+        Name="Costa Rica" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+225"
+        Name="Cote D Ivoire" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+385"
+        Name="Croatia" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+53"
+        Name="Cuba" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+357"
+        Name="Cyprus" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+420"
+        Name="Czech Republic" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+850"
+        Name="Democratic People&apos;s Republic of Korea" >
+
+        <Properties
+            Ambulance="819"
+            Fire="819"
+            MaxPhoneDigits="15"
+            Police="819" />
+    </Country>
+
+    <Country
+        IsdCode="+45"
+        Name="Denmark" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+246"
+        Name="Diego Garcia/British Indian Ocean Territory " >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+253"
+        Name="Djibouti" >
+
+        <Properties
+            Ambulance=""
+            Fire="18"
+            MaxPhoneDigits="15"
+            Police="17" />
+    </Country>
+
+    <Country
+        IsdCode="+1767"
+        Name="Dominica" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1809"
+        Name="Dominican Republic" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+670"
+        Name="East Timor" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+593"
+        Name="Ecuador" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+20"
+        Name="Egypt" >
+
+        <Properties
+            Ambulance="123"
+            Fire="180"
+            MaxPhoneDigits="15"
+            Police="122" />
+    </Country>
+
+    <Country
+        IsdCode="+503"
+        Name="El Salvador" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+240"
+        Name="Equatorial Guinea" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+291"
+        Name="Eritrea" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+372"
+        Name="Estonia" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+251"
+        Name="Ethiopia" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+500"
+        Name="Falkland Islands" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+298"
+        Name="Faroe Islands" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+679"
+        Name="Fiji" >
+
+        <Properties
+            Ambulance="911"
+            Fire="9170"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+358"
+        Name="Finland" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+33"
+        Name="France" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+594"
+        Name="French Guiana" >
+
+        <Properties
+            Ambulance="15"
+            Fire="18"
+            MaxPhoneDigits="15"
+            Police="17" />
+    </Country>
+
+    <Country
+        IsdCode="+689"
+        Name="French Polynesia" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+241"
+        Name="Gabon Republic of" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+220"
+        Name="Gambia" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+995"
+        Name="Georgia" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+49"
+        Name="Germany" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+233"
+        Name="Ghana" >
+
+        <Properties
+            Ambulance="193"
+            Fire="192"
+            MaxPhoneDigits="15"
+            Police="191" />
+    </Country>
+
+    <Country
+        IsdCode="+350"
+        Name="Gibraltar" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+30"
+        Name="Greece" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+299"
+        Name="Greenland" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+1473"
+        Name="Grenada" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+590"
+        Name="Guadeloupe" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+502"
+        Name="Guatemala" >
+
+        <Properties
+            Ambulance="122"
+            Fire="123"
+            MaxPhoneDigits="15"
+            Police="110" />
+    </Country>
+
+    <Country
+        IsdCode="+224"
+        Name="Guinea" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+245"
+        Name="Guinea-Bissau" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+592"
+        Name="Guyana" >
+
+        <Properties
+            Ambulance="913"
+            Fire="912"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+509"
+        Name="Haiti" >
+
+        <Properties
+            Ambulance="118"
+            Fire="118"
+            MaxPhoneDigits="15"
+            Police="118" />
+    </Country>
+
+    <Country
+        IsdCode="+504"
+        Name="Honduras" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+852"
+        Name="HongKong" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+36"
+        Name="Hungary" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+354"
+        Name="Iceland" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+91"
+        Name="India" >
+
+        <Properties
+            Ambulance="108"
+            Fire="101"
+            MaxPhoneDigits="10"
+            Police="100" />
+    </Country>
+
+    <Country
+        IsdCode="+62"
+        Name="Indonesia" >
+
+        <Properties
+            Ambulance="118"
+            Fire="113"
+            MaxPhoneDigits="15"
+            Police="110" />
+    </Country>
+
+    <Country
+        IsdCode="+98"
+        Name="Iran" >
+
+        <Properties
+            Ambulance="115"
+            Fire="125"
+            MaxPhoneDigits="15"
+            Police="110" />
+    </Country>
+
+    <Country
+        IsdCode="+964"
+        Name="Iraq" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+353"
+        Name="Ireland" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+972"
+        Name="Israel" >
+
+        <Properties
+            Ambulance="101"
+            Fire="102"
+            MaxPhoneDigits="15"
+            Police="100" />
+    </Country>
+
+    <Country
+        IsdCode="+39"
+        Name="Italy" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+1876"
+        Name="Jamaica" >
+
+        <Properties
+            Ambulance="110"
+            Fire="110"
+            MaxPhoneDigits="15"
+            Police="119" />
+    </Country>
+
+    <Country
+        IsdCode="+81"
+        Name="Japan" >
+
+        <Properties
+            Ambulance="119"
+            Fire="119"
+            MaxPhoneDigits="15"
+            Police="110" />
+    </Country>
+
+    <Country
+        IsdCode="+962"
+        Name="Jordan" >
+
+        <Properties
+            Ambulance="112"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+7"
+        Name="Kazakhstan" >
+
+        <Properties
+            Ambulance="103"
+            Fire="101"
+            MaxPhoneDigits="15"
+            Police="102" />
+    </Country>
+
+    <Country
+        IsdCode="+254"
+        Name="Kenya" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+686"
+        Name="Kiribati" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+965"
+        Name="Kuwait" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+996"
+        Name="Kyrgyzstan" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+856"
+        Name="Laos" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+371"
+        Name="Latvia" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+961"
+        Name="Lebanon" >
+
+        <Properties
+            Ambulance="140"
+            Fire="175"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+266"
+        Name="Lesotho" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+231"
+        Name="Liberia" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+218"
+        Name="Libya" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+423"
+        Name="Liechtenstein" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+370"
+        Name="Lithuania" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+352"
+        Name="Luxembourg" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+853"
+        Name="Macau" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+389"
+        Name="Macedonia" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+261"
+        Name="Madagascar" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+265"
+        Name="Malawi" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+60"
+        Name="Malaysia" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+960"
+        Name="Maldives" >
+
+        <Properties
+            Ambulance="102"
+            Fire="102"
+            MaxPhoneDigits="15"
+            Police="102" />
+    </Country>
+
+    <Country
+        IsdCode="+223"
+        Name="Mali" >
+
+        <Properties
+            Ambulance="15"
+            Fire="18"
+            MaxPhoneDigits="15"
+            Police="17" />
+    </Country>
+
+    <Country
+        IsdCode="+356"
+        Name="Malta" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+596"
+        Name="Martinique" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+222"
+        Name="Mauritania" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+230"
+        Name="Mauritius" >
+
+        <Properties
+            Ambulance="114"
+            Fire="115"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+269"
+        Name="Mayotte" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+52"
+        Name="Mexico" >
+
+        <Properties
+            Ambulance="65"
+            Fire="68"
+            MaxPhoneDigits="15"
+            Police="66" />
+    </Country>
+
+    <Country
+        IsdCode="+373"
+        Name="Moldova" >
+
+        <Properties
+            Ambulance="903"
+            Fire="901"
+            MaxPhoneDigits="15"
+            Police="902" />
+    </Country>
+
+    <Country
+        IsdCode="+377"
+        Name="Monaco" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+976"
+        Name="Mongolia" >
+
+        <Properties
+            Ambulance="103"
+            Fire="101"
+            MaxPhoneDigits="15"
+            Police="102" />
+    </Country>
+
+    <Country
+        IsdCode="+382"
+        Name="Montenegro" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+1664"
+        Name="Montserrat" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+212"
+        Name="Morocco(western sahara)" >
+
+        <Properties
+            Ambulance="15"
+            Fire="15"
+            MaxPhoneDigits="15"
+            Police="19" />
+    </Country>
+
+    <Country
+        IsdCode="+258"
+        Name="Mozambique" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+264"
+        Name="Namibia" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+674"
+        Name="Nauru" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+977"
+        Name="Nepal" >
+
+        <Properties
+            Ambulance="102"
+            Fire="101"
+            MaxPhoneDigits="15"
+            Police="100" />
+    </Country>
+
+    <Country
+        IsdCode="+31"
+        Name="Netherlands" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+599"
+        Name="Netherlands Antilles" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+687"
+        Name="New Caledonia" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+64"
+        Name="New Zealand" >
+
+        <Properties
+            Ambulance="111"
+            Fire="111"
+            MaxPhoneDigits="15"
+            Police="111" />
+    </Country>
+
+    <Country
+        IsdCode="+505"
+        Name="Nicaragua" >
+
+        <Properties
+            Ambulance="118"
+            Fire="118"
+            MaxPhoneDigits="15"
+            Police="118" />
+    </Country>
+
+    <Country
+        IsdCode="+227"
+        Name="Niger" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+234"
+        Name="Nigeria" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+47"
+        Name="Norway" >
+
+        <Properties
+            Ambulance="113"
+            Fire="110"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+968"
+        Name="Oman" >
+
+        <Properties
+            Ambulance="9999"
+            Fire="9999"
+            MaxPhoneDigits="15"
+            Police="9999" />
+    </Country>
+
+    <Country
+        IsdCode="+92"
+        Name="Pakistan" >
+
+        <Properties
+            Ambulance="115"
+            Fire="16"
+            MaxPhoneDigits="15"
+            Police="15" />
+    </Country>
+
+    <Country
+        IsdCode="+680"
+        Name="Palau" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+970"
+        Name="Palestinian Territory" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+507"
+        Name="Panama" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+675"
+        Name="Papua New Guinea" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+595"
+        Name="Paraguay" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+
+    <Country
+        IsdCode="+51"
+        Name="Peru" >
+
+        <Properties
+            Ambulance="106"
+            Fire="116"
+            MaxPhoneDigits="15"
+            Police="105" />
+    </Country>
+
+    <Country
+        IsdCode="+63"
+        Name="Philippines" >
+
+        <Properties
+            Ambulance="117"
+            Fire="117"
+            MaxPhoneDigits="15"
+            Police="117" />
+    </Country>
+
+    <Country
+        IsdCode="+48"
+        Name="Poland" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+351"
+        Name="Portugal" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+1787"
+        Name="Puerto Rico" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+974"
+        Name="Qatar" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+262"
+        Name="Reunion" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+40"
+        Name="Romania" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+7"
+        Name="Russia" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+250"
+        Name="Rwandese Republic" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+1869"
+        Name="Saint Kitts and Nevis" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1758"
+        Name="Saint Lucia" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1784"
+        Name="Saint Vincent and the Grenadines" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+685"
+        Name="Samoa" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+378"
+        Name="San Marino" >
+
+        <Properties
+            Ambulance="118"
+            Fire="115"
+            MaxPhoneDigits="15"
+            Police="113" />
+    </Country>
+
+    <Country
+        IsdCode="+239"
+        Name="Sao Tome and Principe" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+966"
+        Name="Saudi Arabia" >
+
+        <Properties
+            Ambulance="997"
+            Fire="998"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+221"
+        Name="Senegal" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+381"
+        Name="Serbia" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+248"
+        Name="Seychelles" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+232"
+        Name="Sierra Leone" >
+
+        <Properties
+            Ambulance="999"
+            Fire="19"
+            MaxPhoneDigits="15"
+            Police="19" />
+    </Country>
+
+    <Country
+        IsdCode="+65"
+        Name="Singapore" >
+
+        <Properties
+            Ambulance="995"
+            Fire="995"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+421"
+        Name="Slovak Republic" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+386"
+        Name="Slovenia" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+677"
+        Name="Solomon Islands" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+252"
+        Name="Somali Democratic Republic" >
+
+        <Properties
+            Ambulance="888"
+            Fire="888"
+            MaxPhoneDigits="15"
+            Police="888" />
+    </Country>
+
+    <Country
+        IsdCode="+27"
+        Name="South Africa" >
+
+        <Properties
+            Ambulance="10177"
+            Fire="10111"
+            MaxPhoneDigits="15"
+            Police="10111" />
+    </Country>
+
+    <Country
+        IsdCode="+82"
+        Name="South Korea" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+34"
+        Name="Spain" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+94"
+        Name="Sri Lanka" >
+
+        <Properties
+            Ambulance="110"
+            Fire="111"
+            MaxPhoneDigits="15"
+            Police="119" />
+    </Country>
+
+    <Country
+        IsdCode="+249"
+        Name="Sudan" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+597"
+        Name="Suriname" >
+
+        <Properties
+            Ambulance="115"
+            Fire="115"
+            MaxPhoneDigits="15"
+            Police="115" />
+    </Country>
+
+    <Country
+        IsdCode="+268"
+        Name="Swaziland" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+46"
+        Name="Sweden" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+41"
+        Name="Switzerland" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+963"
+        Name="Syrian Arab Republic" >
+
+        <Properties
+            Ambulance="110"
+            Fire="113"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+886"
+        Name="Taiwan" >
+
+        <Properties
+            Ambulance="119"
+            Fire="119"
+            MaxPhoneDigits="15"
+            Police="110" />
+    </Country>
+
+    <Country
+        IsdCode="+992"
+        Name="Tajikistan" >
+
+        <Properties
+            Ambulance="103"
+            Fire="101"
+            MaxPhoneDigits="15"
+            Police="102" />
+    </Country>
+
+    <Country
+        IsdCode="+255"
+        Name="Tanzania" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+66"
+        Name="Thailand" >
+
+        <Properties
+            Ambulance="1669"
+            Fire="199"
+            MaxPhoneDigits="15"
+            Police="191" />
+    </Country>
+
+    <Country
+        IsdCode="+228"
+        Name="Togolese Republic" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+676"
+        Name="Tonga" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1868"
+        Name="Trinidad and Tobago" >
+
+        <Properties
+            Ambulance="990"
+            Fire="990"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+216"
+        Name="Tunisia" >
+
+        <Properties
+            Ambulance="190"
+            Fire="198"
+            MaxPhoneDigits="15"
+            Police="197" />
+    </Country>
+
+    <Country
+        IsdCode="+90"
+        Name="Turkey" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+993"
+        Name="Turkmenistan" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1649"
+        Name="Turks and Caicos Islands" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+256"
+        Name="Uganda" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+380"
+        Name="Ukraine" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+971"
+        Name="United Arab Emirates" >
+
+        <Properties
+            Ambulance="998"
+            Fire="997"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+44"
+        Name="United Kingdom" >
+
+        <Properties
+            Ambulance="999"
+            Fire="999"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+598"
+        Name="Uruguay" >
+
+        <Properties
+            Ambulance="911"
+            Fire="911"
+            MaxPhoneDigits="15"
+            Police="911" />
+    </Country>
+    <!--
+  <Country Name="USA" IsdCode="+1">
+    <Properties MaxPhoneDigits="10" Police="911" Fire="911" Ambulance="911" />
+  </Country>
+    -->
+
+    <Country
+        IsdCode="+998"
+        Name="Uzbekistan" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+678"
+        Name="Vanuatu" >
+
+        <Properties
+            Ambulance="112"
+            Fire="112"
+            MaxPhoneDigits="15"
+            Police="112" />
+    </Country>
+
+    <Country
+        IsdCode="+58"
+        Name="Venezuela" >
+
+        <Properties
+            Ambulance="171"
+            Fire="171"
+            MaxPhoneDigits="15"
+            Police="171" />
+    </Country>
+
+    <Country
+        IsdCode="+84"
+        Name="Viet Nam" >
+
+        <Properties
+            Ambulance="115"
+            Fire="114"
+            MaxPhoneDigits="15"
+            Police="113" />
+    </Country>
+
+    <Country
+        IsdCode="+1284"
+        Name="Virgin Islands british" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+1340"
+        Name="Virgin Islands british US" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+967"
+        Name="Yemen" >
+
+        <Properties
+            Ambulance=""
+            Fire=""
+            MaxPhoneDigits="15"
+            Police="" />
+    </Country>
+
+    <Country
+        IsdCode="+260"
+        Name="Zambia" >
+
+        <Properties
+            Ambulance="991"
+            Fire="993"
+            MaxPhoneDigits="15"
+            Police="999" />
+    </Country>
+
+    <Country
+        IsdCode="+263"
+        Name="Zimbabwe" >
+
+        <Properties
+            Ambulance="994"
+            Fire="993"
+            MaxPhoneDigits="15"
+            Police="995" />
+    </Country>
+
+</CountryCodes>

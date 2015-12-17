@@ -1,0 +1,686 @@
+﻿.Busy {
+    cursor: progress;
+}
+
+.fragment {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.Default {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 80px 10px 80% 50px 40px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+}
+
+.Banner {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    display: -ms-grid;
+    -ms-grid-columns: 20% 10px 30% 8px 1fr;
+    -ms-grid-rows: 50px 30px;
+}
+
+    .Banner .logo {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        margin-top: 0px;
+    }
+
+    .Banner .Bannermenu {
+        -ms-grid-row: 1;
+        -ms-grid-column: 5;
+    }
+
+        .Banner .Bannermenu div {
+            float: right;
+        }
+
+    .Banner .Bannersearch {
+        -ms-grid-row: 2;
+        -ms-grid-column: 5;
+    }
+
+        .Banner .Bannersearch div {
+            float: right;
+        }
+
+        .Banner .Bannersearch .searchImg {
+            vertical-align: top;
+            height: 30px;
+            padding: 0px;
+        }
+
+    .Banner .errorMsg {
+        -ms-grid-row: 2;
+        -ms-grid-column: 5;
+    }
+
+    .Banner .errorMsg {
+        float: left;
+        color: red;
+        font-size: medium;
+    }
+
+.MenuBar {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+}
+
+    .MenuBar .menuitem {
+        color: #36b4dd;
+        font-size: 12pt;
+        font-weight: 200;
+    }
+
+        .MenuBar .menuitem .menulink {
+            text-decoration: none!important;
+        }
+
+.MainArea {
+    display: -ms-grid;
+    -ms-grid-columns: 172px 10px 75% 8px 1fr;
+    -ms-grid-rows: 100%;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    padding-top: 5px;
+}
+
+.leftpanel {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.mapview {
+    position: relative;
+    border: #000000 1px solid;
+    width:auto;
+ }
+
+.MainArea .middlepanel {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-row-span: 3;
+}
+
+.mapexpand {
+    -ms-grid-column-span: 3;
+    margin-right: 16px;
+}
+
+.mapheightreduce {
+    -ms-grid-rows: 100%;
+}
+
+.rightpanel {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+}
+
+
+    .rightpanel .rightpanelbackground {
+        background-color: #4472C4;
+        color: white;
+        font-size: 12pt;
+        padding: 3px 3px 3px 5px;
+    }
+
+    .rightpanel .rightpanelhideicon {
+        width: 100%;
+    }
+
+.leftpanel .leftpanelitemheader {
+    list-style-type: none;
+    text-align: left;
+}
+
+.leftpanel #headingSOS {
+    cursor: pointer;
+    background-color: #ED7D31;
+    padding: 2px 5px 2px 5px;
+    color: white;
+    font-size: 16px;
+}
+
+/* .leftpanel #lstSOS:hover {
+        background-color:#f7c09b;
+        color:white;
+    }*/
+
+.leftpanel .leftpanelSOSitem {
+    /*max-height: 300px!important;*/
+    overflow: auto;
+}
+
+    .leftpanel .leftpanelSOSitem ul {
+        margin-left: 5px;
+    }
+
+    .leftpanel .leftpanelSOSitem li {
+        list-style-type: none;
+        text-align: left;
+        background-color: #F8CBAD;
+        cursor: pointer;
+        padding: 3px;
+        padding-left: 10px;
+    }
+
+        .leftpanel .leftpanelSOSitem li:hover {
+            background-color: #F5AE73;
+            color: white;
+        }
+
+.leftpanel #headingTrack {
+    cursor: pointer;
+    background-color: #70AD47;
+    padding: 2px 5px 2px 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.leftpanel .leftpanelTrackitem {
+    /*max-height: 300px!important;*/
+    overflow: auto;
+}
+
+    .leftpanel .leftpanelTrackitem li {
+        list-style-type: none;
+        text-align: left;
+        background-color: #E2EFDA;
+        cursor: pointer;
+        padding: 3px;
+        padding-left: 10px;
+    }
+
+        .leftpanel .leftpanelTrackitem li:hover {
+            background-color: #bbed9a;
+            color: white;
+        }
+
+.leftpanel #inactiveheader {
+    cursor: pointer;
+    background-color: #4472C4;
+    padding: 2px 5px 2px 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.leftpanel .leftpanelinactiveitem li:hover {
+    background-color: #9eb8e6;
+    color: white;
+}
+
+.leftpanel .leftpanelinactiveitem {
+    /*max-height: 300px!important;*/
+    overflow: auto;
+}
+
+    .leftpanel .leftpanelinactiveitem li {
+        list-style-type: none;
+        text-align: left;
+        background-color: #dae1ed;
+        cursor: pointer;
+        padding: 3px;
+        padding-left: 10px;
+    }
+
+.leftpanel #incidentheader {
+    cursor: pointer;
+    background-color: #4472C4;
+    padding: 2px 5px 2px 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.leftpanel .leftpanelincidentitem {
+    /*max-height: 300px!important;*/
+    overflow: auto;
+}
+
+    .leftpanel .leftpanelincidentitem li {
+        list-style-type: none;
+        text-align: left;
+        background-color: #EFE3A5;
+        cursor: pointer;
+        padding: 3px;
+        padding-left: 10px;
+    }
+        .leftpanel .leftpanelincidentitem li:hover {
+            background-color: #FFBF00;
+            color: white;
+        }
+
+.leftpanel #showmore {
+    cursor: pointer;
+    background-color: #4472C4;
+    padding: 2px 5px 2px 5px;
+    color: white;
+    font-size: 16px;
+}
+
+
+.rightpanel .rightpanelhelpitem li {
+    list-style-type: none;
+    text-align: left;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 3px;
+    padding-left: 10px;
+}
+
+.rightpanel .rightpanelhelpitemInfo li {
+    list-style-type: none;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 3px;
+    padding-left: 10px;
+}
+
+
+.rightpanel .rightpanelhelpitem li:hover {
+    background-color: #c8c8c8;
+}
+
+.rightpanel .leftpanelmessages {
+    max-height: 300px!important;
+    overflow: auto;
+}
+
+.directionInfoContent {
+    max-height: 350px;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+.TrackingArea {
+    display: -ms-grid;
+    /*-ms-grid-columns: 198px 10px 75.5% 8px 1fr;*/
+    -ms-grid-rows: 1fr;
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    padding-top: 5px;
+}
+
+
+    .TrackingArea .leftpanel .trackingsection {
+        cursor: pointer;
+        background-color: #4472C4;
+        position: fixed;
+        left: 0px;
+        bottom: 30px;
+        height: 28px;
+        color: white;
+        font-size: 16px;
+        width: 180px;
+    }
+
+        .TrackingArea .leftpanel .trackingsection:hover {
+            background-color: #b6b2b2;
+        }
+
+    .TrackingArea .leftpanel .attachmentsection {
+        cursor: pointer;
+        background-color: #4472C4;
+        color: white;
+        font-size: 16px;
+        width: 180px;
+        position: fixed;
+        left: 0px;
+        bottom: 60px;
+        height: 28px;
+    }
+
+        .TrackingArea .leftpanel .attachmentsection:hover {
+            background-color: #b6b2b2;
+        }
+
+
+
+.trackingfilter {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+}
+
+    .trackingfilter li {
+        list-style-type: none;
+        text-align: left;
+        background-color: #808080;
+        padding: 10px 5px 2px 5px;
+        color: white;
+        font-size: 12pt;
+        cursor: pointer;
+        border-color: white;
+        border: 1px solid;
+    }
+
+.trackingdetails {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 150px;
+    border: 2px black solid;
+    width: 1000px;
+}
+
+    .trackingdetails .trackingdetailsheader {
+        text-align: left;
+        background-color: #808080;
+        padding: 2px 5px 2px 5px;
+        color: white;
+        font-size: 11pt;
+        font-weight: normal;
+    }
+
+    .trackingdetails .hcol1 {
+        width: 200px;
+    }
+
+    .trackingdetails .hcol2 {
+        width: 200px;
+    }
+
+    .trackingdetails .hcol3 {
+        width: 200px;
+    }
+
+    .trackingdetails .hcol4 {
+        width: 200px;
+    }
+
+    .trackingdetails .hcol5 {
+        width: 500px;
+    }
+
+    .trackingdetails .trackingdetailsdatarow {
+        text-align: left;
+        padding: 2px 5px 2px 5px;
+        color: #000000;
+        font-size: 10pt;
+        font-weight: normal;
+    }
+
+    .trackingdetails .rcol1 {
+    }
+
+    .trackingdetails .rcol2 {
+    }
+
+    .trackingdetails .rcol3 {
+    }
+
+    .trackingdetails .rcol4 {
+    }
+
+    .trackingdetails .rcol5 {
+    }
+
+    .trackingdetails .rcol6 {
+    }
+
+.attachmentlist {
+    list-style-type: none;
+    -ms-grid-column-span: 3;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    height: 180px;
+    overflow-x: auto;
+}
+
+    .attachmentlist li {
+        display: inline;
+        padding: 2px 2px 2px 2px;
+    }
+
+    .attachmentlist img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid;
+        border-color: black;
+    }
+
+.disappear {
+    display: none !important;
+}
+
+.appear {
+    display: block !important;
+}
+
+.ui-accordion .ui-accordion-content {
+    overflow: auto;
+    padding: 0;
+    border-top-color: currentColor;
+    border-top-width: 0px;
+    border-top-style: none;
+    min-height: 450px!important;
+}
+
+.ui-state-default {
+    background-image: none;
+    background-color: none;
+}
+
+.ui-widget-content .ui-state-default {
+    background-image: none;
+    background-color: none;
+}
+
+.ui-widget-header .ui-state-default {
+    background-image: none;
+    background-color: none;
+}
+
+.ui-icon {
+    display: none;
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+    background-image: none;
+}
+
+.ui-icon-triangle-l-e {
+}
+
+.ui-state-default .ui-icon {
+    background-image: none;
+}
+
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+/* Modal Window*/
+
+div.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+    div.modal > img.loading {
+        position: relative;
+        top: 200px;
+        left: 50%;
+        /*margin-left: -10px;
+        margin-top: -10px;*/
+        z-index: 0;
+    }
+
+section.page.search img.loading {
+    vertical-align: bottom;
+}
+
+div.modal > div.content > img.close {
+    position: absolute;
+    top: -21px;
+    right: -21px;
+    z-index: 4;
+}
+
+div.modal > div.content {
+    /*width: 100%;*/
+    width: 1000px;
+    margin: 50px auto 50px auto;
+    z-index: 2;
+    display: block;
+    height: 80%;
+    position: relative;
+    /*position: absolute;*/
+    background: #FFF;
+}
+
+    div.modal > div.content > div.content-main {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        /*overflow-y: scroll;*/
+    }
+
+        div.modal > div.content > div.content-main > img {
+            display: block;
+            margin: 0 auto;
+            height: 100%;
+        }
+
+a.modal > img {
+    border: none;
+    outline: none;
+}
+
+.groupTile {
+    padding: -2px;
+    height: 80px;
+    width: 80px;
+}
+.tileCountStyle {
+    text-align:center; 
+    font-size:22px; 
+    margin-top:10px;
+}
+.tileTextStyle {
+    text-align:right; 
+    vertical-align:bottom; 
+    margin-top:15px;
+}
+#SOStile, #Activetile, #Inactivetile, #Incidentstile {
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+#SOStile {
+    background-color: #FF4000;
+    border: solid #FF4000;
+}
+
+#Activetile {
+    background-color: #70AD47;
+    border: solid #70AD47;
+}
+
+#Inactivetile {
+    background-color: #2E9AFE;
+    border: solid #2E9AFE;
+}
+
+#Incidentstile {
+    background-color: #FFBF00;
+    border: solid #FFBF00;
+}
+
+#leftpanegroups {
+    margin-top: -3px;
+}
+
+.selected {
+    border: 2px solid #333333 !important;
+    padding: 1px !important;
+}
+
+#lstSOSdiv, #lstTrackdiv, #lstinactivediv, #lstincidentdiv {
+    overflow-y: auto;
+    left: 2px;
+    width: 180px;
+}
+
+#navcontainer ul {
+    padding-top: 5px;
+    list-style-type: none;
+    text-align: center;
+}
+
+    #navcontainer ul li {
+        display: inline;
+        font-family: 'Segoe UI';
+        font-size: 12px;
+    }
+
+        #navcontainer ul li a {
+            text-decoration: none;
+            padding: .2em 1em;
+            color: #fff;
+            /*background-color: #036;*/
+        }
+
+            #navcontainer ul li a:hover {
+                color: #fff;
+                background-color: #369;
+            }
+
+#footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+    background: #999;
+    z-index: 9;
+}
+
+#historyDiv {
+    font-family: 'Segoe UI', 'Arial';
+    font-size: 11pt;
+    font-weight: normal;
+    position: fixed;
+    left: 182px;
+    bottom: 0px;
+    height: 190px;
+    width: 95%;
+    background-color: #B9CEEA;
+    z-index: 0;
+    border: solid 1px #999;
+}
+
+#historyImage {
+    position: fixed;
+    right: 0px;
+    bottom: 165px;
+    height: 25px;
+    width: 25px;
+    background-color: #B9CEEA;
+}
+
+.incidentInfo div {
+    color: white !important;
+    /*padding: 10px!important;*/
+}

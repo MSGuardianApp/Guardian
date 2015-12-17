@@ -1,0 +1,49 @@
+﻿/*#downMore {
+    border: 1px solid black;
+    font-family: 'Segoe UI Light';
+    background-color:#D8E0F1;
+    padding: 0px;
+    height: 130px;
+    width:100% !important;
+    font-size: 18px;
+}
+
+#more {
+    font-size: 20px;
+}
+
+.setMargin {
+    margin: 580px 0px 0px 0px;
+}
+
+.sideOption {
+    float: left;
+    border-right: 1px solid black;
+    margin-right: 5px;
+    height:130px;
+}
+
+#downPane {
+    list-style-type : none;
+    padding: 0px;
+}
+
+#downPane li {
+   padding: 5px;
+    height: 20px;
+}
+
+#downPane li:hover {
+    background-color: #B4C6E7;
+}
+
+#downMore ul, #downMore tr:first-child {
+    background-color: #4472C4;
+    color: white;
+    font-size: 16px;
+    padding: 3px 3px 3px 5px;
+}
+
+#content td {
+    text-align: center;
+}*/

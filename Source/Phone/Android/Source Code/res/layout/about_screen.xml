@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black" >
+
+    <RelativeLayout
+        android:id="@+id/BottomRelOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black" >
+
+        <ImageView
+            android:id="@+id/imageMailBtn"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_centerVertical="true"
+            android:src="@drawable/mail" />
+
+        <ImageView
+            android:id="@+id/imageSMSBtn"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/imageMailBtn"
+            android:src="@drawable/sms_help" />
+
+        <ImageView
+            android:id="@+id/imageShareBtn"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/imageSMSBtn"
+            android:src="@drawable/share" />
+
+        <ImageView
+            android:id="@+id/imageLikeBtn"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/imageShareBtn"
+            android:src="@drawable/like" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/aboutFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/BottomRelOut" >
+
+        <android.support.v4.view.PagerTabStrip
+            android:id="@+id/about_pager_tab_strip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:textColor="#ff9933" />
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

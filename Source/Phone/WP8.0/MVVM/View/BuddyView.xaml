@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="SOS.Phone.UserControls.BuddyView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:phoneControls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"             
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}">
+
+    <Grid  Margin="0,0,0,0" x:Name="ucBuddy"  >
+        <StackPanel  >
+            <Border BorderThickness="{Binding BorderThickness}" BorderBrush="{Binding BuddyStatusColor}">
+                <StackPanel Orientation="Vertical" >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel  x:Name="FirstIconPanel"  Tap="BuddyName_TapEvent"  Orientation="Horizontal" Width="260" >
+                            <StackPanel x:Name="NamePanel" Orientation="Vertical" Width="205">
+                                <TextBlock Foreground="{Binding BuddyStatusColor}" Text="{Binding Name}"  Margin="5,0,0,0"  FontSize="22"  FontWeight="Bold"  >
+                                </TextBlock>
+                                <TextBlock  Foreground="{Binding BuddyStatusColor}" Text="{Binding PhoneNumber}"  Margin="5,0,0,0"  FontSize="22"  FontWeight="Bold"  >
+                                </TextBlock>
+                            </StackPanel>
+                            <Border x:Name="FirstIconBorder" BorderThickness="2" BorderBrush="White" Height="60" Width="54" VerticalAlignment="top">
+                                <Image HorizontalAlignment="Center"  x:Name="FirstIconImage"  Style="{StaticResource BuddyListIconStyle}"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel x:Name="SecondIconPanel" Margin="10,0,0,0" Tap="btnCallBuddy_click" >
+                            <Border  BorderThickness="2" BorderBrush="White" Height="60">
+                                <Image  x:Name="SecondIconImage"  Style="{StaticResource BuddyListIconStyle}"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel  Margin="10,0,0,0" Tap="btnSMSBuddy_click" >
+                            <Border BorderThickness="2" BorderBrush="White" Height="60">
+                                <Image  x:Name="imgSMS" Source="\Assets\Images\sms.png" Style="{StaticResource BuddyListIconStyle}"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Margin="10,0,0,0" Tap="btnEmail_Click" >
+                            <Border BorderThickness="2" BorderBrush="White" Height="60">
+                                <Image  x:Name="imgEmail" Source="\Assets\Images\email.png"  Style="{StaticResource BuddyListIconStyle}"/>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel x:Name="AddressPanel">
+                        <Border BorderThickness="1" BorderBrush="Black" ></Border>
+                        <TextBlock x:Name="AddressTextBlock" Text="{Binding LastLocation}" Foreground="white" TextWrapping="Wrap" Margin="5,2,5,0" FontSize="18" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="5" BorderBrush="Black"></Border>
+        </StackPanel>
+    </Grid>
+
+
+</UserControl>

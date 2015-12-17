@@ -1,0 +1,41 @@
+﻿.spinnerBackground {
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    left:0px;
+    top:0px;
+    z-index: 10008;
+    display:none;
+}
+
+    .spinnerBackground .spinnerBusy {
+        height: 100px;
+        width: 100px;
+        background-color: #fff;
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        /*z-index: 10009;*/
+    }
+    
+        .spinnerBackground .spinnerBusy .spinnerImage{
+            height: 48px;
+            width: 48px;
+            background: url(/Content/Images/Spinner.gif);
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+
+        .spinnerBackground .spinnerBusy .spinnerText {
+            margin-left: 20px;
+            margin-top: 0px;
+        }
+
+    .spinnerBackground.show {
+        display:block;
+    }
+
+    .show {
+        display:block;
+    }

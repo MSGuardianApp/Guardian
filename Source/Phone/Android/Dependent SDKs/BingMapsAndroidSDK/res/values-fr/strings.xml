@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bing Maps Android SDK</string>
+    
+    <string name="app_description">Cette application est une démo du SDK Android Bing Maps en action. Utiliser cette application comme un exemple de comment créer votre propre application Android Bing Maps basé ou créer votre propre à l\'aide du Kit de développement logiciel créé par</string>
+    
+    <!-- Configure the map culture you prefer when the phone is in different languages. 
+    	List of supported cultures: http://msdn.microsoft.com/en-us/library/gg427600.aspx -->
+    <string name="mapCulture">fr-FR</string>
+    
+    <string name="serviceCulture">fr-FR</string>
+    
+    <string name="loading">Chargement</string>
+    
+    <string name="details">Détails</string>
+    
+    <!-- Menu text -->
+    <string name="myLocation">Mon Emplacement</string>
+	<string name="search">Recherche</string>
+	<string name="directions">Directions</string>
+
+	<string name="more">Plus</string>	
+	<string name="clearMap">Carte Claire</string>
+    <string name="about">Sur</string>
+    
+    <string name="mapMode">Mode carte</string>
+    <string name="auto">Auto</string>
+    <string name="road">Route</string>
+    <string name="aerial">Aérienne</string>
+    <string name="birdseye">Birdseye</string>
+    
+    <string name="layers">Couches</string>
+    <string name="traffic">Trafic</string>
+</resources>

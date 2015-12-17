@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/lv_buddiesList"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:dividerHeight="@dimen/dp_2"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:listSelector="@android:color/transparent" />
+    
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#000000"
+        android:textColor="@android:color/white"
+        android:text="Loading data...." />
+
+</LinearLayout>

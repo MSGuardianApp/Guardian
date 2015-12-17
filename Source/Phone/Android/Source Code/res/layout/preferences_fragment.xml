@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.guardianapp.views.ScrollViewExt xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrlView"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:focusableInTouchMode="true" >
+
+    <LinearLayout
+        android:id="@+id/createProfLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:background="#00000000"
+        android:orientation="vertical" >
+
+        <com.guardianapp.views.CusCheckBox
+            android:id="@+id/sos_on_pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/sos_on_pob"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_locationServiec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/locationServicesTxt"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <RelativeLayout
+            android:id="@+id/Rel_locationService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5" >
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_LocatonServicesSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/sett_off"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/dp_20" />
+
+            <ToggleButton
+                android:id="@+id/toggleLocationServices"
+                android:layout_width="60dp"
+                android:layout_height="@dimen/dp_20"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bgtoggle"
+                android:button="@null"
+                android:textOff=""
+                android:textOn="" />
+        </RelativeLayout>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_sendLocToSer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/sendLocToSerTxt"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <RelativeLayout
+            android:id="@+id/Rel_sendLocToSer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5" >
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_SendLocToSerSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/sett_off"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/dp_20" />
+
+            <ToggleButton
+                android:id="@+id/toggleSendLocToSer"
+                android:layout_width="60dp"
+                android:layout_height="@dimen/dp_20"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bgtoggle"
+                android:button="@null"
+                android:textOff=""
+                android:textOn="" />
+        </RelativeLayout>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_phoneLocServices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/phoneLocServicesTxt"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <RelativeLayout
+            android:id="@+id/Rel_phoneLocService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5" >
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_PhoneLocServices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/sett_off"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/dp_20" />
+
+            <ToggleButton
+                android:id="@+id/iv_phneLocServices"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:button="@null"
+                android:textOff=""
+                android:textOn="" />
+        </RelativeLayout>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_Country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/country"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/editTxt_phoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@drawable/bg_edittext"
+            android:ems="8"
+            android:focusable="false"
+            android:textColor="@color/white"
+            android:textStyle="bold" >
+
+            <requestFocus />
+        </EditText>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_emergencyNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/sett_emer"
+            android:textColor="#FFFFFF" />
+
+        <RelativeLayout
+            android:id="@+id/Rel_impNumbers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5" >
+
+            <RelativeLayout
+                android:id="@+id/Rel_policeNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <com.guardianapp.views.CusFntTextView
+                    android:id="@+id/tv_policeNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/sett_police"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/editTxt_policeNumber"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_centerHorizontal="true"
+                    android:background="#C0C0C0"
+                    android:ems="8"
+                    android:inputType="number"
+                    android:textAlignment="center" >
+
+                    <requestFocus />
+                </EditText>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Rel_AmbuNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Rel_policeNumbers"
+                android:layout_marginTop="@dimen/dp_10" >
+
+                <com.guardianapp.views.CusFntTextView
+                    android:id="@+id/tv_AmbulanceNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/sett_amb"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/editTxt_AmbulanceNumber"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_centerHorizontal="true"
+                    android:background="#C0C0C0"
+                    android:ems="8"
+                    android:inputType="number"
+                    android:textAlignment="center" >
+
+                    <requestFocus />
+                </EditText>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Rel_FireNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Rel_AmbuNumbers"
+                android:layout_marginTop="@dimen/dp_10" >
+
+                <com.guardianapp.views.CusFntTextView
+                    android:id="@+id/tv_FireNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/sett_fire"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/editTxt_FireNumber"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_centerHorizontal="true"
+                    android:background="#C0C0C0"
+                    android:ems="8"
+                    android:inputType="number"
+                    android:textAlignment="center" >
+
+                    <requestFocus />
+                </EditText>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/default_sos_recurrence_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal" >
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_default_sos_recurrence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/set_default_sosmsg_recurring_time"
+                android:textColor="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/editTxt_default_sos_recurrence"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:background="#C0C0C0"
+                android:ems="2"
+                android:inputType="number"
+                android:text="@string/default_sos_recurrence_time"
+                android:gravity="center" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_DefaultCaller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/set_def_call"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/editTxt_defaultCaller"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@drawable/bg_edittext"
+            android:ems="8"
+            android:focusable="false"
+            android:paddingLeft="@dimen/dp_8"
+            android:textColor="#FFFFFF" >
+
+            <requestFocus />
+        </EditText>
+
+        <ListView
+            android:id="@+id/lv_callerList"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:dividerHeight="1.0sp"
+            android:focusableInTouchMode="false"
+            android:listSelector="@android:color/transparent"
+            android:visibility="gone" >
+        </ListView>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_SOSInformBuddy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/inform_buddies"
+            android:textColor="#FFFFFF" />
+
+        <com.guardianapp.views.CusCheckBox
+            android:id="@+id/cb_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sett_sms"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusCheckBox
+            android:id="@+id/cb_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sett_email"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusCheckBox
+            android:id="@+id/cb_fbPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sett_fb_post"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_fbGrpDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/fbGroupSetDescriptionTxt"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve"
+            android:visibility="gone" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_fb_connected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/fb_connected"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_fbLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@drawable/fb_login"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_fbLogout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@drawable/fb_logout"
+            android:visibility="gone" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_fbGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/sett_fb_gp"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twelve" />
+
+        <RelativeLayout
+            android:id="@+id/rel_fbGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5" >
+
+            <Spinner
+                android:id="@+id/editTxt_secCode"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/iv_refershBox"
+                android:background="#C0C0C0"
+                android:ems="8"
+                android:focusable="false" >
+            </Spinner>
+
+            <ImageView
+                android:id="@+id/iv_refershBox"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_30"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:layout_marginRight="@dimen/dp_2"
+                android:src="@drawable/refreshbox" />
+        </RelativeLayout>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_validDesscrip"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="100dp"
+            android:textColor="#787878"
+            android:textSize="@dimen/font_size_twenty" />
+    </LinearLayout>
+
+</com.guardianapp.views.ScrollViewExt>

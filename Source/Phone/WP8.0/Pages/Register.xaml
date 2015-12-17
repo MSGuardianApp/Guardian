@@ -1,0 +1,127 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SOS.Phone.Register"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:myMap="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"
+    xmlns:converter="clr-namespace:SOS.Phone.Utilites.Converters"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" >
+    <phone:PhoneApplicationPage.Resources>
+        <converter:AddBracketsToStringConverter x:Key="AddBracketsToStringConverter"/>
+    </phone:PhoneApplicationPage.Resources>
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush  ImageSource="/assets/bg.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        <StackPanel>
+            <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,5,0,0" Orientation="Horizontal">
+                <StackPanel  Orientation="Horizontal">
+                    <Image Source="/Assets/applicationicon.png"  Height="32" Width="32" />
+                    <TextBlock x:Name="AppTitle" Text="REGISTER" Style="{StaticResource SubMenuStyle}" />
+                </StackPanel>
+            </StackPanel>
+            <ProgressBar x:Name="m_ProgressBar" IsIndeterminate="True" Visibility="Collapsed"  Margin="0,0,0,0"></ProgressBar>
+            <TextBlock />
+            <ScrollViewer x:Name="ProfileScrollViewer" Height="800">
+                <StackPanel>
+                    <TextBlock x:Name="WaitTextBlock" Margin="0,260,0,0" Text="Please wait..." Opacity="0.8" HorizontalAlignment="Center" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" ></TextBlock>
+                    <StackPanel Name="LiveAuthTokenPanel"  Visibility="Collapsed">
+                        <TextBlock Text="Name" Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle3Style}" />
+
+                        <TextBox x:Name="NameTextBox" InputScope="PersonalFullName" Height="71" TextWrapping="Wrap" MaxLength="25"/>
+                        <TextBlock Text="Logged-in Live Account" Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle3Style}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBox x:Name="LiveIdTextBox" MaxLength="30" Width="425" TextWrapping="Wrap" IsReadOnly="True" InputScope="EmailUserName"/>
+                            <Image Source="/Assets/Images/edit.png" Height="48" Width="50"  Stretch="Fill"  Margin="-6,0,0,0" Visibility="Collapsed"/>
+                            <!-- TODO Visible -->
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel x:Name="ProfilePanel" Visibility="Collapsed">
+                        <TextBlock></TextBlock>
+                        <TextBlock Name="ProfileHeading" Text="Create Profile" FontWeight="Bold" Margin="10,0,0,0" FontSize="24" />
+                        <StackPanel x:Name="EnterpriseEmailPanel">
+                            <TextBlock Text=" Enterprise Email" Margin="5,5,0,0" Style="{StaticResource PhoneTextTitle3Style}"/>
+                            <TextBox x:Name="EnterpriseEmailTextBox" TextWrapping="Wrap" Width="345" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <TextBlock Text=" Mobile Number" Margin="5,5,0,0" Style="{StaticResource PhoneTextTitle3Style}"/>
+                        <Grid Margin="20,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.3*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="CountryCodeTextBox" Height="71" TextWrapping="Wrap" Opacity="0" Width="100" Text="+91" Visibility="Collapsed" IsReadOnly="True" />
+                            <toolkit:ListPicker Grid.Column="0"  x:Name="CountryCodeListPicker" Height="60"  FullModeHeader="Select a country" Margin="0,1,0,10"   Width="90" Visibility="Visible" ItemsSource="{Binding }" ExpansionMode="FullScreenOnly" SelectionChanged="CountryCodeListPicker_SelectionChanged">
+                                <toolkit:ListPicker.FullModeItemTemplate>
+                                    <DataTemplate>
+                                        <Grid >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.7*"/>
+                                                <ColumnDefinition Width="0.3*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Margin="10,0,0,0" TextWrapping="Wrap"  Text="{Binding CountryName}" Style="{StaticResource PhoneTextTitle3Style}" FontWeight="Bold"  FontSize="30"  />
+                                            <TextBlock Margin="20,0,0,0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" Text="{Binding IsdCode,Converter={StaticResource AddBracketsToStringConverter}}" FontSize="30"  />
+
+                                        </Grid>
+                                    </DataTemplate>
+                                </toolkit:ListPicker.FullModeItemTemplate>
+                                <toolkit:ListPicker.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Margin="0,-2,0,0" Text="{Binding IsdCode}" FontSize="25"/>
+                                    </DataTemplate>
+                                </toolkit:ListPicker.ItemTemplate>
+                            </toolkit:ListPicker>
+                            <TextBox x:Name="MobileNumberTextBox" Grid.Column="1" Height="76.3"  TextWrapping="Wrap"  Width="235" Margin="-12,0,0,0" />
+                            <Button x:Name="ValidateNumber" Grid.Column="2" Height="71" Click="ValidateButton_Click">
+                                <TextBlock Text="Validate"></TextBlock>
+                            </Button>
+
+                        </Grid>
+
+                        <TextBlock x:Name="TokenInfoTextBlock" Text="" Opacity="0.8" Margin="10,0,0,0" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" ></TextBlock>
+                        <StackPanel x:Name="KeyPanel">
+                            <StackPanel x:Name="EmailKeyPanel">
+                                <TextBlock Text="Enterprise Security Code" Margin="30,5,0,0" Style="{StaticResource PhoneTextTitle3Style}" />
+                                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                                    <TextBox x:Name="EmailSecurityCodeTextBox" InputScope="Number" Width="325" KeyUp="EmailSecurityKeyTextBox_KeyUp" BorderBrush="LightGray" />
+                                    <TextBox x:Name="HiddenEmailSecurityCodeTextBox" Visibility="Collapsed" Width="325" InputScope="Number" />
+                                    <Button Hold="RevealEmailPWChars_Hold" Tap="RevealEmailPWChars_Tap" MouseLeave="RevealEmailPWChars_MouseLeave" Height="72" Width="72" Margin="-76,0,0,0" Foreground="#FFC0B7B7" BorderBrush="Transparent">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Assets/Images/password_reveal.png"></ImageBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                            <TextBlock Text="Phone Security Code" Margin="30,5,0,0" Style="{StaticResource PhoneTextTitle3Style}" />
+                            <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                                <TextBox x:Name="SecurityCodeTextBox" InputScope="Number" Width="325" KeyUp="SecurityKeyTextBox_KeyUp" BorderBrush="LightGray" />
+                                <TextBox x:Name="HiddenSecurityCodeTextBox" Visibility="Collapsed" Width="325" InputScope="Number" />
+                                <Button Hold="RevealPWChars_Hold" Tap="RevealPWChars_Tap" MouseLeave="RevealPWChars_MouseLeave" Height="72" Width="72" Margin="-76,0,0,0" Foreground="#FFC0B7B7" BorderBrush="Transparent">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/Assets/Images/password_reveal.png"></ImageBrush>
+                                    </Button.Background>
+                                </Button>
+                                <Button Height="71" Click="ConfirmButton_Click">
+                                    <TextBlock Text="Confirm"></TextBlock>
+                                </Button>
+                            </StackPanel>
+                            <TextBlock Text="(Enter security code and click Confirm to create your profile)" Opacity="0.8" Margin="30,0,0,0" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" ></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Height="200" Text=" "/>
+                    <!-- scroller for convenience to click Confirm -->
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</phone:PhoneApplicationPage>

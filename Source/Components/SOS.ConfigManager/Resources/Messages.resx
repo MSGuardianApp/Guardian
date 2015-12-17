@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BuddyNotificationEmailBody" xml:space="preserve">
+    <value>Hi,&lt;br /&gt; &lt;br /&gt; {0}({1}) has added you as a buddy in Guardian for receiving SOS notifications and Tracking. &lt;br /&gt; If you wish not to receive notifications for this user, click below link to unsubscribe &lt;br /&gt; {2} &lt;br /&gt; &lt;br /&gt; Thanks, &lt;br /&gt; Guardian Team  &lt;br /&gt; **This email is sent from an unmonitored alias.**</value>
+  </data>
+  <data name="BuddyNotificationEmailSubject" xml:space="preserve">
+    <value>Buddy addition in Guardian for {0}({1})</value>
+  </data>
+  <data name="BuddyNotificationSMSBody" xml:space="preserve">
+    <value>{0}({1}) added you as a buddy in Guardian App. To unsubscribe, click {2}</value>
+  </data>
+  <data name="EmailGroupValidationMsgTmp" xml:space="preserve">
+    <value>Hi, &lt;br /&gt; &lt;br /&gt;Please click the below link to validate your Guardian group association. &lt;br /&gt; &lt;br /&gt; Validation Link: {2}/Verification.aspx?V=2&amp;amp;key={0}&amp;amp;pr={1}&amp;amp;et=G&lt;br /&gt; &lt;br /&gt;Thanks, &lt;br /&gt; Guardian Team &lt;br /&gt;**This email is sent from an unmonitored alias.** &lt;br /&gt; &lt;br /&gt;</value>
+  </data>
+  <data name="EmailGroupValidationSubj" xml:space="preserve">
+    <value>Activate your Group validation for Guardian</value>
+  </data>
+  <data name="EmailMarshalValidationMsgTmp" xml:space="preserve">
+    <value>Hi, &lt;br /&gt; &lt;br /&gt; Please click the bollowing link to confirm yourself as Guardian group marshal. &lt;br /&gt; &lt;br /&gt; Validation Link: {2}/Verification.aspx?V=2&amp;amp;key={0}&amp;amp;pr={1}&amp;amp;et=M &lt;br /&gt; &lt;br /&gt; Thanks,&lt;br /&gt; &lt;br /&gt; Guardian Team &lt;br /&gt; &lt;br /&gt; **This email is sent from an unmonitored alias.** &lt;br /&gt;&lt;br /&gt;</value>
+  </data>
+  <data name="EmailMarshalValidationSubj" xml:space="preserve">
+    <value>Guardian marshal confirmation</value>
+  </data>
+  <data name="EmailMessage" xml:space="preserve">
+    <value>Hello, &lt;br /&gt; &lt;br /&gt; {name} (Mobile No {phone}) needs urgent help at {address}.  Track at {tinyuri} and help urgently. &lt;br /&gt; &lt;br /&gt; Thanks, &lt;br /&gt;&lt;br /&gt; Guardian Team &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; **This email is sent from an unmonitored alias. If you can’t provide help, try reaching appropriate authorities for help.** &lt;br /&gt;&lt;br /&gt;</value>
+  </data>
+  <data name="EmailSafeMessage" xml:space="preserve">
+    <value>Hello, &lt;br /&gt; &lt;br /&gt; {name} (Mobile No {phone}) is safe now. &lt;br /&gt;&lt;br /&gt; Thanks, &lt;br /&gt; Guardian Team &lt;br /&gt;&lt;br /&gt; &lt;br /&gt; **This email is sent from an unmonitored alias. If you can’t provide help, try reaching appropriate authorities for help.** &lt;br /&gt;</value>
+  </data>
+  <data name="EmailSafeSubject" xml:space="preserve">
+    <value>Guardian SOS: {name} is safe now!</value>
+  </data>
+  <data name="EmailSubject" xml:space="preserve">
+    <value>Guardian SOS: {name} needs urgent help!</value>
+  </data>
+  <data name="EnterpriseValidationMsg" xml:space="preserve">
+    <value>Please enter {0} for Enterprise verification code to create your Profile</value>
+  </data>
+  <data name="FacebookMessage" xml:space="preserve">
+    <value>{name} (Mobile No {phone}) needs urgent help at {address}. Track at {tinyuri} and help urgently.</value>
+  </data>
+  <data name="FacebookSafeMessage" xml:space="preserve">
+    <value>{name} is safe now.</value>
+  </data>
+  <data name="FacebookSafeSubject" xml:space="preserve">
+    <value>Guardian SOS: {name} is safe now!</value>
+  </data>
+  <data name="FacebookSubject" xml:space="preserve">
+    <value>Guardian SOS: {name} needs urgent help!</value>
+  </data>
+  <data name="PhoneReValidationSMS" xml:space="preserve">
+    <value>Please enter {0} verification code to create your Profile for phone number ending with {1}</value>
+  </data>
+  <data name="PhoneValidationSMS" xml:space="preserve">
+    <value>Please enter {0} verification code to create your Profile for phone number ending with {1}</value>
+  </data>
+  <data name="SMSMessage" xml:space="preserve">
+    <value>{name} ({phone}) needs urgent help at {address}. Track at {tinyuri}</value>
+  </data>
+  <data name="SMSSafeMessage" xml:space="preserve">
+    <value>{name} is safe now.</value>
+  </data>
+  <data name="UnRegisterNotificationEmailBody" xml:space="preserve">
+    <value>Hi,  &lt;br /&gt; &lt;br /&gt; You have unregistered yourself from Guardian App. We have ensured to delete your profile from our servers. &lt;br /&gt; Please be informed that Guardian works best when you use it as a registered user. &lt;br /&gt; &lt;br /&gt; Thanks, &lt;br /&gt; Guardian Team  &lt;br /&gt; **This email is sent from an unmonitored alias.**</value>
+  </data>
+  <data name="UnRegisterNotificationEmailSubject" xml:space="preserve">
+    <value>Profile unregistered in Guardian</value>
+  </data>
+</root>

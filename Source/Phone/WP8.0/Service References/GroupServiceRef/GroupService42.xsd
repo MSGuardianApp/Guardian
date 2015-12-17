@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:39018/GroupService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" />
+  <xs:import schemaLocation="http://localhost:39018/GroupService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ProfileLiteList">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="DataInfo" nillable="true" type="q1:ArrayOfResultInfo" />
+      <xs:element minOccurs="0" name="List" nillable="true" type="tns:ArrayOfProfileLite" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfileLiteList" nillable="true" type="tns:ProfileLiteList" />
+  <xs:complexType name="ArrayOfProfileLite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProfileLite" nillable="true" type="tns:ProfileLite" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProfileLite" nillable="true" type="tns:ArrayOfProfileLite" />
+  <xs:complexType name="ProfileLite">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:User">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsSOSOn" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTrackingOn" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastLocs" nillable="true" type="tns:ArrayOfGeoTag" />
+          <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SOSToken" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TinyURI" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrackingToken" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProfileLite" nillable="true" type="tns:ProfileLite" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="DataInfo" nillable="true" type="q2:ArrayOfResultInfo" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FBAuthID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FBID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiveDetails" nillable="true" type="tns:LiveCred" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="LiveCred">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArchivalFolder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiveAuthID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiveID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiveCred" nillable="true" type="tns:LiveCred" />
+  <xs:complexType name="Profile">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProfileLite">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AscGroups" nillable="true" type="tns:ArrayOfGroup" />
+          <xs:element minOccurs="0" name="CanArchive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanMail" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanPost" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanSMS" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FBGroupID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FBGroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LocateBuddies" nillable="true" type="tns:ArrayOfProfileLite" />
+          <xs:element minOccurs="0" name="LocationConsent" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MyBuddies" nillable="true" type="tns:ArrayOfBuddy" />
+          <xs:element minOccurs="0" name="PhoneSetting" nillable="true" type="tns:DeviceSetting" />
+          <xs:element minOccurs="0" name="PrimeBuddyId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimeGroupID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SMSText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteSetting" nillable="true" type="tns:PortalSetting" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Profile" nillable="true" type="tns:Profile" />
+  <xs:complexType name="ArrayOfGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroup" nillable="true" type="tns:ArrayOfGroup" />
+  <xs:complexType name="Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnrollmentKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnrollmentType" type="tns:Enrollment" />
+      <xs:element minOccurs="0" name="EnrollmentValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeoFence" nillable="true" type="tns:ArrayOfGeoTag" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LiveInfo" nillable="true" type="tns:LiveCred" />
+      <xs:element minOccurs="0" name="Members" nillable="true" type="tns:ArrayOfProfile" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Tags" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ToRemove" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Type" type="tns:GroupType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Group" nillable="true" type="tns:Group" />
+  <xs:simpleType name="Enrollment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="AutoOrgMail" />
+      <xs:enumeration value="Moderator" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enrollment" nillable="true" type="tns:Enrollment" />
+  <xs:complexType name="ArrayOfGeoTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeoTag" nillable="true" type="tns:GeoTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeoTag" nillable="true" type="tns:ArrayOfGeoTag" />
+  <xs:complexType name="GeoTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Command" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeoDirection" type="tns:Direction" />
+      <xs:element minOccurs="0" name="Identifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Long" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Speed" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoTag" nillable="true" type="tns:GeoTag" />
+  <xs:simpleType name="Direction">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Direction" nillable="true" type="tns:Direction" />
+  <xs:complexType name="ArrayOfProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Profile" nillable="true" type="tns:Profile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProfile" nillable="true" type="tns:ArrayOfProfile" />
+  <xs:simpleType name="GroupType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="publicGroup" />
+      <xs:enumeration value="privateGroup" />
+      <xs:enumeration value="SocialGroup" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GroupType" nillable="true" type="tns:GroupType" />
+  <xs:complexType name="ArrayOfBuddy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Buddy" nillable="true" type="tns:Buddy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBuddy" nillable="true" type="tns:ArrayOfBuddy" />
+  <xs:complexType name="Buddy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:User">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BuddyID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToRemove" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Buddy" nillable="true" type="tns:Buddy" />
+  <xs:complexType name="DeviceSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanEmail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanSMS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DeviceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlatForm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeviceSetting" nillable="true" type="tns:DeviceSetting" />
+  <xs:complexType name="PortalSetting">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="PortalSetting" nillable="true" type="tns:PortalSetting" />
+  <xs:complexType name="Admin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminID" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="DataInfo" nillable="true" type="q4:ArrayOfResultInfo" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupIDCSV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:ArrayOfGroup" />
+      <xs:element minOccurs="0" name="LiveAuthID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Admin" nillable="true" type="tns:Admin" />
+  <xs:complexType name="MarshalList">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="DataInfo" nillable="true" type="q5:ArrayOfResultInfo" />
+      <xs:element minOccurs="0" name="List" nillable="true" type="tns:ArrayOfMarshal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MarshalList" nillable="true" type="tns:MarshalList" />
+  <xs:complexType name="ArrayOfMarshal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Marshal" nillable="true" type="tns:Marshal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMarshal" nillable="true" type="tns:ArrayOfMarshal" />
+  <xs:complexType name="Marshal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProfileLite">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LocateBuddies" nillable="true" type="tns:ArrayOfProfileLite" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Marshal" nillable="true" type="tns:Marshal" />
+</xs:schema>

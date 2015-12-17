@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="SOS.AzureServiceHost" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
+  <WebRole name="SOS.RESTService" vmsize="Medium">
+    <Startup>
+      <Task commandLine="AlterIISSettings.bat" executionContext="elevated" taskType="background" />
+      <!--<Task commandLine="EnableCompression.cmd" executionContext="elevated" taskType="simple"></Task> This has been done in web.config-->
+    </Startup>
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="Endpoint1" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="Endpoint1" protocol="https" port="443" certificate="Guardian" />
+    </Endpoints>
+    <Imports>
+    </Imports>
+    <ConfigurationSettings>
+      <Setting name="QueueConnection" />
+      <Setting name="TableConnection" />
+      <Setting name="BlobConnection" />
+      <Setting name="AzureSQLConnectionString" />
+      <Setting name="EventHubConnectionString" />
+      <Setting name="EventHubName" />      
+      <Setting name="SMSServiceUserID" />
+      <Setting name="SMSServicePassword" />
+      <Setting name="IntlSMSServiceUserID" />
+      <Setting name="IntlSMSServicePassword" />  
+      <Setting name="SMSDefaultFromnumber" />
+      <Setting name="GuardianPortalUri" />
+      <Setting name="V1GuardianPortalUri" />
+      <Setting name="TinyServiceUri" />
+      <Setting name="sendGridUserID" />
+      <Setting name="sendGridPassword" />
+      <Setting name="SendSms" />
+      <Setting name="UseEventHubs" />
+      <Setting name="SMSPostGap" />
+      <Setting name="FacebookPostGap" />
+      <Setting name="EmailPostGap" />           
+      <Setting name="BingKey" />                            
+      <Setting name="SubGroupAllocationIntervalInMinutes" />               
+      <Setting name="BroadcastRunIntervalInSeconds" />
+      <Setting name="ArchiveTimeGapInMinutes" />
+      <Setting name="ArchiveRunIntervalInMinutes" />    
+      <Setting name="ClientSecret" />
+      <Setting name="LiveAppUri" />
+      <Setting name="RandomNumberDigits" />     
+      <Setting name="IncludeActiveMembers" />
+      <Setting name="DefaultGroupID" />
+      <Setting name="TimeToResetCacheInMinutes" />
+      <Setting name="AppInsightsKey" />
+      <Setting name="AppInsightsTag" />
+      <Setting name="IsEnterpriseBuild" />
+      <Setting name="HasDataMigrated" />
+      <Setting name="EnterpriseDomain" />
+      <Setting name="GoogleClientID" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Guardian" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
+  </WebRole>
+</ServiceDefinition>

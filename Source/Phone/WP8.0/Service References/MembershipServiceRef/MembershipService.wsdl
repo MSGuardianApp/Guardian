@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.microsoft.com/sos/2013/02" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.microsoft.com/sos/2013/02" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.microsoft.com/sos/2013/02/Imports">
+      <xsd:import schemaLocation="http://localhost:39018/MembershipService.svc?xsd=xsd0" namespace="http://www.microsoft.com/sos/2013/02" />
+      <xsd:import schemaLocation="http://localhost:39018/MembershipService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:39018/MembershipService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:39018/MembershipService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MembershipService_GetProfileByProfileID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileByProfileID" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_GetProfileByProfileID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileByProfileIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_GetProfileLiteByProfileID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileLiteByProfileID" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_GetProfileLiteByProfileID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileLiteByProfileIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_GetProfilesForLiveID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfilesForLiveID" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_GetProfilesForLiveID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfilesForLiveIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_UnBuddy_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnBuddy" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_UnBuddy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnBuddyResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_CreatePhoneValidator_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePhoneValidator" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_CreatePhoneValidator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePhoneValidatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_CreateProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProfile" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_CreateProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_UpdateProfilePhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfilePhone" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_UpdateProfilePhone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfilePhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_UpdateProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfile" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_UpdateProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_CheckPendingUpdates_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPendingUpdates" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_CheckPendingUpdates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPendingUpdatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_UnRegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnRegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="MembershipService_UnRegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnRegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MembershipService">
+    <wsdl:operation name="GetProfileByProfileID">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/GetProfileByProfileID" message="tns:MembershipService_GetProfileByProfileID_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/GetProfileByProfileIDResponse" message="tns:MembershipService_GetProfileByProfileID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileLiteByProfileID">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/GetProfileLiteByProfileID" message="tns:MembershipService_GetProfileLiteByProfileID_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/GetProfileLiteByProfileIDResponse" message="tns:MembershipService_GetProfileLiteByProfileID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilesForLiveID">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/GetProfilesForLiveID" message="tns:MembershipService_GetProfilesForLiveID_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/GetProfilesForLiveIDResponse" message="tns:MembershipService_GetProfilesForLiveID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnBuddy">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/UnBuddy" message="tns:MembershipService_UnBuddy_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/UnBuddyResponse" message="tns:MembershipService_UnBuddy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePhoneValidator">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/CreatePhoneValidator" message="tns:MembershipService_CreatePhoneValidator_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/CreatePhoneValidatorResponse" message="tns:MembershipService_CreatePhoneValidator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateProfile">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/CreateProfile" message="tns:MembershipService_CreateProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/CreateProfileResponse" message="tns:MembershipService_CreateProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilePhone">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/UpdateProfilePhone" message="tns:MembershipService_UpdateProfilePhone_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/UpdateProfilePhoneResponse" message="tns:MembershipService_UpdateProfilePhone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/UpdateProfile" message="tns:MembershipService_UpdateProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/UpdateProfileResponse" message="tns:MembershipService_UpdateProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPendingUpdates">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/CheckPendingUpdates" message="tns:MembershipService_CheckPendingUpdates_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/CheckPendingUpdatesResponse" message="tns:MembershipService_CheckPendingUpdates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnRegisterUser">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/UnRegisterUser" message="tns:MembershipService_UnRegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/MembershipService/UnRegisterUserResponse" message="tns:MembershipService_UnRegisterUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Guardian</string>
+    <string name="version">Version</string>
+    <string name="release">1.3 release</string>
+    <string name="post_feedback_to">Post your feedback to</string>
+    <string name="guardian_email">GuardianApp@outlook.com</string>
+    <string name="menu_halp">help</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_aerial_view">aerial view</string>
+    <string name="menu_clear_route">clear route</string>
+    <string name="menu_road_view">road view</string>
+    <string name="current_location">go to my location</string>
+    <string name="menu_about">about</string>
+    <string name="menu_privacy_policy">privacy policy</string>
+    <string name="menu_rate_feedback">rate/feedback</string>
+    <string name="menu_msg_buddies">force stop messages to buddies</string>
+    <string name="menu_pin_sos">pin sos to start screen</string>
+    <string name="register_settings">Register</string>
+    <string name="unregister_settings">Unregister</string>
+    <string name="country_code_changed">All your buddies from the previous country would be removed.</string>
+
+    <!-- activities title -->
+    <string name="select_country">SELECT A COUNTRY</string>
+
+    <!-- labels and constants in splash screen activity -->
+    <string name="loading_text">Loading, Please Wait...</string>
+    <string name="ms_text">Microsoft IT India</string>
+    <string name="powered_by">Powered by</string>
+    <string name="internet_unavailable">Please check your internet connection...</string>
+
+    <!-- labels and constants in HomeScreenActivity -->
+    <string name="tag_line">Security. Anytime. Anywhere</string>
+    <string name="sos_text">SOS</string>
+    <string name="tap_this_text">Tap this, if you are threatened</string>
+    <string name="sos_display_text">SOS alerts has been sent to your buddies</string>
+    <string name="info_txt">Information</string>
+    <string name="enable_loc_settings">Location Services are disabled either in phone\'s or Guardian\'s settings. Do you want to enable it</string>
+    <string name="report_an_incident_msg">Incident has been successfully reported. Appreciate your social responsibility.</string>
+    <string name="image_captured_msg">Evidence has been captured and uploaded to the guardian server.</string>
+    <string name="dialog_ok_button">OK</string>
+    <string name="dialog_cancel_button">Cancel</string>
+    <string name="loc_settngs_dis_msg">Location services are disabled in phone settings...</string>
+    <string name="sos_on">ON</string>
+    <string name="trackme_on">ON</string>
+    <string name="stop_sos">stop sos</string>
+    <string name="sos_off">OFF</string>
+    <string name="start_sos">start sos</string>
+    <string name="track_me_tile">Track Me</string>
+    <string name="locate_tile_text">Locate</string>
+    <string name="sos_na">SOS: NA</string>
+    <string name="tracking_na">Tracking: NA</string>
+    <string name="report_inc">Report an\nIncident</string>
+    <string name="report_with_evi">Report with evidence!</string>
+    <string name="wifi_tile">Wi-Fi</string>
+    <string name="cell_data_tile">Cell-Data</string>
+    <string name="gps_tile">GPS</string>
+    <string name="settings_tile">Settings</string>
+    <string name="curr_loc">Current Location:</string>
+    <string name="disp_curr_loc">This display\'s current Location</string>
+    <string name="title">Title</string>
+    <string name="msg">Message</string>
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="rate_app">If you liked the app, Please rate and review it on the store to help us improve it.</string>
+    <string name="title_rate_app">Rate Guardian</string>
+    <string name="close_on_sos">Either Tracking or SOS is activated. Exiting app will deactivate them. You can click on Home button to suspend Guardian and to do other tasks.</string>
+    <string name="close_on_sos_title">Are you sure to quit Guardian?</string>
+
+    <!-- labels and constants in SOS -->
+    <string name="starting_sos">Starting SOS..</string>
+    <string name="cancel_sos">Cancel SOS</string>
+    <string name="click_gps">Click to switch on GPS</string>
+    <string name="capture">capture</string>
+    <string name="sos_check_msg">Please check your SOS is on</string>
+    <string name="tracking_off_msg">Guardian tracking is off</string>
+    <string name="save_batt_msg">To save battery, please turn off tracking</string>
+    <string name="stop_tracking">stop tracking</string>
+    <string name="start_tracking">start tracking</string>
+    <string name="dial_police_at">Dial Police at</string>
+    <string name="dial_amb_at">Dial Ambulance at</string>
+    <string name="dial_fire_at">Dial Fire brigade at</string>
+    <string name="sos_turned_off">SOS is turned off \n You are safe now. To save battery, please turn off tracking.</string>
+    <string name="turn_off_safe_text">Guardian SOS is Active ! \n If you are safe, please turn SOS off.</string>
+    <string name="invalid_photo_capture">You cannot capture photos when Tracking/ SOS is switched off.</string>
+    <string name="empty_buddies_list">You have not added any buddies. \n <u>Click here to add buddies.</u></string>
+    <string name="empty_groups_list">You have not joined in any groups. \n <u>Click here to join a group.</u></string>
+    <string name="post_photo_to_server">Photo has been captured and Syncing with the Guardian server...</string>
+    <string name="photo_captured">Photo has been captured and synced with the Guardian server successfully..</string>
+    <string name="unregistered_captured">Please login with your Microsoft Account to upload evidence to Guardian Cloud Server..</string>
+    <string name="track_noti_title">Guardian Tracking is Active</string>
+    <string name="sos_noti_title">Guardian SOS is Active</string>
+    <string name="track_noti_body">To save battery, please turn off tracking.</string>
+    <string name="sos_noti_body">If you are safe, please turn SOS off.</string>
+    <string name="extend_help_to_lb">I\'m reaching to help you.</string>
+
+    <!-- Report and incident -->
+    <string name="inc_cat">Incident Category</string>
+    <string name="harassment">Harassment</string>
+    <string name="ragging">Ragging</string>
+    <string name="accident">Accident</string>
+    <string name="robbery">Robbery</string>
+    <string name="others">Others</string>
+    <string name="description">Description</string>
+    <string name="report">Report</string>
+    <string name="beta_feature">Beta Feature</string>
+
+    <!-- labels and constants in buddies_details_list.xml -->
+    <string name="name">Name</string>
+    <string name="temp_ph_no">+910000000000</string>
+    <string name="ph_no">phone no</string>
+    <string name="address">Address</string>
+    <string name="non_registered">Non-registered user</string>
+    <string name="registered">Registered user</string>
+    <string name="send_report">Send Report</string>
+    <string name="spinner_title">Select Phone Number</string>
+    <string name="cont_num">Contact Numbers</string>
+    <string name="email_add">Email Address</string>
+    <string name="add_buddy">Add</string>
+    <string name="buddy_already_exists">Buddy with this Contact Number already exists</string>
+    <string name="max_five">You can\'t add more than five buddies</string>
+    <string name="addGroupTxt">Please enter your valid Org Email Id</string>
+    <string name="buddy_name_empty">Name cannot be empty. Please enter Buddy name.</string>
+    <string name="buddy_invalid_email">Please provide a valid Email Id</string>
+    <string name="invalid_enrollment_key">Please enter valid Organization Email Id</string>
+    <string name="contact_must_to_add_buddy">A contact Number is required to add a Buddy</string> 
+
+    <!-- labels in profile fragment -->
+    <string name="connect_to_ms_live">Connect to Microsoft Live</string>
+    <string name="email_id">Email id</string>
+    <string name="mob_num">Mobile Number</string>
+    <string name="last_sync_on">Last Synced on</string>
+    <string name="date_time">date time</string>
+    <string name="sync_now">Sync now</string>
+    <string name="logged_in_live">Logged-in Live Account</string>
+    <string name="create_profile">Create Profile</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="validate">Validate</string>
+    <string name="confirm">Confirm</string>
+    <string name="incorrect_security_code">Incorrect Security Code. Please provide a valid security code.</string>
+    <string name="provide_sec_code">Please provide a valid security code</string>
+    <string name="incorrect_org_email">* Please provide valid Org Email Id</string>
+
+    <!-- buddies fragment in settings screen -->
+    <string name="no_contacts_msg">No Matching contacts found. Please try with a different name</string>
+    <string name="join_groups">Join Group</string>
+    <string name="add_buddy_sett">Add Buddy</string>
+    <string name="group_exists">Group Already Exists</string>
+    <string name="buddies_des1">* Marked buddies have been unsubscribed</string>
+    <string name="buddies_des2">+ Marked buddies are Group Marshal\'s</string>
+    <string name="grp_pen_veri_msg">* Marked groups are pending for verification</string>
+    <string name="unable_to_reach">Unable to reach the server. While keep retrying, please look for help from others</string>
+    <string name="updated_info_msg">You have updated the settings. Do you want \n to sync the settings with Guardian Server ?</string>
+    <string name="unregister_info_msg">Are you sure want to unregister? This will permanently delete all your data from Guardian Server and cannot be retreived.</string>
+    <string name="profile_invalid">Please update your contact information. This contact number has been invalidated.</string>
+
+    <!-- error dialog messages -->
+    <string name="error_dialog_title">Guardian App Crashed</string>
+    <string name="error_dialog_text">Guardian crashed because of an unexpected error. Please help fixing the error by sending an error report to the developer.</string>
+    <string name="tap_n_hold_map">Tap somewhere in the map to show a pushpin. After that you can get directions to get there.</string>
+
+    <!-- settings screen -->
+    <string name="sos_on_pob">Double press power button to start SOS</string>
+    <string name="sett_off">Off</string>
+    <string name="country">Country</string>
+    <string name="sett_emer">Emergency Numbers</string>
+    <string name="sett_police">Police</string>
+    <string name="sett_amb">Ambulance</string>
+    <string name="sett_fire">Fire</string>
+    <string name="set_default_sosmsg_recurring_time">SOS recurrence (in minutes)</string>
+    <string name="default_sos_recurrence_time">10</string>
+    <string name="set_def_call">Default caller on SOS</string>
+    <string name="inform_buddies">On SOS, inform buddies via</string>
+    <string name="sett_sms">SMS</string>
+    <string name="sett_email">Email</string>
+    <string name="sett_fb_post">Facebook Post</string>
+    <string name="fb_connected">You are connected to Facebook! Your tracking information will be posted to group selected below</string>
+    <string name="sett_fb_gp">Facebook Group</string>
+    <string name="createProf_heading">To benefit from the advanced Guardian features, you need to be a registered user.</string>
+    <string name="createProf_GroupHeading">"Groups can help you faster when you are in need. You need to be a registered Guardian user to add groups to your profile."</string>
+    <string name="createProfie_Description">Please login using your Microsoft Account to Register with Guardian or to Restore your existing profile</string>
+    <string name="createProfie_hint">Hint: To login, you can use the same id you have used for your phone</string>
+    <string name="privacyPolicy"><u>Privacy Policy</u></string>
+    <string name="resgiterSec_codeDescription_1">(Validate will generate a one-time security code and will be send via SMS to your mobile number)</string>
+    <string name="resgiterSec_codeDescription_2">(Enter security code and click.Confirm to create your profile)</string>
+    <string name="locationServicesTxt">Allow Guardian to use Location Service</string>
+    <string name="sendLocToSerTxt">Send tracking locations to Guardian server</string>
+    <string name="phoneLocServicesTxt">Phone Location Services</string>
+    <string name="fbGroupSetDescriptionTxt">To post SOS messages to Facebook, please login once to Facebook and choose a group</string>
+    <string name="str_CountryCode">+91</string>
+    <string name="str_SosDesc">This will send SMS to all your buddy mobiles notifying about 
+ 		    your emergency along with your current location. Guardian continuously sends emails to the buddy email ids and also posts to your private facebook group, if registered.</string>
+    <string name="str_SOsbtnDes">Tap on the number to start SOS immediately</string>
+    <string name="str_AboutDes"> Guardian is the ultimate security app in your hand. Being easy to configure and the power of being tracked by buddies and security groups simultaneously, ensures multi-fold security for you</string>
+    <string name="str_howItWork">If you are a registered user,\n
+   - When you are in panic, just click SOS tile or SOS 
+   icon on the app bar. You can pin SOS tile to Start 
+   screen for one click SOS start.\n\n\                     
+  - If GPRS or phone network is available, SOS call 
+  Will reach Guardian Server, which will send 
+  SMS/ emails/ FB messages(as set in preferences) to
+  all your buddies on your behalf.\n\n
+
+  - Guardian will keep relaying SOS alerts with 
+  location and tracking details to all your buddies at
+  regular intervals, until you stop SOS.\n\n
+                            
+  - Your buddies and groups can locate you in real-time
+  and can help or reach to the nearest Police Stations,
+  Hospitals etc.. for help.\n\n
+                            
+  - Your buddies and groups can get your dynamic 
+  location and directions to reach you to help.\n\n
+                           
+  - Reaching your buddies or security groups for help
+  via Call/ SMS/ emai will be a click away with
+  standard SOS templates. \n\n
+                            
+  - While in SOS, you can capture evidences which will 
+  be stored in cloud.\n\n
+                            
+  - You can join security groups which will monitor you
+  in SOS mode and send their marshals for help, in 
+  case you need. Security Groups can be public like 
+  police or private like your organization’s security
+  group.\n\n 
+                            
+  - You can reach out to us at 
+  GuardianApp@outlook.com if your organization 
+  wants to setup a security group with Guardian, to
+  monitor your own employees/ personnel.\n\n
+                            
+  - After you have set-up the app from settings,
+  whenever you are apprehensive about your security 
+  while commuting, you can start tracking yourself to 
+  ensure you are heading towards your destination. 
+  As soon as you sense a danger, you can trigger SOS
+  by clicking SOS.\n\n
+                            
+  - All the tracking details will be maintained in history 
+  on the portal at http://aka.ms/GuardianPortal for 
+  3 months, post which the data will be purged. \n\n
+                            
+  - You can locate your friends who have added you as 
+  a Buddy in Locate page and get real-time directions 
+  to reach/ help them, if they are in need.\n\n
+                            
+  - With Report Incident feature, you can also report 
+  any incident like accident, harassment, theft etc.
+  happening around you along with evidence and this 
+  information will be shared with Public groups like 
+  Police.\n\n
+  Disclaimer:\n
+  - Guardian or Guardian Team is not responsible for any damage caused.\n 
+- SMS delivery is subjected to the operator congestion and network availability.\n                            
+- Location details are mostly accurate to 100 meters. But, it is not guaranteed that the location is correct as it depends on various factors like hardware used to capture GPS location in devices, availability of GPS information etc.</string>
+    <string name="Str_NonRegisterText">1.	Setup buddies and preferences through phone\n 
+2.	Self-Tracking and showing route\n 
+3.	Ability to send SOS signals\n  
+ -	Pre-defined SMS with location to buddies\n  
+ -	Posting to FB (to a private group)\n 
+4.	One click call/SMS/Email to buddies while in SOS\n 
+5.	Local help (Police, Hospitals)\n 
+6.	Route to Local Help\n 
+7.	Local Emergency Numbers</string>
+    <string name="Str_RegisterUserText">1.	All features of Non-Registered Users\n
+     2.	Allowing buddies to acknowledge (taking care of 
+    privacy)\n
+    
+    3.	Adding Security groups to monitor you in real-time, 
+    when needed\n
+    4.	Ability to send SOS signals\n
+    -	Initiating immediate call with a buddy\n
+    -	Sending automated emails with your location to 
+        your buddies\n
+    -  SMS with Tracking trail to buddies\n
+    -	Sending pictures to the buddies\n
+    -	Sending pictures to your Security Groups\n
+	5.	Continuous SOS notifications via SMS, Email, FB  
+    Posts to buddies at regular interval, at absolutely 
+    NO COST\n
+     6.	Send SOS in the event of the phone being 
+    destroyed/ switched off\n
+7.	Start SOS notifications by sending SMS when 
+    GPRS(internet) is unavailable\n
+8.	Safety message after turning Off SOS\n
+9.	Tracking people who have added you as Buddies,  
+     on your mobile devices\n                        
+10. Being tracked by your buddies in real-time on 
+     their mobile devices\n
+11. Being tracked by more than one organization\'s 
+     security group in real-time when you need \n
+12. Ability to save SOS photos in cloud for evidence\n 
+13. Incident reporting like Eve-tease, accidents etc. 
+     along with evidence in cloud \n
+14. Security groups can help you by having ability 
+     to send Police/Medical Help to you when in SOS \n
+15. Allowing security groups to assign their marshals 
+     to rescue you on the fly with real-time tracking \n
+16. One click to start SOS - Pin SOS tile to Start page \n                           
+17. One click to restore all your buddies, preferences 
+     and settings on a new device \n        
+18. One Drive access requested during registration
+     is to archive your tracking information while
+     we use data periodically. This feature will 
+     be part of future release. We DO NOT access
+     any of your personal or public data/ information
+     from onedrive now nor would do in future \n                            
+19. You can track your buddies from anywhere, 
+     anytime by simply login as user.\n
+    </string>
+    <string name="Str_logger_text">Please click send report to send the detailed error log to the Guardian Core team</string>
+    <string name="Str_ReportDetail_text">*Incidents are reported to public groups(e.g. police) which you have added in your settings.</string>
+    <string name="Str_SOSDialog_text">A safe message has been sent to all your buddies. To send a personalized message to your buddies, press OK. Else press CANCEL</string>
+
+    <!-- <string name="Str_faceBookAppId">268298433363227</string> -->
+    <string name="Str_faceBookAppId">486681428059978</string>
+    <string name="get_started">To get started, log in using Facebook</string>
+    <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>
+
+</resources>

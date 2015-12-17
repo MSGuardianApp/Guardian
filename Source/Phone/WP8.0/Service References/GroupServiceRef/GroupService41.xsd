@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.microsoft.com/sos/2013/02" elementFormDefault="qualified" targetNamespace="http://www.microsoft.com/sos/2013/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:39018/GroupService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" />
+  <xs:import schemaLocation="http://localhost:39018/GroupService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" />
+  <xs:element name="GetMembersForGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMembersForGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetMembersForGroupResult" nillable="true" type="q1:ProfileLiteList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Admin_GetAssociatedMembers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Admin_GetAssociatedMembersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="Admin_GetAssociatedMembersResult" nillable="true" type="q2:ArrayOfProfileLite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Admin_RefreshMemberLocations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Admin_RefreshMemberLocationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="Admin_RefreshMemberLocationsResult" nillable="true" type="q3:ArrayOfProfileLite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetListOfGroupsResult" nillable="true" type="q4:ArrayOfGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfVolunteerGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfVolunteerGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetListOfVolunteerGroupsResult" nillable="true" type="q5:ArrayOfGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdminProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LiveMail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdminProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetAdminProfileResult" nillable="true" type="q6:Admin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMarshalInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LiveMail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMarshalInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="SaveMarshalInfoResult" nillable="true" type="q7:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarshalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarshalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetMarshalListResult" nillable="true" type="q8:MarshalList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarshalDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMarshalDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" minOccurs="0" name="GetMarshalDetailResult" nillable="true" type="q9:Marshal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignBuddyToMarshal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdminID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MarshalProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MarshalUserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TargetUserProfileID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignBuddyToMarshalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="AssignBuddyToMarshalResult" nillable="true" type="q10:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveBuddyFromMarshal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdminID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MarshalProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MarshalUserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TargetUserProfileID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveBuddyFromMarshalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="RemoveBuddyFromMarshalResult" nillable="true" type="q11:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMarshal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdminID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MarshalProfileID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMarshalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="DeleteMarshalResult" nillable="true" type="q12:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGroupMemeber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidationID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGroupMemeberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" minOccurs="0" name="ValidateGroupMemeberResult" nillable="true" type="q13:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,442 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SOS.Phone.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:src="clr-namespace:PictureConv"   
+    mc:Ignorable="d"
+    xmlns:UC="clr-namespace:SOS.Phone.UserControls"
+    xmlns:converter="clr-namespace:SOS.Phone.Utilites.Converters"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" BackKeyPress="PhoneApplicationPage_BackKeyPress">
+
+    <phone:PhoneApplicationPage.Resources>
+
+        <DataTemplate x:Key="AccountTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Path=Name, Mode=OneWay}" />
+                <TextBlock Grid.Column="1" Text=" account: " />
+                <TextBlock Grid.Column="2" Text="{Binding Path=Kind, Mode=OneWay}" />
+            </Grid>
+        </DataTemplate>
+        <src:ContactPictureConverter x:Key="ContactPictureConverter" />
+        <converter:AddBracketsToStringConverter x:Key="AddBracketsToStringConverter"/>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.Background>
+            <ImageBrush  ImageSource="/assets/bg.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+
+        <phone:Pivot Name="SettingsPivot" SelectionChanged="SettingsPivot_SelectionChanged" HeaderTemplate="{StaticResource PivotItemTitleStyle}">
+            <phone:PivotItem Header="Profile" Name="profilePivotItem" Margin="14,22,10,6">
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel x:Name="ProfileRegisterPanel" Margin="0,140,0,260" Visibility="Collapsed" >
+                            <TextBlock Margin="12,0,0,0" Style="{StaticResource PhoneTextSmallStyle}" Text="To benefit from the advanced Guardian features, you need to be a registered user." TextWrapping="Wrap" />
+                            <UC:LoginControl x:Name="LiveLoginControl" ></UC:LoginControl>
+                        </StackPanel>
+                        <StackPanel x:Name="ProfilePanel" ScrollViewer.VerticalScrollBarVisibility="Auto" Visibility="Collapsed" >
+                            <ScrollViewer>
+                                <StackPanel Height="560">
+                                    <TextBlock Text="Name" Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle3Style}" />
+
+                                    <TextBox x:Name="NameTextBox" MaxLength="30" Height="71" TextWrapping="Wrap" MouseLeave="NameTextBox_MouseLeave" InputScope="PersonalFullName" />
+                                    <TextBlock Text="Email id" Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle3Style}" />
+
+                                    <TextBox x:Name="LiveIdTextBlock" MaxLength="35" Height="71"  IsReadOnly="True" InputScope="EmailUserName"/>
+                                    <TextBlock Text="Mobile Number" Margin="10,0,0,0" ></TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <TextBox x:Name="MobileNumberTextBox" MaxLength="20" Width="400" TextWrapping="Wrap" IsReadOnly="True" Height="71" InputScope="TelephoneNumber" />
+                                        <Image Source="/Assets/Images/edit.png" Height="48" Width="50"  Stretch="Fill"  Margin="-6,0,0,0" Tap="EditMobileNumberImage_Tap"/>
+                                        <Image Source="/Assets/Images/deletebox.png" Height="48" Width="50"  Stretch="Fill"  Margin="6,0,0,0" Tap="DeleteProfileImage_Tap" Visibility="Collapsed"/>
+                                    </StackPanel>
+                                    <TextBlock Text="Current Profile" Visibility="Collapsed" Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle3Style}" />
+
+                                    <toolkit:ListPicker x:Name="MobileNumberListPicker"  Visibility="Collapsed" Height="71"  SelectionChanged="MobileNumberListPicker_SelectionChanged"  ItemsSource="{Binding}">
+                                        <toolkit:ListPicker.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding MobileNumber}" />
+                                            </DataTemplate>
+                                        </toolkit:ListPicker.ItemTemplate>
+                                    </toolkit:ListPicker>
+                                    <TextBlock Text="Settings last synced to Guardian Server" Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle3Style}" />
+                                    <Grid x:Name="stcpnlLastSynced">
+
+                                        <TextBlock x:Name="LastSyncedProfileTextBox" Text="{Binding LastSynced}" Margin="20,5,10,0" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="219"/>
+                                        <Image Source="/Assets/images/sync.png" Width="54"  MouseEnter="SyncWithServer_Click" Margin="0,-26,9,23" HorizontalAlignment="Right"  Stretch="Fill"/>
+                                        <TextBlock Text="Sync now" Margin="0,20,0,0" HorizontalAlignment="Right"/>
+
+                                    </Grid>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                            <StackPanel x:Name="AddProfilePanel" Tap="AddProfilePanel_Tap" Orientation="Horizontal" HorizontalAlignment="Right" Visibility="Collapsed" >
+                                <Image Source="/Assets/Images/add.png" Height="22" Width="22"   Margin="0,4,5,0" />
+                                <TextBlock Text="Add Profile" VerticalAlignment="Top" FontSize="21" Foreground="#FF10AA1E" FontWeight="Bold" Margin="0,0,30,0" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem Header="Buddies" Name="buddiesPivotItem" >
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+                        <ScrollViewer Height="529">
+                            <StackPanel Height="518">
+                                <ListBox Name="BuddiesListBox" Margin="10,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="521" ItemsSource="{Binding}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <Border Background="Gray" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0" >
+                                                        <Image Source="{Binding Converter={StaticResource ContactPictureConverter}}" Width="40" Height="40" Stretch="Fill"  />
+                                                    </Border>
+                                                    <TextBlock Name="ContactResults" Width="280" TextWrapping="NoWrap" Text="{Binding Path=Name, Mode=OneWay}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="18,8,0,0" />
+                                                    <Border  Margin="30,20,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                                                        <Image Source="/Assets/Images/delete.png" Width="40" Height="40" Stretch="Fill" Tap="RemoveBuddyImage_Click"></Image>
+                                                    </Border>
+                                                </StackPanel>
+                                                <TextBlock Width="280" TextWrapping="NoWrap" Text="{Binding Path=PhoneNumber, Mode=OneWay}" FontSize="22" Margin="18,0,0,0" />
+                                                <TextBlock Width="280" TextWrapping="NoWrap" Text="{Binding Path=Email, Mode=OneWay}" FontSize="22" Margin="18,0,0,0" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                        </ScrollViewer>
+                        <StackPanel x:Name="AddBuddyPanel" Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Right" Tap="addBuddyButton_Click" >
+                            <Image Source="/Assets/Images/add.png" Height="22" Width="22" VerticalAlignment="Top"  Margin="0,4,5,0" />
+                            <TextBlock x:Name="AddBuddy" Text="Add Buddy" VerticalAlignment="Top" FontSize="21" Foreground="#FF10AA1E" FontWeight="Bold" Margin="0,0,30,0" />
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock x:Name="lblUnsubscribedUser" Text="* Marked buddies have been unsubscribed" FontSize="18" FontStyle="Italic" Margin="0,0,0,0" Foreground="#FFF96511" />
+                            <TextBlock x:Name="lblMarshalUser" Text="+ Marked buddies are Group Marshal's" FontSize="18" FontStyle="Italic" Margin="0,0,0,0" Foreground="#FFF96511" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem Header="Groups" Name="groupsPivotItem" >
+                <StackPanel>
+                    <StackPanel x:Name="GroupRegisterPanel" Margin="0,120,0,260" Visibility="Collapsed" >
+                        <TextBlock Margin="12,0,0,0" Style="{StaticResource PhoneTextSmallStyle}" Text="Groups can help you faster when you are in need. You need to be a registered Guardian user to add groups to your profile." TextWrapping="Wrap" />
+                        <UC:LoginControl ></UC:LoginControl>
+                    </StackPanel>
+
+                    <StackPanel x:Name="GroupPanel" Orientation="Vertical" Visibility="Collapsed">
+                        <ScrollViewer>
+                            <StackPanel>
+                                <ListBox Name="GroupsListBox" Margin="10,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="530" ItemsSource="{Binding}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <TextBlock Name="GroupName"  Width="280" TextWrapping="Wrap" Text="{Binding Path=Name, Mode=OneWay}" FontSize="30" Margin="5,8,0,0" />
+                                                    <Border  Margin="60,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                                                        <Image Source="/Assets/Images/delete.png" Width="40" Height="40" Stretch="Fill" Tap="RemoveGroupImage_Click"></Image>
+                                                    </Border>
+                                                </StackPanel>
+                                                <TextBlock Width="280" TextWrapping="NoWrap" Text="{Binding Path=PhoneNumber, Mode=OneWay}" FontSize="22" Margin="10,0,0,0" />
+                                                <TextBlock Width="280" TextWrapping="NoWrap" Text="{Binding Path=Email, Mode=OneWay}" FontSize="22" Margin="10,0,0,0" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                        </ScrollViewer>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Right" Tap="joinGroupButton_Click" >
+                            <Image Source="/Assets/Images/add.png" Height="22" Width="22" VerticalAlignment="Top"  Margin="0,4,5,0" />
+                            <TextBlock Text="Join Group" VerticalAlignment="Top" FontSize="21" Foreground="#FF10AA1E" FontWeight="Bold" Margin="0,0,30,0" />
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock x:Name="lblNonValidatedGroups" Text="* Marked groups are pending for verification" FontSize="18" FontStyle="Italic" Margin="0,10,0,0" Foreground="#FFF96511" />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </phone:PivotItem>
+            <phone:PivotItem Header="Preferences" ScrollViewer.VerticalScrollBarVisibility="Auto" Name="preferencePivotItem">
+                <Grid>
+                    <ScrollViewer>
+                        <StackPanel ScrollViewer.VerticalScrollBarVisibility="Auto" Name="StcPnlPreferences">
+                            <CheckBox x:Name="PinSos" Content="Pin SOS to Start Screen for OneTouch activation" FontSize="18" Checked="PinSosToStart_Checked" Unchecked="PinSosToStart_Unchecked"/>
+                            <toolkit:ToggleSwitch x:Name="LocationConsentSwitch" Height="113" IsChecked="true" Background="Black" Header="Allow Guardian to use Location Service" Unchecked="LocationConsentSwitch_Unchecked" Checked="LocationConsentSwitch_Checked"/>
+                            <TextBlock x:Name="TrackingConsentLabel" Text="  Send tracking locations to Guardian server" Foreground="lightgray" />
+                            <toolkit:ToggleSwitch x:Name="PostLocationConsentSwitch"  IsChecked="true" Background="Black" Margin="0,-24,0,0"  Unchecked="PostLocationConsentSwitch_Unchecked" Checked="PostLocationConsentSwitch_Checked"/>
+                            <TextBlock Text="  Phone's Location Services" Foreground="LightGray"  FontWeight="Normal" />
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" >
+                                    <StackPanel Width="100">
+                                        <TextBlock x:Name="LocationServiceTextBlock" Margin="10,0,0,0" Text="On" FontSize="32" FontWeight="Light" />
+                                    </StackPanel>
+                                    <StackPanel Width="345">
+                                        <Image x:Name="LocationServiceButton" Source="/Assets/Images/LocOffImage.png" MouseEnter="LocationServiceButton_Click" Height="40" HorizontalAlignment="Right"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <TextBlock></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Country" Margin="10,30,0,0" Style="{StaticResource PhoneTextTitle3Style}" Foreground="White" />
+
+                                <TextBox x:Name="CountryCodeTextBlock" Text="" IsEnabled="False" Margin="0,10,0,0" Visibility="Collapsed"/>
+
+                                <toolkit:ListPicker FullModeHeader="Select a country"  x:Name="CountryCodeListPicker" Margin="12,0,0,0"  ExpansionMode="FullScreenOnly"  IsEnabled="true"   SelectionChanged="CountryCodeListPicker_SelectionChanged" SelectedIndex="0" Visibility="Visible" ItemsSource="{Binding }" >
+                                    <toolkit:ListPicker.FullModeItemTemplate>
+                                        <DataTemplate>
+                                            <Grid >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.7*"/>
+                                                    <ColumnDefinition Width="0.3*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Margin="10,0,0,0" TextWrapping="Wrap"  Text="{Binding CountryName}" Style="{StaticResource PhoneTextTitle3Style}" FontWeight="Bold" FontSize="30"  />
+                                                <TextBlock Margin="20,0,0,0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" Text="{Binding IsdCode,Converter={StaticResource AddBracketsToStringConverter}}" FontSize="30"  />
+
+                                            </Grid>
+                                        </DataTemplate>
+                                    </toolkit:ListPicker.FullModeItemTemplate>
+                                    <toolkit:ListPicker.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                                                <TextBlock Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle3Style}" Text="{Binding CountryName, Mode=TwoWay}" FontWeight="Bold" FontSize="30"  />
+                                                <TextBlock Margin="20,0,0,0" Style="{StaticResource PhoneTextTitle3Style}" Text="{Binding IsdCode,Mode=TwoWay,Converter={StaticResource AddBracketsToStringConverter}}" FontSize="30" />
+                                            </StackPanel>
+
+                                        </DataTemplate>
+                                    </toolkit:ListPicker.ItemTemplate>
+                                </toolkit:ListPicker>
+
+                            </StackPanel>
+
+                            <Grid  Margin="0,20,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.3*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Emergency Numbers" Grid.ColumnSpan="2" Style="{StaticResource PhoneTextTitle3Style}" Foreground="White" />
+                                <TextBlock Text="Police" Grid.Row="1" Grid.Column="0"  Style="{StaticResource PhoneTextTitle3Style}" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBox x:Name="PoliceTb" InputScope="Number" Grid.Row="1" Grid.Column="1" Text="100" FontSize="20" Margin="-5,0,0,0"  TextAlignment="Left"/>
+                                <TextBlock Text="Ambulance" Grid.Row="2" Grid.Column="0"  Style="{StaticResource PhoneTextTitle3Style}" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBox x:Name="AmbulanceContactTb" InputScope="Number" Grid.Row="2" Grid.Column="1" Text="108" FontSize="20" Margin="-5,0,0,0" TextAlignment="Left"/>
+                                <TextBlock Text="Fire" Grid.Row="3" Grid.Column="0" Style="{StaticResource PhoneTextTitle3Style}" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBox x:Name="FireContactTb" InputScope="Number" Grid.Row="3" Grid.Column="1" Text="101" FontSize="20" Margin="-5,0,0,0"  TextAlignment="Left"/>
+
+                            </Grid>
+
+                            <TextBlock Text="Default caller on SOS" Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle3Style}" Foreground="White" />
+                            <toolkit:ListPicker x:Name="DefaultCallerListPicker" SelectionChanged="DefaultCallerListPicker_SelectionChanged" ItemsSource="{Binding}">
+                                <toolkit:ListPicker.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}" />
+                                    </DataTemplate>
+                                </toolkit:ListPicker.ItemTemplate>
+                            </toolkit:ListPicker>
+                            <StackPanel Name="MessageTemplatePanel" Visibility="Collapsed" >
+                                <TextBlock Text="  Message Template:"/>
+                                <TextBox Name="MessageTemplatePref" MaxLength="200" TextWrapping="Wrap" MouseLeave="MessageTemplatePref_MouseLeave"></TextBox>
+                            </StackPanel>
+                            <TextBlock Text="On SOS, inform buddies via" Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle3Style}"/>
+                            <CheckBox x:Name="SosTypeSMS" Content="SMS" FontSize="18" Checked="SosTypeSMS_Checked" Unchecked="SosTypeSMS_Unchecked"  />
+                            <CheckBox x:Name="SosTypeEmail" Content="Email" FontSize="18" Unchecked="SosTypeEmail_Unchecked" Checked="SosTypeEmail_Checked" />
+                            <StackPanel Name="FBStackPanel" Visibility="Collapsed" >
+                                <CheckBox x:Name="SosFB" Content="Facebook Post" FontSize="18" Checked="sosFB_Checked" Unchecked="SosFB_Unchecked"/>
+                                <TextBlock />
+                                <TextBlock TextWrapping="Wrap" Text="To post SOS messages to Facebook, please login once to Facebook and choose a group" Opacity="0.8" Margin="10,0,0,0" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
+                                <StackPanel Name="FBAuthTokenPanel" Visibility="Collapsed">
+                                    <TextBlock></TextBlock>
+                                    <TextBlock Text="You are connected to Facebook! Your tracking information will be posted to group selected below" TextWrapping="Wrap" Margin="10,0,0,0" FontStyle="Italic" FontSize="22"/>
+                                </StackPanel>
+                                <Button x:Name="FBLoginButton" Click="FB_Login_Click" Height="69">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/Assets/Images/fb_login.png"></ImageBrush>
+                                    </Button.Background>
+                                </Button>
+                                <TextBlock />
+                                <TextBlock Text="Facebook group" Margin="10,0,0,0" Style="{StaticResource PhoneTextSmallStyle}" ></TextBlock>
+                                <ProgressBar x:Name="m_ProgressBar_facebook" IsIndeterminate="True" Visibility="Collapsed"  Margin="0,0,0,0"></ProgressBar>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                                    <toolkit:ListPicker x:Name="FBGroupListPicker" Width="385" ItemsSource="{Binding}" SelectionChanged="FBGroupListPicker_SelectionChanged">
+                                        <toolkit:ListPicker.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=name}" />
+                                            </DataTemplate>
+                                        </toolkit:ListPicker.ItemTemplate>
+                                        <toolkit:ListPicker.FullModeItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=name}" FontSize="25" />
+                                            </DataTemplate>
+                                        </toolkit:ListPicker.FullModeItemTemplate>
+                                    </toolkit:ListPicker>
+                                    <Button Click="LoadFBGroupsImage_Click" VerticalAlignment="Top" Height="76" Width="70" Margin="-20,8,0,0" ClickMode="Press">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Assets/Images/refreshbox.png" Stretch="Fill" />
+                                        </Button.Background>
+                                    </Button>
+
+                                </StackPanel>
+                                <!--<Button x:Name="FBLogoutButton" Click="FB_Logout_Click" Height="69" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Assets/Images/fb_Logout.jpg"></ImageBrush>
+                                </Button.Background>
+                            </Button>-->
+                            </StackPanel>
+                            <TextBlock></TextBlock>
+                            <TextBlock Height="200"></TextBlock>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+        <ProgressBar x:Name="m_ProgressBar" IsIndeterminate="True" Visibility="Collapsed"  Margin="0,0,0,675"></ProgressBar>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Orientation="Vertical">
+            <StackPanel  Orientation="Horizontal" Name="stcPanelBtnAsync" Canvas.ZIndex="999" >
+                <Image Source="/Assets/applicationicon.png"  Height="32" Width="32" VerticalAlignment="Top"/>
+                <TextBlock x:Name="AppTitle" Text="SETTINGS" VerticalAlignment="Top" Style="{StaticResource SubMenuStyle}"/>
+                <Image Name="imgSyncButtonTop" Source="/Assets/images/sync.png" Height="38" Visibility="Collapsed" Width="200" VerticalAlignment="Center" Margin="125,0,0,0" MouseEnter="SyncWithServer_Click"  />
+                <!--Visibility="{Binding IsDataSynced, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"-->
+            </StackPanel>
+        </StackPanel>
+        <Popup Name="AddBuddyDetailsPopup">
+            <Border BorderThickness="1" BorderBrush="WhiteSmoke" Height="605" Width="411" Margin="35,114,33,121">
+
+                <StackPanel Background="Black" Height="605"  Width="411">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="  Name" Foreground="LightGray"  FontWeight="Normal" FontSize="24" />
+                        <Image Source="/Assets/Images/close.png" Margin="298,-1,0,0" Width="35" Height="35"  MouseEnter="Details_CloseClisk"/>
+                    </StackPanel>
+                    <TextBox x:Name="FullName" MaxLength="30" TextWrapping="Wrap" Text="{Binding Path=FullName, Mode=TwoWay}" FontSize="21"  KeyUp="FullName_KeyUp" InputScope="PersonalFullName" />
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="LightGray" TextWrapping="Wrap" Margin="0,12,0,0" Text="  Contact Numbers" FontSize="24"/>
+                        <HyperlinkButton x:Name="ChangeCountryCodeBtn" Margin="0,15,0,0" Content="(change country code)" FontSize="20" Click="ChangeCountryCode_Click"/>
+                    </StackPanel>
+                    <toolkit:ListPicker x:Name="PhoneNumberList" Visibility="Collapsed" ItemsSource="{Binding PhoneNumbers}" SelectionChanged="PhoneNumberList_SelectionChanged" ExpansionMode="ExpansionAllowed" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" Canvas.ZIndex="2" FontSize="24" BorderBrush="#FFC0D0FF" />
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBox x:Name="CountryCodeTextBox" TextWrapping="Wrap" Text="+91" IsReadOnly="True" Height="73" Width="110" TextAlignment="Right" InputScope="TelephoneCountryCode" />
+
+                        <TextBox x:Name="ContactNumber" InputScope="TelephoneNumber" TextWrapping="NoWrap" Margin="-10,0,0,0"  Text="{Binding PhoneNumber, Mode=TwoWay}" KeyUp="ContactNumber_KeyUp" HorizontalAlignment="Left" Width="311"/>
+                    </StackPanel>
+                    <TextBlock Foreground="LightGray" TextWrapping="Wrap" Text="  Email Addresses" Margin="0,12,0,0" FontSize="24"/>
+                    <toolkit:ListPicker x:Name="EmailIdList" ItemsSource="{Binding Path=EmailAddresses}" SelectionChanged="EmailIdList_SelectionChanged" ExpansionMode="ExpansionAllowed"  ScrollViewer.VerticalScrollBarVisibility="Auto" Canvas.ZIndex="1" BorderBrush="#FFC0D0FF" FontSize="24"/>
+
+
+                    <TextBox x:Name="EmailId" InputScope="EmailUserName" MaxLength="50" TextWrapping="Wrap" Text="{Binding Path=EmailAddress, Mode=TwoWay}" FontSize="24" KeyUp="EmailId_KeyUp" />
+
+                    <Button Content="Add" HorizontalAlignment="Center" Click="Add_DetailsClick" Width="139"/>
+                    <TextBlock x:Name="SocialSiteContactsWarning" Visibility="Collapsed" TextWrapping="Wrap" Text="  * Add Social Sites contacts manually." Foreground="#FFD14646"/>
+
+                </StackPanel>
+
+            </Border>
+        </Popup>
+
+        <Popup Name="AddBuddyPopup">
+            <Border BorderThickness="1" BorderBrush="WhiteSmoke" Height="605" Width="411" Margin="35,114,33,121">
+                <StackPanel Background="Black" Height="605"  Width="411">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBox MaxLength="15" Name="txtFilterText" Width="320" InputScope="Search"></TextBox>
+                        <Image Source="/Assets/Images/search.png" MouseEnter="SearchButton_Click" Width="48" Height="48"  Margin="-6,0,0,0"/>
+                        <Image Source="/Assets/Images/close.png" MouseEnter="CloseBuddy_Click" VerticalAlignment="Top" Width="35" Height="35"  Margin="12,0,0,0"/>
+                    </StackPanel>
+                    <ScrollViewer>
+                        <ListBox Name="buddiesSearchResult" Margin="10,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="480" ItemsSource="{Binding}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical">
+                                        <StackPanel Orientation="Horizontal" >
+                                            <Border Background="Gray" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0" >
+                                                <Image Source="{Binding Converter={StaticResource ContactPictureConverter}}" Width="36" Height="36" Stretch="Fill"  />
+                                            </Border>
+                                            <StackPanel Orientation="Vertical" >
+                                                <TextBlock Name="ContactResults" Width="250" TextWrapping="Wrap" Text="{Binding Path=DisplayName, Mode=TwoWay}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="18,8,0,0" />
+                                                <!--<TextBox Name="ContactNumber" Width="250" TextWrapping="Wrap" Text="{Binding Path=PhoneNumber, Mode=TwoWay}" FontSize="15" Margin="18,8,0,0" KeyUp="ContactNumber_KeyUp"/>-->
+                                            </StackPanel>
+                                            <Border Margin="30,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                                                <Image Source="/Assets/Images/add.png" Width="40" Height="40" Stretch="Fill" Tap="AddBuddyImage_Click"></Image>
+                                            </Border>
+                                        </StackPanel>
+                                        <!--<StackPanel Orientation="Horizontal">
+                                            <TextBox Name="ContactNumber" Width="250" TextWrapping="Wrap" Text="{Binding Path=PhoneNumber, Mode=TwoWay}" FontSize="21" Margin="44,8,0,0" KeyUp="ContactNumber_KeyUp"/>
+                                        </StackPanel>-->
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+        </Popup>
+        <Popup Name="JoinGroupPopup">
+            <Border BorderThickness="1" BorderBrush="WhiteSmoke" Height="605" Width="411" Margin="35,114,33,121">
+                <StackPanel Background="Black" Height="605"  Width="411">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBox MaxLength="20" Name="txtFilterGroupText" Width="320" InputScope="Search"></TextBox>
+                        <Image Source="/Assets/Images/search.png" MouseEnter="GroupSearchButton_Click" Width="48" Height="48"  Margin="-6,0,0,0"/>
+                        <Image Source="/Assets/Images/close.png" MouseEnter="CloseGroup_Click" VerticalAlignment="Top" Width="35" Height="35"  Margin="12,0,0,0"/>
+                    </StackPanel>
+                    <ScrollViewer>
+                        <ListBox Name="groupsSearchResult" Margin="10,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="480" ItemsSource="{Binding}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock Name="GroupName" Width="250" Text="{Binding Path=GroupName, Mode=OneWay}" FontSize="30" Margin="18,8,0,0" TextTrimming="WordEllipsis" />
+                                        <Border Margin="30,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                                            <Image Source="/Assets/Images/add.png" Width="32" Height="32" Stretch="Fill" Tap="JoinGroupImage_Click"></Image>
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+        <Popup Name="JoinGroupDetailsPopup">
+            <Border BorderThickness="1" BorderBrush="WhiteSmoke" Height="605" Width="411" Margin="35,114,33,121">
+                <Grid Background="Black">
+                    <Image Source="/Assets/Images/close.png" MouseEnter="CloseDetailsGroup_Click" VerticalAlignment="Top" Width="35" Height="35"  Margin="372,0,2,0"/>
+                    <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                        <TextBlock x:Name="lblJoinGroup" Width="Auto"  TextWrapping="Wrap" Text="" FontSize="25" Margin="10,30,0,0"/>
+                        <TextBox MaxLength="25" x:Name="txtJoinGroupText" Margin="0,10,10,0" InputScope="EmailUserName"/>
+                    </StackPanel>
+                    <Button Content="Add" HorizontalAlignment="Left" Margin="129,252,0,0" VerticalAlignment="Top" Click="Details_JoinGroupClick" Width="139"/>
+                    <TextBlock  Name="lblJoinGroupError" Width="Auto" TextWrapping="Wrap" Height="Auto" Text="* Please provide valid Organization Email Id" FontSize="25" Margin="10,518,0,14" Foreground="#FFE81C1C"/>
+                </Grid>
+            </Border>
+        </Popup>
+
+        <Popup Name="FBLoginPopup">
+
+            <phone:WebBrowser Name="fbLoginBrowser" Height="730" Width="480" LoadCompleted="fbLoginBrowser_LoadCompleted"></phone:WebBrowser>
+
+        </Popup>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar x:Name="SettingsAppBar" IsVisible="True" IsMenuEnabled="True" Mode="Minimized">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem  x:Name="UnRegister" Text="Unregister" Click="UnRegister_Click"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

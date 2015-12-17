@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.microsoft.com/sos/2013/02" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.microsoft.com/sos/2013/02" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.microsoft.com/sos/2013/02/Imports">
+      <xsd:import schemaLocation="http://localhost:39018/GeoUpdate.svc?xsd=xsd0" namespace="http://www.microsoft.com/sos/2013/02" />
+      <xsd:import schemaLocation="http://localhost:39018/GeoUpdate.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:39018/GeoUpdate.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:39018/GeoUpdate.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GeoService_PostMyLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostMyLocation" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_PostMyLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostMyLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_PostLocationWithMedia_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostLocationWithMedia" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_PostLocationWithMedia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostLocationWithMediaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_StopPostings_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopPostings" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_StopPostings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopPostingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_StopSOSOnly_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopSOSOnly" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_StopSOSOnly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopSOSOnlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_UpdateLastSMSPostedTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLastSMSPostedTime" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_UpdateLastSMSPostedTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLastSMSPostedTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_ReportIncident_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportIncident" />
+  </wsdl:message>
+  <wsdl:message name="GeoService_ReportIncident_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportIncidentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GeoService">
+    <wsdl:operation name="PostMyLocation">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/PostMyLocation" message="tns:GeoService_PostMyLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/PostMyLocationResponse" message="tns:GeoService_PostMyLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostLocationWithMedia">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/PostLocationWithMedia" message="tns:GeoService_PostLocationWithMedia_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/PostLocationWithMediaResponse" message="tns:GeoService_PostLocationWithMedia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopPostings">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/StopPostings" message="tns:GeoService_StopPostings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/StopPostingsResponse" message="tns:GeoService_StopPostings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopSOSOnly">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/StopSOSOnly" message="tns:GeoService_StopSOSOnly_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/StopSOSOnlyResponse" message="tns:GeoService_StopSOSOnly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastSMSPostedTime">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/UpdateLastSMSPostedTime" message="tns:GeoService_UpdateLastSMSPostedTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/UpdateLastSMSPostedTimeResponse" message="tns:GeoService_UpdateLastSMSPostedTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportIncident">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/ReportIncident" message="tns:GeoService_ReportIncident_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GeoService/ReportIncidentResponse" message="tns:GeoService_ReportIncident_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

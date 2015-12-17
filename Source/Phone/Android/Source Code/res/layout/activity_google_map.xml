@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/BottomRelOut" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/webView"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="10dp"
+        android:text="Speed(kmph):"
+        android:textStyle="bold" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_oval"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_alignBaseline="@id/tv_speed"
+        android:layout_alignBottom="@id/webView"
+        android:layout_marginBottom="25dp"
+        android:layout_toRightOf="@id/tv_speed"
+        android:background="@drawable/shape_oval"
+        android:gravity="center"
+        android:text="2"
+        android:textStyle="bold" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_recordedat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/webView"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="10dp"
+        android:text="22:48:12"
+        android:textStyle="bold" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_recordedat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/webView"
+        android:layout_marginBottom="25dp"
+        android:layout_toLeftOf="@id/tv_recordedat_time"
+        android:text="Recorded - "
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/BottomRelOut"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black" >
+
+        <ImageView
+            android:id="@+id/imageSOSBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:id="@+id/imageTrackBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/imageSOSBtn" />
+
+        <ImageView
+            android:id="@+id/imageRouteBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/imageTrackBtn"
+            android:src="@drawable/route" />
+
+        <ImageView
+            android:id="@+id/imageCamera"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/imageRouteBtn"
+            android:src="@drawable/camera" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageIcon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/iconic_tile_small" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_tracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/imageIcon"
+        android:text="@string/track_me_tile"
+        android:textSize="@dimen/font_size_eighteen"
+        android:textStyle="bold" />
+
+    <com.guardianapp.views.CusFntTextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:text="@string/trackme_on"
+        android:textColor="@color/green"
+        android:textSize="@dimen/font_size_eighteen"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/SearchRelOut"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_status"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" >
+
+        <EditText
+            android:id="@+id/et_Search"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@drawable/trackme_search_box"
+            android:drawableRight="@drawable/searchblack"
+            android:ems="10"
+            android:imeOptions="actionSearch"
+            android:inputType="text" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_serchResult"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/BottomRelOut"
+        android:layout_alignLeft="@+id/SearchRelOut"
+        android:layout_below="@+id/SearchRelOut"
+        android:dividerHeight="1.0sp"
+        android:focusableInTouchMode="false"
+        android:listSelector="@android:color/transparent"
+        android:visibility="gone" >
+    </ListView>
+
+</RelativeLayout>

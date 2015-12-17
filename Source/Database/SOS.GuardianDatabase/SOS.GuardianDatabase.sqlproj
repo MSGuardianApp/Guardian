@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SOS.GuardianDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{c72b6c27-3a59-4247-b624-7970a0294187}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureDatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SOS.GuardianDatabase</RootNamespace>
+    <AssemblyName>SOS.GuardianDatabase</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="migrate" />
+    <Folder Include="migrate\Stored Procedures" />
+    <Folder Include="migrate\Tables" />
+    <Folder Include="Security" />
+    <Folder Include="dbo\Functions" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SOS.GuardianDatabase.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Buddy.sql" />
+    <Build Include="dbo\Tables\Profile.sql" />
+    <Build Include="dbo\Tables\User.sql" />
+    <Build Include="dbo\Tables\GroupMarshal.sql" />
+    <Build Include="dbo\Tables\GroupMembership.sql" />
+    <Build Include="dbo\Tables\LiveLocation.sql" />
+    <Build Include="dbo\Stored Procedures\RemoveBuddyRelation.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteWhileUnregisterUser.sql" />
+    <Build Include="dbo\Stored Procedures\SubscribeBuddyForProfileAction.sql" />
+    <Build Include="dbo\Tables\LiveSession.sql" />
+    <Build Include="dbo\Views\LiveGroupMemberView.sql" />
+    <Build Include="dbo\Stored Procedures\RemoveLiveLocation.sql" />
+    <Build Include="dbo\Stored Procedures\LocateBuddyCount.sql" />
+    <Build Include="dbo\Views\LiveLocateBuddyView.sql" />
+    <Build Include="dbo\Views\LocateBuddyCountView.sql" />
+    <Build Include="dbo\Stored Procedures\PostLiveLocation.sql" />
+    <Build Include="dbo\Stored Procedures\PurgeStaleLiveLocations.sql" />
+    <Build Include="dbo\Stored Procedures\ClearInProcessLiveSessions.sql" />
+    <Build Include="dbo\Stored Procedures\GetSessionsForNotifications.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateNotificationComplete.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteGroupMembership.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteGroupMarshal.sql" />
+    <Build Include="dbo\Stored Procedures\CreatePublicGroupMembership.sql" />
+    <Build Include="migrate\Tables\ProfileMap.sql" />
+    <Build Include="migrate\Tables\UserMap.sql" />
+    <Build Include="migrate\Stored Procedures\GetAllMapProfiles.sql" />
+    <Build Include="migrate\Stored Procedures\GetAllMapUsers.sql" />
+    <Build Include="migrate\Stored Procedures\InsertBuddyToSQLBuddyTable.sql" />
+    <Build Include="migrate\Stored Procedures\InsertGeoLocationToSQLLiveLocationTable.sql" />
+    <Build Include="migrate\Stored Procedures\InsertProfileToSQLProfileTable.sql" />
+    <Build Include="migrate\Stored Procedures\InsertUserToSQLUserTable.sql" />
+    <Build Include="Security\migrate.sql" />
+    <Build Include="dbo\Stored Procedures\StopSOSOnly.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateGroupMembership.sql" />
+    <Build Include="dbo\Stored Procedures\SubscribeLiveUserToSubGroup.sql" />
+    <Build Include="dbo\Views\LocateBuddyView.sql" />
+    <Build Include="dbo\Stored Procedures\ValidateAndSaveMarshal.sql" />
+    <Build Include="migrate\Stored Procedures\InsertProfileToSQLGroupMarshalTable.sql" />
+    <Build Include="migrate\Stored Procedures\InsertProfileToSQLGroupMembershipTable.sql" />
+    <Build Include="dbo\Stored Procedures\UpdatePrimeBuddy.sql" />
+    <Build Include="dbo\Functions\TicksToDateTime.sql" />
+    <Build Include="dbo\Stored Procedures\ManageProfileUser.sql" />
+    <Build Include="dbo\Stored Procedures\CreateBuddy.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateDispatchInfo.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateProfileMap.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateLastSMSPostedTime.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SOS.GuardianDatabase.refactorlog" />
+  </ItemGroup>
+</Project>

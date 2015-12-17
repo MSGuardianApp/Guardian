@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="tile_title_font">17sp</dimen>
+    <dimen name="tile_subtitle_font">15sp</dimen>
+    <dimen name="tile_subsubtitle_font">10sp</dimen>
+    <dimen name="tile_divider_dim">13dp</dimen>
+    <dimen name="sos_tile_font">22sp</dimen>
+    <dimen name="font_size_twofifty">220sp</dimen>
+
+</resources>

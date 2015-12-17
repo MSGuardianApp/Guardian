@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfResultInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultInfo" nillable="true" type="tns:ResultInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultInfo" nillable="true" type="tns:ArrayOfResultInfo" />
+  <xs:complexType name="ResultInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultType" type="tns:ResultTypeEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultInfo" nillable="true" type="tns:ResultInfo" />
+  <xs:simpleType name="ResultTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Information" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Exception" />
+      <xs:enumeration value="AuthError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResultTypeEnum" nillable="true" type="tns:ResultTypeEnum" />
+  <xs:complexType name="BasicProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataInfo" nillable="true" type="tns:ArrayOfResultInfo" />
+      <xs:element minOccurs="0" name="IsSOSOn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTrackingOn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastLocs" nillable="true" type="tns:ArrayOfBasicGeoTag" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileID" type="xs:long" />
+      <xs:element minOccurs="0" name="UserID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicProfile" nillable="true" type="tns:BasicProfile" />
+  <xs:complexType name="ArrayOfBasicGeoTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicGeoTag" nillable="true" type="tns:BasicGeoTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicGeoTag" nillable="true" type="tns:ArrayOfBasicGeoTag" />
+  <xs:complexType name="BasicGeoTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accuracy" type="xs:double" />
+      <xs:element minOccurs="0" name="IsSOS" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Long" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MediaUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicGeoTag" nillable="true" type="tns:BasicGeoTag" />
+</xs:schema>

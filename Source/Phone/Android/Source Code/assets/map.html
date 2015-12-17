@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    <script type="text/javascript">
+        var map = null,
+            directionsManager = null,
+            directionsErrorEventObj = null,
+            directionsUpdatedEventObj = null,
+            tappedLocArr = [],
+            sourceLocArr = [],
+            searchLocArr = [],
+            locBuddyDirSrcLoc = [],
+            locBuddyDirDesLoc = [],
+            points = new Array(),
+            srcPin = null,
+            destPin1 = null,
+            destPin2 = null,
+            destPin3 = null,
+            original_lat,
+            original_long,
+            latLongArrayString = '',
+            isLocateBuddyOrNearHelpFlag = false,
+            locateBuddyLastLoc,
+            currentUserLastLoc,
+            locArr;
+
+
+
+        var KEY = 'AoBFMSS4EOyLV9jxIidneive6OtB21mVyzr520OsUwO51tFxCe9vgShVsHs2rz7U';
+
+        var sourceLat, sourceLong;
+
+        var getMap = function() {
+            map = new Microsoft.Maps.Map(document.getElementById('mapDiv'), {
+                credentials: KEY,
+                center: new Microsoft.Maps.Location(17.429474, 78.342143),
+                mapTypeId: Microsoft.Maps.MapTypeId.road,
+                zoom: 13
+            });
+            
+            Android.mapLoaded();
+            Microsoft.Maps.Events.addHandler(map, 'click', addSelectedLatLong);
+        }
+        
+        function addSelectedLatLong(e) {
+            if (e.targetType == "map") {
+                var point = new Microsoft.Maps.Point(e.getX(), e.getY());
+                var loc = e.target.tryPixelToLocation(point);
+                emptyArray(tappedLocArr);
+                tappedLocArr.push({
+                    latitude: loc.latitude,
+                    longitude: loc.longitude
+                });
+
+            }
+        }
+
+        function emptyArray(sourceArray) {
+            while (sourceArray.length > 0) {
+                sourceArray.pop();
+            }
+        }
+
+        function takeMeToMyPlace(lat, long) {
+            if (lat != null && long != null) {
+                original_lat = parseFloat(lat);
+                original_long = parseFloat(long);
+                var current_location = new Microsoft.Maps.Location(original_lat, original_long);
+                map.setView({
+                    center: current_location,
+                    zoom: 13
+                });
+            }
+        }
+
+        function locateBuddyOrUser(lat, long, isLocatedBuddy) {
+            var userType = "locatebuddy";
+            if (isLocatedBuddy == 'true') {
+                userType = "locatebuddy";
+            } else {
+                userType = "user";
+            }
+            PutPushPin(lat, long, userType);
+            locateBuddyLastLoc = new Microsoft.Maps.Location(lat, long);
+            var current_location = new Microsoft.Maps.Location(lat, long);
+            map.setView({
+                center: current_location,
+                zoom: 13
+            });
+
+        }
+
+        function createRouteToSelectedAddress(srcLat, srcLong) {
+            if (sourceLocArr.length > 0) {
+                emptyArray(sourceLocArr);
+            }
+            if (searchLocArr.length > 0) {
+                emptyArray(searchLocArr);
+            }
+            map.entities.remove(destPin2);
+            sourceLocArr.push({
+                latitude: srcLat,
+                longitude: srcLong
+            });
+
+            if (tappedLocArr.length == 0) {
+                Android.showEmptyRouteToast();
+            }
+
+            attachPushPinsToMap(false);
+
+            createDirections();
+        }
+
+        function createRouteToDestLocation(srcLat, srcLong, destLat, destLong, showBuddyPin) {
+            if (sourceLocArr.length > 0) {
+                emptyArray(sourceLocArr);
+            }
+            map.entities.remove(destPin2);
+            sourceLocArr.push({
+                latitude: srcLat,
+                longitude: srcLong
+            });
+
+            if (searchLocArr.length > 0) {
+                emptyArray(searchLocArr);
+            }
+            currentUserLastLoc = new Microsoft.Maps.Location(srcLat, srcLong);
+            searchLocArr.push({
+                latitude: destLat,
+                longitude: destLong
+            });
+
+            attachPushPinsToMap(showBuddyPin);
+
+            createDirections();
+
+            var current_location = new Microsoft.Maps.Location(srcLat, srcLong);
+            map.setView({
+                center: current_location,
+                zoom: 13
+            });
+        }
+
+        function attachPushPinsToMap(isLocateBuddy) {
+        
+           locArr = (searchLocArr.length > 0) ? searchLocArr : tappedLocArr;
+
+            map.entities.push(new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(sourceLocArr[0].latitude, sourceLocArr[0].longitude), {
+                text: '',
+                icon: 'start.png',
+                width: 24,
+                height: 40
+            }));
+            
+            if (isLocateBuddy == 'true') {
+
+                destPin2 = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(locArr[0].latitude, locArr[0].longitude), {
+                    text: 'B',
+                    icon: 'buddy.png',
+                    width: 24,
+                    height: 40
+                });
+            } else {
+
+                destPin2 = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(locArr[0].latitude, locArr[0].longitude), {
+                    text: 'D',
+                    icon: 'start.png',
+                    width: 24,
+                    height: 40
+
+                });
+            }
+            map.entities.push(destPin2);
+
+        }
+
+        var createDirections = function() {
+            if (!directionsManager) {
+                Microsoft.Maps.loadModule('Microsoft.Maps.Directions', {
+                    callback: createDrivingRoute
+                });
+            } else {
+                createDrivingRoute();
+            }
+        }
+
+        var createDrivingRoute = function() {
+            if (!directionsManager) {
+                createDirectionsManager();
+            }
+            directionsManager.resetDirections();
+            directionsManager.setRequestOptions({
+                routeMode: Microsoft.Maps.Directions.RouteMode.driving
+            });
+            directionsManager.addWaypoint(new Microsoft.Maps.Directions.Waypoint({
+                location: new Microsoft.Maps.Location(sourceLocArr[0].latitude, sourceLocArr[0].longitude)
+            }));
+
+            var current_location = new Microsoft.Maps.Location(sourceLocArr[0].latitude, sourceLocArr[0].longitude);
+            map.setView({
+                zoom: 13
+            });
+
+            directionsManager.addWaypoint(new Microsoft.Maps.Directions.Waypoint({
+                location: new Microsoft.Maps.Location(locArr[0].latitude, locArr[0].longitude)
+            }));
+
+            directionsManager.setRenderOptions({
+                itineraryContainer: document.getElementById('itineraryDiv'),
+                waypointPushpinOptions: {
+                    visible: false
+                },
+                viapointPushpinOptions: {
+                    visible: false
+                }
+            });
+            directionsManager.calculateDirections();
+
+
+        }
+
+
+        function createDrivingRouteBetweenUandB(srcLoc, destLoc) {
+            if (!directionsManager) {
+                createDirectionsManager();
+            }
+            directionsManager.resetDirections();
+            directionsManager.setRequestOptions({
+                routeMode: Microsoft.Maps.Directions.RouteMode.driving
+            });
+            directionsManager.addWaypoint(new Microsoft.Maps.Directions.Waypoint({
+                location: srcLoc
+            }));
+
+            directionsManager.addWaypoint(new Microsoft.Maps.Directions.Waypoint({
+                location: destLoc
+            }));
+
+            directionsManager.setRenderOptions({
+                itineraryContainer: document.getElementById('itineraryDiv'),
+                waypointPushpinOptions: {
+                    visible: false
+                },
+                viapointPushpinOptions: {
+                    visible: false
+                }
+            });
+            directionsManager.calculateDirections();
+        }
+
+
+        var createDirectionsManager = function() {
+            if (!directionsManager) {
+                directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+            }
+            directionsManager.resetDirections();
+            directionsErrorEventObj = Microsoft.Maps.Events.addHandler(directionsManager, 'directionsError', function(arg) {
+                alert(arg.message)
+            });
+            directionsUpdatedEventObj = Microsoft.Maps.Events.addHandler(directionsManager, 'directionsUpdated', function() {});
+        }
+
+        function PutPushPin(lat, long, flagType) {
+            var iconUrl = "sos.png";
+            var label;
+            if (flagType == 'sos') {
+                iconUrl = "sos.png";
+                label = 'S';
+            } else if (flagType == 'track') {
+                iconUrl = "track.png";
+                label = 'T';
+            } else if (flagType == 'marshal') {
+                iconUrl = "buddy.png";
+                label = 'M';
+            } else if (flagType == 'start') {
+                iconUrl = "start.png";
+                label = '';
+            } else if (flagType == 'locatebuddy') {
+                iconUrl = "buddy.png";
+                label = 'B';
+            } else if (flagType == 'user') {
+                iconUrl = "pin_source.png";
+                label = '';
+            } else if (flagType == 'dest') {
+                iconUrl = "start.png";
+                label = 'D';
+            }
+
+            var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(lat, long), {
+                text: label,
+                icon: iconUrl,
+                width: 24,
+                height: 40
+            });
+            if (flagType != 'marshal') //Don't push Buddy Pin on Portal Map
+                map.entities.push(pin);
+            return pin;
+
+
+        }
+
+        function createRouteToDestLocArray(currentLat, currentLong, latLongString) {
+            latLongArrayString = latLongString;
+            latLongArrayString = latLongArrayString.replace('[', '').replace(']', '').trim();
+            emptyArray(tappedLocArr);
+            emptyArray(sourceLocArr);
+            var current_location = new Microsoft.Maps.Location(currentLat, currentLong);
+            map.setView({
+                center: current_location,
+                zoom: 13
+            });
+            createDrivingRouteForLocArray();
+        }
+
+        function createDrivingRouteForLocArray() {
+            map.entities.clear();
+            var state = '0';
+            var splitLatLong = latLongArrayString.split(',');
+            var flagType = 'track';
+
+            for (i = 0; i < splitLatLong.length; i++) {
+                var latLongVal = splitLatLong[i].split('-');
+
+                if (latLongVal[2] == "0") {
+                    flagType = 'track';
+                } else if (latLongVal[2] == "1") {
+                    flagType = 'sos';
+                }
+                points.push(new Microsoft.Maps.Location(latLongVal[0], latLongVal[1]));
+                if (i == 0) {
+                    PutPushPin(latLongVal[0], latLongVal[1], flagType);
+                }
+                if (i == splitLatLong.length - 1) {
+                    destPin1 = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(latLongVal[0], latLongVal[1]), {
+                        text: '',
+                        icon: 'start.png',
+                        width: 24,
+                        height: 40
+                    });
+                    map.entities.push(destPin1);
+                    map.setView({
+                        zoom: 10
+                    });
+                }
+            }
+
+            lastDrawnPoint = points[points.length - 1];
+            DrawPath(points, flagType);
+
+        }
+
+        function DrawPath(points, type) {
+            var color;
+            if (type == 'sos')
+                color = new Microsoft.Maps.Color(200, 237, 125, 49);
+
+            else if (type == 'track')
+                color = new Microsoft.Maps.Color(200, 112, 173, 71);
+            else
+                color = new Microsoft.Maps.Color(200, 0, 0, 0);
+            var line = new Microsoft.Maps.Polyline(points, {
+                strokeColor: color,
+                strokeThickness: 4
+            });
+            map.setView({
+                zoom: 13
+            });
+            map.entities.push(line);
+        }
+
+        function appendPathToExisting(lat, long, type) {
+            var color;
+            var pointsArray = new Array();
+            var currentPoint = new Microsoft.Maps.Location(lat, long);
+
+            map.entities.remove(destPin1);
+            destPin1 = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(lat, long), {
+                text: '',
+                icon: 'start.png',
+                width: 24,
+                height: 40
+            });
+            map.entities.push(destPin1);
+            map.setView({
+                zoom: 10
+            });
+
+            if (type == 0) {
+                color = new Microsoft.Maps.Color(200, 112, 173, 71);
+            } else if (type == 1) {
+                color = new Microsoft.Maps.Color(200, 237, 125, 49);
+            } else {
+                color = new Microsoft.Maps.Color(200, 0, 0, 0);
+            }
+            pointsArray.push(lastDrawnPoint);
+            pointsArray.push(currentPoint);
+
+            lastDrawnPoint = currentPoint;
+
+            var polyLine = new Microsoft.Maps.Polyline(pointsArray, {
+                strokeColor: color,
+                strokeThickness: 4
+            });
+            map.setView({
+                zoom: 13
+            });
+            map.entities.push(polyLine);
+
+        }
+
+        var drawPolyLine = function(lat, long, isLocatedBuddy , type) {
+            var locations = new Array();
+            var currentLocateBuddyLoc;
+            var currentUserLoc;
+
+            if (isLocatedBuddy == 'true') {
+                currentLocateBuddyLoc = new Microsoft.Maps.Location(lat, long);
+                if (currentLocateBuddyLoc != locateBuddyLastLoc) {
+
+                    locations.push(locateBuddyLastLoc);
+                    locations.push(currentLocateBuddyLoc);
+                    locateBuddyLastLoc = new Microsoft.Maps.Location(lat, long)
+                    DrawPath(locations , type);
+                }
+            } else {
+                currentUserLoc = new Microsoft.Maps.Location(lat, long);
+                if (currentUserLoc != currentUserLastLoc) {
+                    locations.push(currentUserLastLoc);
+                    locations.push(currentUserLoc);
+                    currentUserLastLoc = new Microsoft.Maps.Location(lat, long)
+                    DrawPath(locations , type);
+                }
+
+            }
+            createDrivingRouteBetweenUandB(locateBuddyLastLoc, currentUserLastLoc);
+
+        }
+
+        function showMapInAerialView(lat, long) {
+            map.setView({
+                zoom: 13,
+                mapTypeId: Microsoft.Maps.MapTypeId.aerial
+            });
+        }
+
+        function showMapInRoadView() {
+            map.setView({
+                zoom: 13,
+                mapTypeId: Microsoft.Maps.MapTypeId.road
+            });
+        }
+    </script>
+</head>
+
+<body onload="getMap();">
+    <div id='mapDiv' style="width:400px; height:400px;"></div>
+    <div id='itineraryDiv'></div>
+</body>
+
+</html>

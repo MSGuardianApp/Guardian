@@ -1,0 +1,29 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "AppDelegate.h"
+    #import "Reachability.h"
+    #import "GlobalClass.h"
+    #import "MicrosoftLiveConnect.h"
+    #import "URL_Header.h"
+    #import "DBaseInteraction.h"
+    #import "LiveDetails.h"
+    #import "MyProfile.h"
+    #import <CoreLocation/CoreLocation.h>
+    #import "KVNProgress.h"
+    #import "ViewPagerController.h"
+    #import "GeoTag.h"
+    #import "NBPhoneNumberUtil.h"
+#endif

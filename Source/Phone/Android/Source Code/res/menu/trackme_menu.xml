@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.guardian.HomeScreenActivity" >
+
+    <item
+    android:id="@+id/aerial"
+    android:title="@string/menu_aerial_view"/>
+	<item
+    android:id="@+id/road_view"
+    android:title="@string/menu_road_view"/>
+	<item
+    android:id="@+id/focus_user"
+    android:title="@string/current_location"/>
+	/>
+
+</menu>

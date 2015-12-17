@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ListView
+        android:id="@+id/lv_buddiesList"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rel_AddBuddies"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        android:dividerHeight="10.0sp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:listSelector="@android:color/transparent" />
+
+    <RelativeLayout
+        android:id="@+id/rel_AddBuddies"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" >
+
+        <RelativeLayout
+            android:id="@+id/rel_AddButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="5dp" >
+
+            <ImageView
+                android:id="@+id/AddIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/add" />
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_AddBuddies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/AddIcon"
+                android:text="@string/add_buddy_sett"
+                android:textColor="#54C758"
+                android:textSize="@dimen/font_size_fifteen"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_buddiesDes1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_AddButtons"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="@dimen/dp_2"
+            android:text="@string/buddies_des1"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/font_size_twelve"
+            android:textStyle="italic" />
+
+        <com.guardianapp.views.CusFntTextView
+            android:id="@+id/tv_buddiesDes2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_buddiesDes1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="@string/buddies_des2"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/font_size_twelve"
+            android:textStyle="italic" />
+    </RelativeLayout>
+
+</RelativeLayout>

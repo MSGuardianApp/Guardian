@@ -1,0 +1,189 @@
+﻿div.LoginModal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+}
+    div.LoginModal > img.loading {
+        position: relative;
+        top: 200px;
+        left: 50%;
+        /*margin-left: -10px;
+        margin-top: -10px;*/
+        z-index: 0;
+    }
+section.page.search img.loading {
+    vertical-align: bottom;
+}
+
+  div.LoginModal > div.content > img.close {
+        position: absolute;
+        top: -21px;
+        right: -21px;
+        z-index: 4;
+    }
+
+    div.LoginModal > div.content {
+        /*width: 100%;*/
+        width: 400px;
+        margin: 250px auto 50px auto;
+        z-index: 2;
+        display: block;
+        height: 300px;
+        position: relative;
+        /*position: absolute;*/
+        background: #FFF; 
+    }
+    div.LoginModal > div.content > div.content-main {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        /*overflow-y: scroll;*/
+         
+    }
+        div.LoginModal > div.content > div.content-main > img {
+            display: block;
+            margin: 0 auto; 
+            height: 100%;
+        }
+    a.LoginModal > img {
+border: none;
+outline: none;
+}
+
+.fragment 
+{
+	box-sizing:border-box;
+   
+     width: 100%;
+    height: 100%;
+}
+
+.Login
+{
+    
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 60px 10px 1fr;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+      
+}
+
+.marshalTable td {
+    width:25%;
+    
+}
+.DeleteImage:hover {
+    cursor:pointer;
+}
+
+.tableDisplay thead{
+    color:#ed7d31;
+}
+
+.Login .Banner {
+       -ms-grid-row:1;
+    -ms-grid-column:1;
+     -ms-grid-column-span:2;
+    
+    display: -ms-grid;
+     -ms-grid-columns: 20% 10px 30% 8px 1fr;
+    
+    -ms-grid-rows: 50px 30px;
+
+        border-bottom-color:green;border-bottom-width:4px;border-bottom-style:solid;padding-bottom:5px;
+     border-top-color:#ED7D31;border-top-width:4px;border-top-style:solid;padding-bottom:5px;
+     
+}
+  .Login .Banner .pagetitle
+ {
+     font-size: 26pt;
+    line-height: 1.4;
+    font-weight: lighter;
+    /*text-transform: lowercase; */
+     color:#000000; 
+     margin-left:20px;
+      
+ }
+
+     
+ .Login .MainArea {
+    display: -ms-grid;
+    -ms-grid-columns: 50% 50%;
+    -ms-grid-rows:  30px 50px 80px 1fr ;
+    -ms-grid-row:3;
+    -ms-grid-column:1; 
+ }
+
+  .Login  .MainArea  .errorMsgLogin
+ {
+    -ms-grid-row:1; 
+    -ms-grid-column:1;
+    -ms-grid-column-span:2;
+    margin-left:20px;
+    font-weight: lighter;
+    font-size:medium;
+    color:red;
+ }
+  .Login  .MainArea  .sectiontitle
+ {
+    -ms-grid-row:2; 
+    -ms-grid-column:1;
+    -ms-grid-column-span:2;
+     font-size: 16pt;
+    line-height: 1.4;
+    margin-left:20px;
+    font-weight: lighter;
+    /*text-transform: lowercase; */
+    color:#ED7D31;
+    vertical-align:top;
+    
+ }
+ 
+ .Login .MainArea  .sectiondetails {
+    -ms-grid-row:3; 
+    -ms-grid-column:1;
+    -ms-grid-column-span:2; 
+     display: -ms-grid;
+    -ms-grid-columns: 50% 50%;
+    -ms-grid-rows:  1fr 1fr;
+    }
+.Login .MainArea .sectiondetails .leftside {
+    -ms-grid-row:1; 
+    -ms-grid-column:1; 
+     text-align:center;
+    font-size: 16pt;
+    line-height: 1.4;
+    font-weight: lighter;
+    /*text-transform: lowercase; */
+     color:#5caaf6;
+     vertical-align:top;
+     
+     text-decoration:none;
+    }
+    .Login .MainArea .sectiondetails .rightside {
+    -ms-grid-row:1; 
+    -ms-grid-column:2;
+     text-align:center;
+    font-size: 16pt;
+    line-height: 1.4;
+    font-weight: lighter;
+    /*text-transform: lowercase; */
+     color:#5caaf6;
+     vertical-align:top;  
+    
+    }
+    .Login .MainArea .sectiondetails .bottom {
+
+    -ms-grid-row:4; 
+    -ms-grid-column:1;
+    -ms-grid-column-span:2;
+    text-align:center;
+
+    }
+

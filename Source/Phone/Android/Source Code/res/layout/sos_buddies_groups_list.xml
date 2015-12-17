@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dp_5"
+        android:background="@drawable/bg_edittext" >
+
+        <LinearLayout
+            android:id="@+id/ll_nameCellNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/dp_5"
+            android:orientation="vertical" >
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/name"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/font_size_fifteen" />
+
+            <com.guardianapp.views.CusFntTextView
+                android:id="@+id/tv_phoneNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="@string/ph_no"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/font_size_ten" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_edittext"
+            android:src="@drawable/email" />
+
+        <ImageView
+            android:id="@+id/iv_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_email"
+            android:background="@drawable/bg_edittext"
+            android:src="@drawable/sms" />
+
+        <ImageView
+            android:id="@+id/iv_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_sms"
+            android:background="@drawable/bg_edittext"
+            android:src="@drawable/call" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.microsoft.com/sos/2013/02" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.microsoft.com/sos/2013/02" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.microsoft.com/sos/2013/02/Imports">
+      <xsd:import schemaLocation="http://localhost:39018/GroupService.svc?xsd=xsd0" namespace="http://www.microsoft.com/sos/2013/02" />
+      <xsd:import schemaLocation="http://localhost:39018/GroupService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:39018/GroupService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:39018/GroupService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOS.Service.Interfaces.DataContracts.OutBound" />
+      <xsd:import schemaLocation="http://localhost:39018/GroupService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GroupService_GetMembersForGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembersForGroup" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetMembersForGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembersForGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_Admin_GetAssociatedMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:Admin_GetAssociatedMembers" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_Admin_GetAssociatedMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Admin_GetAssociatedMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_Admin_RefreshMemberLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:Admin_RefreshMemberLocations" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_Admin_RefreshMemberLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Admin_RefreshMemberLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetListOfGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfGroups" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetListOfGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetListOfVolunteerGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfVolunteerGroups" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetListOfVolunteerGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfVolunteerGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetAdminProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminProfile" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetAdminProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_SaveMarshalInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMarshalInfo" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_SaveMarshalInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMarshalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetMarshalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarshalList" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetMarshalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarshalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetMarshalDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarshalDetail" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_GetMarshalDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarshalDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_AssignBuddyToMarshal_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignBuddyToMarshal" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_AssignBuddyToMarshal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignBuddyToMarshalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_RemoveBuddyFromMarshal_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBuddyFromMarshal" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_RemoveBuddyFromMarshal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBuddyFromMarshalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_DeleteMarshal_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMarshal" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_DeleteMarshal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMarshalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_ValidateGroupMemeber_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGroupMemeber" />
+  </wsdl:message>
+  <wsdl:message name="GroupService_ValidateGroupMemeber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGroupMemeberResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GroupService">
+    <wsdl:operation name="GetMembersForGroup">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetMembersForGroup" message="tns:GroupService_GetMembersForGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetMembersForGroupResponse" message="tns:GroupService_GetMembersForGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Admin_GetAssociatedMembers">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/Admin_GetAssociatedMembers" message="tns:GroupService_Admin_GetAssociatedMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/Admin_GetAssociatedMembersResponse" message="tns:GroupService_Admin_GetAssociatedMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Admin_RefreshMemberLocations">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/Admin_RefreshMemberLocations" message="tns:GroupService_Admin_RefreshMemberLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/Admin_RefreshMemberLocationsResponse" message="tns:GroupService_Admin_RefreshMemberLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfGroups">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetListOfGroups" message="tns:GroupService_GetListOfGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetListOfGroupsResponse" message="tns:GroupService_GetListOfGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfVolunteerGroups">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetListOfVolunteerGroups" message="tns:GroupService_GetListOfVolunteerGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetListOfVolunteerGroupsResponse" message="tns:GroupService_GetListOfVolunteerGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminProfile">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetAdminProfile" message="tns:GroupService_GetAdminProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetAdminProfileResponse" message="tns:GroupService_GetAdminProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMarshalInfo">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/SaveMarshalInfo" message="tns:GroupService_SaveMarshalInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/SaveMarshalInfoResponse" message="tns:GroupService_SaveMarshalInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarshalList">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetMarshalList" message="tns:GroupService_GetMarshalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetMarshalListResponse" message="tns:GroupService_GetMarshalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarshalDetail">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetMarshalDetail" message="tns:GroupService_GetMarshalDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/GetMarshalDetailResponse" message="tns:GroupService_GetMarshalDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignBuddyToMarshal">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/AssignBuddyToMarshal" message="tns:GroupService_AssignBuddyToMarshal_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/AssignBuddyToMarshalResponse" message="tns:GroupService_AssignBuddyToMarshal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBuddyFromMarshal">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/RemoveBuddyFromMarshal" message="tns:GroupService_RemoveBuddyFromMarshal_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/RemoveBuddyFromMarshalResponse" message="tns:GroupService_RemoveBuddyFromMarshal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMarshal">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/DeleteMarshal" message="tns:GroupService_DeleteMarshal_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/DeleteMarshalResponse" message="tns:GroupService_DeleteMarshal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGroupMemeber">
+      <wsdl:input wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/ValidateGroupMemeber" message="tns:GroupService_ValidateGroupMemeber_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.microsoft.com/sos/2013/02/GroupService/ValidateGroupMemeberResponse" message="tns:GroupService_ValidateGroupMemeber_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

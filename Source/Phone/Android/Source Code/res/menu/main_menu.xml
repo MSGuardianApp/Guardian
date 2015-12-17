@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.guardian.HomeScreenActivity" >
+
+ 
+    <item
+    android:id="@+id/helpMenu"
+    android:title="@string/menu_halp"/>
+	<item
+    android:id="@+id/aboutMenu"
+    android:title="@string/menu_about"/>
+	<item
+    android:id="@+id/policyMenu"
+    android:title="@string/menu_privacy_policy"/>
+	
+	<item
+    android:id="@+id/feedbackMenu"
+    android:title="@string/menu_rate_feedback"/>
+	<item
+    android:id="@+id/msgToBuddiesMenu"
+    android:title="@string/menu_msg_buddies"/>
+
+</menu>

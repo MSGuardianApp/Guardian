@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
+  <CommandSet xml:lang="en-US">
+    <CommandPrefix>Guardian</CommandPrefix>
+    <Example>Activate SOS</Example>
+
+    <Command Name="SOS">
+      <Example> Activate SOS </Example>
+      <ListenFor> police [police] [police] [police] </ListenFor>
+      <ListenFor> [Start] SOS </ListenFor>
+      <ListenFor> Send SOS </ListenFor>
+      <ListenFor> Activate SOS </ListenFor>
+      <ListenFor> help [help] [help] [help] </ListenFor>
+      <Feedback> Activating S O S... </Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="TrackMe">
+      <Example> Track Me</Example>
+      <ListenFor> track </ListenFor>
+      <ListenFor> start tracking </ListenFor>
+      <ListenFor> track me</ListenFor>
+      <Feedback> Activating tracking... </Feedback>
+      <Navigate Target="MainPage.xaml" />
+    </Command>
+
+    <Command Name="StopSOS">
+      <Example> Stop SOS </Example>
+      <ListenFor> [Stop] SOS </ListenFor>
+      <ListenFor> Deactivate SOS </ListenFor>
+      <Feedback> Stopping S O S... </Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="StopTracking">
+      <Example> Stop Tracking</Example>
+      <ListenFor> stop track </ListenFor>
+      <ListenFor> stop tracking </ListenFor>
+      <Feedback> Stopping tracking... </Feedback>
+      <Navigate Target="MainPage.xaml" />
+    </Command>
+
+  </CommandSet>
+</VoiceCommands>
