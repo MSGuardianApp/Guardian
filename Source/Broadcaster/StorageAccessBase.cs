@@ -84,7 +84,7 @@ namespace SOS.Temp.AzureStorageAccessLayer
 
         public StorageAccessBase()
         {
-            string con = "DefaultEndpointsProtocol=https;AccountName=guardianstorage;AccountKey=aanOyBRU3i4hrOMKlK/273fdDSwMBnFHczHF0VsweaMTabFD/2riTb332C1WYRb1vwJlcqrMr/5G5/KvJSPmUw==";
+            string con = "DefaultEndpointsProtocol=https;AccountName=guardianstoragedev;AccountKey=/TOREPLACE-KEY/";
             _StorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount.Parse(con);
             _TableClient = StorageAccount.CreateCloudTableClient();
         }
