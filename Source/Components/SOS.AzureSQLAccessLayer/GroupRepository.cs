@@ -83,8 +83,8 @@ namespace SOS.AzureSQLAccessLayer
 
         public async Task UpdateGroupMembership(int groupID, long profileID)
         {
-            int result = _guardianContext.Database
-           .ExecuteSqlCommand("EXEC [dbo].[UpdateGroupMembership] @GroupID,@ProfileID",
+            int result = await _guardianContext.Database
+           .ExecuteSqlCommandAsync("EXEC [dbo].[UpdateGroupMembership] @GroupID,@ProfileID",
                new SqlParameter("@GroupID", groupID),
                new SqlParameter("@ProfileID", profileID));
         }

@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ServiceDefinition name="SOS.AzureWorkerRoleHost" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
+<ServiceDefinition name="SOS.AzureWorkerRoleHost" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2015-04.2.6">
   <WorkerRole name="SOS.Worker.Broadcaster" vmsize="ExtraSmall">
-    <Imports>
-    </Imports>
+    <Imports></Imports>
     <ConfigurationSettings>
       <Setting name="QueueConnection" />
       <Setting name="TableConnection" />
       <Setting name="BlobConnection" />
       <Setting name="AzureSQLConnectionString" />
       <Setting name="EventHubConnectionString" />
-      <Setting name="EventHubName" />      
+      <Setting name="EventHubName" />
       <Setting name="SMSServiceUserID" />
       <Setting name="SMSServicePassword" />
       <Setting name="IntlSMSServiceUserID" />
@@ -24,15 +23,15 @@
       <Setting name="UseEventHubs" />
       <Setting name="SMSPostGap" />
       <Setting name="FacebookPostGap" />
-      <Setting name="EmailPostGap" />           
-      <Setting name="BingKey" />                     
+      <Setting name="EmailPostGap" />
+      <Setting name="BingKey" />
       <Setting name="SubGroupAllocationIntervalInMinutes" />
       <Setting name="BroadcastRunIntervalInSeconds" />
       <Setting name="ArchiveTimeGapInMinutes" />
-      <Setting name="ArchiveRunIntervalInMinutes" />                     
+      <Setting name="ArchiveRunIntervalInMinutes" />
       <Setting name="ClientSecret" />
       <Setting name="LiveAppUri" />
-      <Setting name="RandomNumberDigits" />     
+      <Setting name="RandomNumberDigits" />
       <Setting name="IncludeActiveMembers" />
       <Setting name="DefaultGroupID" />
       <Setting name="TimeToResetCacheInMinutes" />

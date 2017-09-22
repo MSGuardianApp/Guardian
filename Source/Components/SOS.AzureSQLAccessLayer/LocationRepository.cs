@@ -324,8 +324,8 @@ namespace SOS.AzureSQLAccessLayer
         public async Task StopSOSOnly(long profileID, string sessionID = null)
         {
 
-            int result = _guardianContext.Database
-             .ExecuteSqlCommand("EXEC [dbo].[StopSOSOnly] @ProfileID,@SessionID",
+            int result = await _guardianContext.Database
+             .ExecuteSqlCommandAsync("EXEC [dbo].[StopSOSOnly] @ProfileID,@SessionID",
                  new SqlParameter("@ProfileID", profileID),
                  new SqlParameter("@SessionID", sessionID));
 

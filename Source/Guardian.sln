@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{510B85EE-A5EA-4C17-962B-A261F9582654}"
 EndProject
@@ -10,6 +10,17 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{78A20E8F-2CAB-452A-9102-8537B8E44E7A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Suite", "Test Suite", "{28C21C74-C77E-4018-934D-EE2F01AE7F93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CF03DDFB-A47B-4F44-A0F7-818EA14A4142}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{E878DB33-5130-44E4-A934-5D70EECCB7EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{A922DBEC-C4C6-453A-A108-B95E4B86E4B3}"
 EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "SOS.AzurePortalHost", "Hosts\SOS.AzureHost\SOS.AzurePortalHost.ccproj", "{BD3DF15C-FCB7-4AC6-9FE2-F3EC43598BF2}"
 EndProject
@@ -45,13 +56,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOS.Phone", "Phone\WP8.0\SO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOS.LoadTests", "TestSuite\SOS.LoadTests\SOS.LoadTests.csproj", "{4A611583-052C-4199-94CA-11D34B3714B7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CF03DDFB-A47B-4F44-A0F7-818EA14A4142}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOS.AzureStorageAccessLayer.UnitTests", "Components\SOS.AzureStorageAccessLayer.UnitTests\SOS.AzureStorageAccessLayer.UnitTests.csproj", "{F9E5C8CF-ED44-4258-81DF-05BFA6231D5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOS.ConfigManager", "Components\SOS.ConfigManager\SOS.ConfigManager.csproj", "{91DA0955-DCF5-476B-AF6A-050E3CA1C998}"
@@ -68,132 +72,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOS.ThreadedWorkerRole", "C
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SOS.GuardianDatabase", "Database\SOS.GuardianDatabase\SOS.GuardianDatabase.sqlproj", "{C72B6C27-3A59-4247-B624-7970A0294187}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{E878DB33-5130-44E4-A934-5D70EECCB7EE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOS.Mappers", "Components\SOS.Mappers\SOS.Mappers.csproj", "{2D7E6824-231C-415C-B375-11CB48184B2F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{A922DBEC-C4C6-453A-A108-B95E4B86E4B3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOS.DataMigrationTool", "Tools\DataMigrationTool\SOS.DataMigrationTool.csproj", "{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOS.OPsTools", "Tools\OPsTools\SOS.OPsTools.csproj", "{3A88AABC-20A9-4CBD-B5B2-48D5A1E98108}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 29
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://vstfcodebox:8080/tfs/kappa
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Portal\\SOS.Web.csproj
-		SccProjectName1 = Portal
-		SccLocalPath1 = Portal
-		SccProjectUniqueName2 = Broadcaster\\SOS.Worker.Broadcaster.csproj
-		SccProjectName2 = Broadcaster
-		SccLocalPath2 = Broadcaster
-		SccProjectUniqueName3 = Components\\SOS.Exceptions\\SOS.Exceptions.csproj
-		SccProjectTopLevelParentUniqueName3 = Guardian.sln
-		SccProjectName3 = Components/SOS.Exceptions
-		SccLocalPath3 = Components\\SOS.Exceptions
-		SccProjectUniqueName4 = Services\\SOS.Service.Interfaces\\SOS.Service.Interfaces.csproj
-		SccProjectTopLevelParentUniqueName4 = Guardian.sln
-		SccProjectName4 = Services/SOS.Service.Interfaces
-		SccLocalPath4 = Services\\SOS.Service.Interfaces
-		SccProjectUniqueName5 = Services\\SOS.Service.Utility\\SOS.Service.Utility.csproj
-		SccProjectTopLevelParentUniqueName5 = Guardian.sln
-		SccProjectName5 = Services/SOS.Service.Utility
-		SccLocalPath5 = Services\\SOS.Service.Utility
-		SccProjectUniqueName6 = Services\\SOS.Service.Security\\SOS.Service.Security.csproj
-		SccProjectTopLevelParentUniqueName6 = Guardian.sln
-		SccProjectName6 = Services/SOS.Service.Security
-		SccLocalPath6 = Services\\SOS.Service.Security
-		SccProjectUniqueName7 = Components\\SOS.AzureStorageAccessLayer\\SOS.AzureStorageAccessLayer.csproj
-		SccProjectTopLevelParentUniqueName7 = Guardian.sln
-		SccProjectName7 = Components/SOS.AzureStorageAccessLayer
-		SccLocalPath7 = Components\\SOS.AzureStorageAccessLayer
-		SccProjectUniqueName8 = Services\\SOS.Service.Implementation\\SOS.Service.Implementation.csproj
-		SccProjectTopLevelParentUniqueName8 = Guardian.sln
-		SccProjectName8 = Services/SOS.Service.Implementation
-		SccLocalPath8 = Services\\SOS.Service.Implementation
-		SccProjectUniqueName9 = Hosts\\SOS.AzureHost\\SOS.AzurePortalHost.ccproj
-		SccProjectTopLevelParentUniqueName9 = Guardian.sln
-		SccProjectName9 = Hosts/SOS.AzureHost
-		SccLocalPath9 = Hosts\\SOS.AzureHost
-		SccProjectUniqueName10 = Services\\SOS.Service.WcfRest\\SOS.RESTService.csproj
-		SccProjectTopLevelParentUniqueName10 = Guardian.sln
-		SccProjectName10 = Services/SOS.Service.WcfRest
-		SccLocalPath10 = Services\\SOS.Service.WcfRest
-		SccProjectUniqueName11 = Hosts\\SOS.AzureServiceHost\\SOS.AzureServiceHost.ccproj
-		SccProjectTopLevelParentUniqueName11 = Guardian.sln
-		SccProjectName11 = Hosts/SOS.AzureServiceHost
-		SccLocalPath11 = Hosts\\SOS.AzureServiceHost
-		SccProjectUniqueName12 = Hosts\\SOS.AzureWorkerRoleHost\\SOS.AzureWorkerRoleHost.ccproj
-		SccProjectTopLevelParentUniqueName12 = Guardian.sln
-		SccProjectName12 = Hosts/SOS.AzureWorkerRoleHost
-		SccLocalPath12 = Hosts\\SOS.AzureWorkerRoleHost
-		SccProjectUniqueName13 = TestSuite\\SOS.Service.Implementation.Tests\\SOS.Service.UnitTests.csproj
-		SccProjectTopLevelParentUniqueName13 = Guardian.sln
-		SccProjectName13 = TestSuite/SOS.Service.Implementation.Tests
-		SccLocalPath13 = TestSuite\\SOS.Service.Implementation.Tests
-		SccProjectUniqueName14 = TestSuite\\SOS.Test.WorkRoleClient\\SOS.Test.WorkRoleClient.csproj
-		SccProjectTopLevelParentUniqueName14 = Guardian.sln
-		SccProjectName14 = TestSuite/SOS.Test.WorkRoleClient
-		SccLocalPath14 = TestSuite\\SOS.Test.WorkRoleClient
-		SccProjectUniqueName15 = TestSuite\\SOS.Test.ServiceClient\\SOS.Test.ServiceClient.csproj
-		SccProjectTopLevelParentUniqueName15 = Guardian.sln
-		SccProjectName15 = TestSuite/SOS.Test.ServiceClient
-		SccLocalPath15 = TestSuite\\SOS.Test.ServiceClient
-		SccProjectUniqueName16 = Phone\\WP8.0\\SOS.Phone.csproj
-		SccProjectName16 = Phone/WP8.0
-		SccLocalPath16 = Phone\\WP8.0
-		SccProjectUniqueName17 = TestSuite\\SOS.LoadTests\\SOS.LoadTests.csproj
-		SccProjectTopLevelParentUniqueName17 = Guardian.sln
-		SccProjectName17 = TestSuite/SOS.LoadTests
-		SccLocalPath17 = TestSuite\\SOS.LoadTests
-		SccProjectUniqueName18 = Components\\SOS.AzureStorageAccessLayer.UnitTests\\SOS.AzureStorageAccessLayer.UnitTests.csproj
-		SccProjectTopLevelParentUniqueName18 = Guardian.sln
-		SccProjectName18 = Components/SOS.AzureStorageAccessLayer.UnitTests
-		SccLocalPath18 = Components\\SOS.AzureStorageAccessLayer.UnitTests
-		SccProjectUniqueName19 = Components\\SOS.ConfigManager\\SOS.ConfigManager.csproj
-		SccProjectTopLevelParentUniqueName19 = Guardian.sln
-		SccProjectName19 = Components/SOS.ConfigManager
-		SccLocalPath19 = Components\\SOS.ConfigManager
-		SccProjectUniqueName20 = Components\\SOS.AzureSQLAccessLayer\\SOS.AzureSQLAccessLayer.csproj
-		SccProjectTopLevelParentUniqueName20 = Guardian.sln
-		SccProjectName20 = Components/SOS.AzureSQLAccessLayer
-		SccLocalPath20 = Components\\SOS.AzureSQLAccessLayer
-		SccProjectUniqueName21 = Components\\SOS.Model\\SOS.Model.csproj
-		SccProjectTopLevelParentUniqueName21 = Guardian.sln
-		SccProjectName21 = Components/SOS.Model
-		SccLocalPath21 = Components\\SOS.Model
-		SccProjectUniqueName22 = Components\\SOS.AzureSQLAccessLayer.UnitTests\\SOS.AzureSQLAccessLayer.UnitTests.csproj
-		SccProjectTopLevelParentUniqueName22 = Guardian.sln
-		SccProjectName22 = Components/SOS.AzureSQLAccessLayer.UnitTests
-		SccLocalPath22 = Components\\SOS.AzureSQLAccessLayer.UnitTests
-		SccProjectUniqueName23 = Components\\SOS.EventHubReceiver\\SOS.EventHubReceiver.csproj
-		SccProjectTopLevelParentUniqueName23 = Guardian.sln
-		SccProjectName23 = Components/SOS.EventHubReceiver
-		SccLocalPath23 = Components\\SOS.EventHubReceiver
-		SccProjectUniqueName24 = Components\\SOS.ThreadedWorkerRole\\SOS.ThreadedWorkerRole.csproj
-		SccProjectTopLevelParentUniqueName24 = Guardian.sln
-		SccProjectName24 = Components/SOS.ThreadedWorkerRole
-		SccLocalPath24 = Components\\SOS.ThreadedWorkerRole
-		SccProjectUniqueName25 = Database\\SOS.GuardianDatabase\\SOS.GuardianDatabase.sqlproj
-		SccProjectTopLevelParentUniqueName25 = Guardian.sln
-		SccProjectName25 = Database/SOS.GuardianDatabase
-		SccLocalPath25 = Database\\SOS.GuardianDatabase
-		SccProjectUniqueName26 = Components\\SOS.Mappers\\SOS.Mappers.csproj
-		SccProjectTopLevelParentUniqueName26 = Guardian.sln
-		SccProjectName26 = Components/SOS.Mappers
-		SccLocalPath26 = Components\\SOS.Mappers
-		SccProjectUniqueName27 = Tools\\DataMigrationTool\\SOS.DataMigrationTool.csproj
-		SccProjectTopLevelParentUniqueName27 = Guardian.sln
-		SccProjectName27 = Tools/DataMigrationTool
-		SccLocalPath27 = Tools\\DataMigrationTool
-		SccProjectUniqueName28 = Tools\\OPsTools\\SOS.OPsTools.csproj
-		SccProjectTopLevelParentUniqueName28 = Guardian.sln
-		SccProjectName28 = Tools/OPsTools
-		SccLocalPath28 = Tools\\OPsTools
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -422,14 +305,6 @@ Global
 		{2D7E6824-231C-415C-B375-11CB48184B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D7E6824-231C-415C-B375-11CB48184B2F}.Release|ARM.ActiveCfg = Release|Any CPU
 		{2D7E6824-231C-415C-B375-11CB48184B2F}.Release|x86.ActiveCfg = Release|Any CPU
-		{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5}.Release|ARM.ActiveCfg = Release|Any CPU
-		{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5}.Release|x86.ActiveCfg = Release|Any CPU
 		{3A88AABC-20A9-4CBD-B5B2-48D5A1E98108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A88AABC-20A9-4CBD-B5B2-48D5A1E98108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A88AABC-20A9-4CBD-B5B2-48D5A1E98108}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -466,7 +341,6 @@ Global
 		{5D10EF61-5ADD-4E30-B878-B8B4E75F0886} = {CBCC80FA-4735-45A5-A6B9-5B690D4A4878}
 		{C72B6C27-3A59-4247-B624-7970A0294187} = {E878DB33-5130-44E4-A934-5D70EECCB7EE}
 		{2D7E6824-231C-415C-B375-11CB48184B2F} = {CBCC80FA-4735-45A5-A6B9-5B690D4A4878}
-		{96FE1B82-4A65-46D8-B5B0-0FD80496F0A5} = {A922DBEC-C4C6-453A-A108-B95E4B86E4B3}
 		{3A88AABC-20A9-4CBD-B5B2-48D5A1E98108} = {A922DBEC-C4C6-453A-A108-B95E4B86E4B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

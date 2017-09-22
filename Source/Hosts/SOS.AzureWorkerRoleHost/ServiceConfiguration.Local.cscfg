@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ServiceConfiguration serviceName="SOS.AzureWorkerRoleHost" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2014-06.2.4">
+<ServiceConfiguration serviceName="SOS.AzureWorkerRoleHost" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2015-04.2.6">
   <Role name="SOS.Worker.Broadcaster">
     <Instances count="1" />
     <ConfigurationSettings>
@@ -12,7 +12,7 @@
       <Setting name="SMSDefaultFromnumber" value="GUARDN" />
       <Setting name="GuardianPortalUri" value="https://guardianportal-dev.cloudapp.net" />
       <Setting name="V1GuardianPortalUri" value="https://guardian.cloudapp.net" />
-      <Setting name="TinyServiceUri" value="http://tinyurl.com/api-create.php" />     
+      <Setting name="TinyServiceUri" value="http://tinyurl.com/api-create.php" />
       <Setting name="SMSPostGap" value="15" />
       <Setting name="FacebookPostGap" value="15" />
       <Setting name="EmailPostGap" value="15" />
@@ -28,10 +28,10 @@
       <Setting name="sendGridPassword" value="/TOREPLACE-PASSWORD/" />
       <Setting name="IntlSMSServiceUserID" value="microsofthtp" />
       <Setting name="IntlSMSServicePassword" value="/TOREPLACE-SMSPASSWORD/" />
-      <Setting name="BingKey" value="/TOREPLACE-BINGKEY/" />           
+      <Setting name="BingKey" value="/TOREPLACE-BINGKEY/" />
       <Setting name="ClientSecret" value="/TOREPLACE-LIVECLIENTSECRET/,/TOREPLACE-LIVECLIENTSECRET/" />
       <Setting name="LiveAppUri" value="guardianportal-dev.cloudapp.net" />
-      <Setting name="RandomNumberDigits" value="5" />    
+      <Setting name="RandomNumberDigits" value="5" />
       <Setting name="TimeToResetCacheInMinutes" value="240" />
       <Setting name="IncludeActiveMembers" value="true" />
       <Setting name="DefaultGroupID" value="1" />

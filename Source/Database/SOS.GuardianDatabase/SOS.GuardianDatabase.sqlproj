@@ -66,10 +66,6 @@
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Views" />
-    <Folder Include="migrate" />
-    <Folder Include="migrate\Stored Procedures" />
-    <Folder Include="migrate\Tables" />
-    <Folder Include="Security" />
     <Folder Include="dbo\Functions" />
   </ItemGroup>
   <ItemGroup>
@@ -99,22 +95,11 @@
     <Build Include="dbo\Stored Procedures\DeleteGroupMembership.sql" />
     <Build Include="dbo\Stored Procedures\DeleteGroupMarshal.sql" />
     <Build Include="dbo\Stored Procedures\CreatePublicGroupMembership.sql" />
-    <Build Include="migrate\Tables\ProfileMap.sql" />
-    <Build Include="migrate\Tables\UserMap.sql" />
-    <Build Include="migrate\Stored Procedures\GetAllMapProfiles.sql" />
-    <Build Include="migrate\Stored Procedures\GetAllMapUsers.sql" />
-    <Build Include="migrate\Stored Procedures\InsertBuddyToSQLBuddyTable.sql" />
-    <Build Include="migrate\Stored Procedures\InsertGeoLocationToSQLLiveLocationTable.sql" />
-    <Build Include="migrate\Stored Procedures\InsertProfileToSQLProfileTable.sql" />
-    <Build Include="migrate\Stored Procedures\InsertUserToSQLUserTable.sql" />
-    <Build Include="Security\migrate.sql" />
     <Build Include="dbo\Stored Procedures\StopSOSOnly.sql" />
     <Build Include="dbo\Stored Procedures\UpdateGroupMembership.sql" />
     <Build Include="dbo\Stored Procedures\SubscribeLiveUserToSubGroup.sql" />
     <Build Include="dbo\Views\LocateBuddyView.sql" />
     <Build Include="dbo\Stored Procedures\ValidateAndSaveMarshal.sql" />
-    <Build Include="migrate\Stored Procedures\InsertProfileToSQLGroupMarshalTable.sql" />
-    <Build Include="migrate\Stored Procedures\InsertProfileToSQLGroupMembershipTable.sql" />
     <Build Include="dbo\Stored Procedures\UpdatePrimeBuddy.sql" />
     <Build Include="dbo\Functions\TicksToDateTime.sql" />
     <Build Include="dbo\Stored Procedures\ManageProfileUser.sql" />
@@ -122,8 +107,5 @@
     <Build Include="dbo\Stored Procedures\UpdateDispatchInfo.sql" />
     <Build Include="dbo\Stored Procedures\UpdateProfileMap.sql" />
     <Build Include="dbo\Stored Procedures\UpdateLastSMSPostedTime.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="SOS.GuardianDatabase.refactorlog" />
   </ItemGroup>
 </Project>
