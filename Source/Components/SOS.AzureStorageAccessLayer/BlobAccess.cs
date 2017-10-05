@@ -1,7 +1,7 @@
 ﻿using Microsoft.WindowsAzure.Storage.Blob;
 using System;
 using System.IO;
-using SOS.ConfigManager;
+using Guardian.Common;
 namespace SOS.AzureStorageAccessLayer
 {
     public class BlobAccess

@@ -6,7 +6,7 @@ using SendGrid;
 //using SendGridMail;
 //using SendGridMail.Transport;
 using System.Diagnostics;
-using SOS.ConfigManager;
+using Common = Guardian.Common;
 
 namespace SOS.Service.Utility
 {
@@ -18,7 +18,7 @@ namespace SOS.Service.Utility
         private static string sendGridUserID;
         private static string sendGridPassword;
 
-        private static readonly string GuardianPortalUri = Config.GuardianPortalUri;      
+        private static readonly string GuardianPortalUri = Config.GuardianPortalUri;
 
         static Email()
         {
@@ -33,13 +33,13 @@ namespace SOS.Service.Utility
 
             if (validationType == "GroupMember")
             {
-                messageBody = ConfigManager.Resources.Messages.EmailGroupValidationMsgTmp;
-                messageSubject = ConfigManager.Resources.Messages.EmailGroupValidationSubj;
+                messageBody = Common.Resources.Messages.EmailGroupValidationMsgTmp;
+                messageSubject = Common.Resources.Messages.EmailGroupValidationSubj;
             }
             else
             {
-                messageBody = ConfigManager.Resources.Messages.EmailMarshalValidationMsgTmp;
-                messageSubject = ConfigManager.Resources.Messages.EmailMarshalValidationSubj;
+                messageBody = Common.Resources.Messages.EmailMarshalValidationMsgTmp;
+                messageSubject = Common.Resources.Messages.EmailMarshalValidationSubj;
             }
 
             string message = string.Format(messageBody, validationKey, profileId, GuardianPortalUri);
@@ -85,8 +85,8 @@ namespace SOS.Service.Utility
 
         public static bool SendEmailBuddyNotification(string emailTo, string profileUserName, string profileMobileNumber, string subscribeUri, string UnsubscribeURI)
         {
-            string messageBody = ConfigManager.Resources.Messages.BuddyNotificationEmailBody;
-            string messageSubject = ConfigManager.Resources.Messages.BuddyNotificationEmailSubject;
+            string messageBody = Common.Resources.Messages.BuddyNotificationEmailBody;
+            string messageSubject = Common.Resources.Messages.BuddyNotificationEmailSubject;
 
             string body = string.Format(messageBody, profileUserName, profileMobileNumber, UnsubscribeURI);
             string subjectLine = string.Format(messageSubject, profileUserName, profileMobileNumber);
@@ -99,8 +99,8 @@ namespace SOS.Service.Utility
 
         public static bool SendUnRegisterEmailNotification(string emailTo)
         {
-            string messageBody = ConfigManager.Resources.Messages.UnRegisterNotificationEmailBody;
-            string messageSubject = ConfigManager.Resources.Messages.UnRegisterNotificationEmailSubject;
+            string messageBody = Common.Resources.Messages.UnRegisterNotificationEmailBody;
+            string messageSubject = Common.Resources.Messages.UnRegisterNotificationEmailSubject;
 
             List<string> tos = new List<string>();
             tos.Add(emailTo);

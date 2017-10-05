@@ -1,5 +1,5 @@
 ﻿using System;
-using SOS.ConfigManager;
+using Guardian.Common;
 using SOS.Mappers;
 
 namespace SOS.Web

@@ -19,8 +19,8 @@ namespace SOS.EventHubReceiver
         public static async Task Start()
         {
             var eventHubConnectionString = GetEventHubConnectionString();
-            var storageConnectionString = ConfigManager.Config.TableConnectionString;
-            var eventHubName = ConfigManager.Config.EventHubName;
+            var storageConnectionString = Common.Config.TableConnectionString;
+            var eventHubName = Common.Config.EventHubName;
 
             // here it's using eventhub as lease name. but it can be specified as any you want.
             // if the host is having same lease name, it will be shared between hosts.
@@ -63,7 +63,7 @@ namespace SOS.EventHubReceiver
 
         static string GetEventHubConnectionString()
         {
-            var connectionString = ConfigManager.Config.EventHubConnectionString;
+            var connectionString = Common.Config.EventHubConnectionString;
             try
             {
                 var builder = new ServiceBusConnectionStringBuilder(connectionString);

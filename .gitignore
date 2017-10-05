@@ -97,3 +97,8 @@ Temporary Items
 /Source/TestSuite/SOS.Test.ServiceClient/obj/Debug
 /Source/TestSuite/SOS.Test.ServiceClient/bin/Debug
 /Source/Tools/OPsTools/obj/Debug
+*.suo
+/Source/Database/SOS.GuardianDatabase/SOS.GuardianDatabase.jfm
+/Source/Database/SOS.GuardianDatabase/SOS.GuardianDatabase.dbmdl
+/Source/Guardian.Webjob.Broadcaster/obj/Debug
+/Source/Guardian.Webjob.Broadcaster/bin/Debug

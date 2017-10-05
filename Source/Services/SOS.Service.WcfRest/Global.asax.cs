@@ -1,4 +1,4 @@
-﻿using SOS.ConfigManager;
+﻿using Guardian.Common;
 using SOS.Mappers;
 using System;
 using System.Web;

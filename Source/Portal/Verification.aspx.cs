@@ -82,7 +82,7 @@ namespace SOS.Web
             else
             {
                 string redirecturl = Page.Request.Url.ToString();
-                redirecturl = redirecturl.Replace(redirecturl.Split('?')[0],  SOS.ConfigManager.Config.V1GuardianPortalUri + "/Verification.aspx");
+                redirecturl = redirecturl.Replace(redirecturl.Split('?')[0],  Guardian.Common.Config.V1GuardianPortalUri + "/Verification.aspx");
                 Response.Redirect(redirecturl);
             }
         }

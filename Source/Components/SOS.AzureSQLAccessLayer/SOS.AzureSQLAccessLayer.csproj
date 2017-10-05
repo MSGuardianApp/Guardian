@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SOS.AzureSQLAccessLayer</RootNamespace>
     <AssemblyName>SOS.AzureSQLAccessLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -17,6 +17,7 @@
     <SccProvider>SAK</SccProvider>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,10 +90,6 @@
     <ProjectReference Include="..\..\Services\SOS.Service.Utility\SOS.Service.Utility.csproj">
       <Project>{90cbc4b1-c146-40eb-878a-291e4bbd7533}</Project>
       <Name>SOS.Service.Utility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SOS.ConfigManager\SOS.ConfigManager.csproj">
-      <Project>{91da0955-dcf5-476b-af6a-050e3ca1c998}</Project>
-      <Name>SOS.ConfigManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\SOS.Model\SOS.Model.csproj">
       <Project>{9935795f-ad2a-4205-874a-012515e4a2ff}</Project>

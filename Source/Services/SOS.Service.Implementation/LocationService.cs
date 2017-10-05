@@ -6,7 +6,7 @@ using System.ServiceModel.Web;
 using System.Threading.Tasks;
 using SOS.AzureSQLAccessLayer;
 using SOS.AzureStorageAccessLayer;
-using SOS.ConfigManager;
+using Guardian.Common;
 using SOS.EventHubReceiver;
 using SOS.Mappers;
 using SOS.Model;

@@ -16,7 +16,7 @@ namespace SOS.Service.Utility
         public List<string> GetAllWardNames(string PathPrefix, string SubGroupIdentificationKey)
         {
 
-            string connectionString = ConfigManager.Config.TableConnectionString;
+            string connectionString = Common.Config.TableConnectionString;
             var _StorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount.Parse(connectionString);
             var blobClient = _StorageAccount.CreateCloudBlobClient();
             container = blobClient.GetContainerReference("shapes");

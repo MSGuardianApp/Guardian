@@ -3,7 +3,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ServiceBus.Messaging;
 using Newtonsoft.Json;
-using SOS.ConfigManager;
+using Guardian.Common;
 using SOS.Model;
 
 namespace SOS.Service.Implementation

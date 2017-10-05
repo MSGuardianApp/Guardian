@@ -13,7 +13,7 @@ namespace SOS.ThreadedWorkerRole
         /// </summary>
         public override void Run()
         {
-            if (!ConfigManager.Config.UseEventHubs) return;
+            if (!Common.Config.UseEventHubs) return;
 
             Trace.TraceInformation("Worker1:Run begin", "Information");
 

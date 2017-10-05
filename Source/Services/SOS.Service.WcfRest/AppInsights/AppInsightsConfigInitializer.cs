@@ -1,5 +1,5 @@
 ﻿using Microsoft.ApplicationInsights.Extensibility;
-using SOS.ConfigManager;
+using Guardian.Common;
 namespace SOS.RESTService
 {
     public class AppInsightsConfigInitializer : IContextInitializer

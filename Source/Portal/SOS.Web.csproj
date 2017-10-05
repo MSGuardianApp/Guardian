@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SOS.Web</RootNamespace>
     <AssemblyName>SOS.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort>44300</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
@@ -29,6 +29,8 @@
     <NuGetPackageImportStamp>fdba2903</NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/645f6fe9-76c4-4762-a0b9-00627618543f/resourcegroups/guardianportal-dev/providers/microsoft.insights/components/Guardian</ApplicationInsightsResourceId>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -130,6 +132,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
@@ -145,16 +148,14 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ActiveSOSReport.aspx" />
@@ -416,10 +417,6 @@
     <ProjectReference Include="..\Components\SOS.AzureStorageAccessLayer\SOS.AzureStorageAccessLayer.csproj">
       <Project>{0c6cf446-8311-4449-b84e-5436836ba0c8}</Project>
       <Name>SOS.AzureStorageAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Components\SOS.ConfigManager\SOS.ConfigManager.csproj">
-      <Project>{91da0955-dcf5-476b-af6a-050e3ca1c998}</Project>
-      <Name>SOS.ConfigManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\Components\SOS.Exceptions\SOS.Exceptions.csproj">
       <Project>{0d468a7f-1f41-43fb-951f-8095ccd0675a}</Project>

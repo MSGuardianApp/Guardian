@@ -10,7 +10,7 @@ namespace SOS.Service.Utility
     public static class BingService
     {
         private const string _BingUri = "http://dev.virtualearth.net/REST/v1/Locations/";
-        private static string _BingKey = SOS.ConfigManager.Config.BingKey;
+        private static string _BingKey = Guardian.Common.Config.BingKey;
 
         public async static Task<string> GetAddressByPointAsync(string lat, string lng)
         {

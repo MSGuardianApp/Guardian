@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Text;
 using model = SOS.Model;
-using SOS.ConfigManager;
+using Guardian.Common;
 using System.Data;
 using System.Data.SqlClient;
 

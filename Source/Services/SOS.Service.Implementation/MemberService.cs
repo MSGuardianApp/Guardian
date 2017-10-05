@@ -5,7 +5,7 @@ using System.ServiceModel.Web;
 using System.Threading.Tasks;
 using SOS.AzureSQLAccessLayer;
 using SOS.AzureStorageAccessLayer;
-using SOS.ConfigManager;
+using Guardian.Common;
 using SOS.Mappers;
 using SOS.Model;
 using SOS.Service.Interfaces;
@@ -91,7 +91,7 @@ namespace SOS.Service.Implementation
                 if (Config.IsEnterpriseBuild)
                 {
                     if (utility.Email.SendEmail(new List<string> { phValidator.EnterpriseEmailID },
-                        string.Format(ConfigManager.Resources.Messages.EnterpriseValidationMsg, phValidReturn.EnterpriseSecurityToken),
+                        string.Format(Common.Resources.Messages.EnterpriseValidationMsg, phValidReturn.EnterpriseSecurityToken),
                         "Guardian App - Enterprise Security Code for registration"))
                     {
                         utility.ResultsManager.AddResultInfo(PhoneValidationIP, ResultTypeEnum.Information, "Email Sent with Enterprise Security Code");
@@ -139,7 +139,7 @@ namespace SOS.Service.Implementation
                         //Send Email
                         string Last4Dig = phValidator.PhoneNumber.Substring(phValidator.PhoneNumber.Length - 4, 4);
                         if (utility.Email.SendEmail(new List<string> { phValidator.Email },
-                            string.Format(ConfigManager.Resources.Messages.PhoneValidationSMS, phValidReturn.SecurityToken, Last4Dig),
+                            string.Format(Common.Resources.Messages.PhoneValidationSMS, phValidReturn.SecurityToken, Last4Dig),
                             "Guardian App - Security Code for registration"))
                         {
                             utility.ResultsManager.AddResultInfo(PhoneValidationIP, ResultTypeEnum.Information, "Email Sent");

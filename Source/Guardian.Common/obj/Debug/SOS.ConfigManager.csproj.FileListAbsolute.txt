@@ -1,0 +1,9 @@
+E:\Projects\Guardian\GITHUB\Guardian\Source\Components\SOS.ConfigManager\bin\Debug\SOS.ConfigManager.dll
+E:\Projects\Guardian\GITHUB\Guardian\Source\Components\SOS.ConfigManager\bin\Debug\SOS.ConfigManager.pdb
+E:\Projects\Guardian\GITHUB\Guardian\Source\Components\SOS.ConfigManager\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+E:\Projects\Guardian\GITHUB\Guardian\Source\Components\SOS.ConfigManager\bin\Debug\Microsoft.WindowsAzure.Configuration.xml
+E:\Projects\Guardian\GITHUB\Guardian\Source\Components\SOS.ConfigManager\obj\Debug\SOS.ConfigManager.Resources.Messages.resources
+E:\Projects\Guardian\GITHUB\Guardian\Source\Components\SOS.ConfigManager\obj\Debug\SOS.ConfigManager.csproj.GenerateResource.Cache
+E:\Projects\Guardian\GITHUB\Guardian\Source\Components\SOS.ConfigManager\obj\Debug\SOS.ConfigManager.csproj.CoreCompileInputs.cache
+E:\Projects\Guardian\GITHUB\Guardian\Source\Components\SOS.ConfigManager\obj\Debug\SOS.ConfigManager.dll
+E:\Projects\Guardian\GITHUB\Guardian\Source\Components\SOS.ConfigManager\obj\Debug\SOS.ConfigManager.pdb

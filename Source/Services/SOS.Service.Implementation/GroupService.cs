@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using SOS.AzureSQLAccessLayer;
 using SOS.AzureSQLAccessLayer.Entities;
 using SOS.AzureStorageAccessLayer;
-using SOS.ConfigManager;
+using Guardian.Common;
 using SOS.Mappers;
 using SOS.Service.Interfaces;
 using SOS.Service.Interfaces.DataContracts;

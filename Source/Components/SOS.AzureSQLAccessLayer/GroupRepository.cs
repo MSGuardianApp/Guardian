@@ -122,7 +122,7 @@ namespace SOS.AzureSQLAccessLayer
 
         public async Task<List<GroupMemberLiveSession>> GetAllGroupMembershipLite()
         {
-            bool includeActiveMembers = ConfigManager.Config.IncludeActiveMembers;
+            bool includeActiveMembers = Common.Config.IncludeActiveMembers;
 
             return await ((from ls in _guardianContext.LiveSessions
                            join pf in _guardianContext.Profiles on ls.ProfileID equals pf.ProfileID

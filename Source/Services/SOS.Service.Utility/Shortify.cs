@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.IO;
-using SOS.ConfigManager;
+using Guardian.Common;
 
 namespace SOS.Service.Utility
 {

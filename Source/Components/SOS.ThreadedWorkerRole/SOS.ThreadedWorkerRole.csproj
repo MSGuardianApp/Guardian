@@ -9,12 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SOS.ThreadedWorkerRole</RootNamespace>
     <AssemblyName>SOS.ThreadedWorkerRole</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,14 +51,13 @@
     <Compile Include="WorkerEntryPoint.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SOS.ConfigManager\SOS.ConfigManager.csproj">
-      <Project>{91da0955-dcf5-476b-af6a-050e3ca1c998}</Project>
-      <Name>SOS.ConfigManager</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SOS.EventHubReceiver\SOS.EventHubReceiver.csproj">
       <Project>{56c1624e-7e2c-4985-a51b-d668dcd0ff9c}</Project>
       <Name>SOS.EventHubReceiver</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

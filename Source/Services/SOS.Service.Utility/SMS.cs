@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Net;
-using SOS.ConfigManager;
+using Guardian.Common;
 using Twilio;
 
 namespace SOS.Service.Utility
@@ -12,8 +12,8 @@ namespace SOS.Service.Utility
         private static string _smsServicePassword = Config.SMSServicePassword;
         private static string _intlsmsServiceUserID = Config.IntlSMSServiceUserID;
         private static string _intlsmsServicePassword = Config.IntlSMSServicePassword;
-        private static string _smsPhoneValidMsg = ConfigManager.Resources.Messages.PhoneValidationSMS;
-        private static string _smsPhoneReValidMsg = ConfigManager.Resources.Messages.PhoneReValidationSMS;
+        private static string _smsPhoneValidMsg = Common.Resources.Messages.PhoneValidationSMS;
+        private static string _smsPhoneReValidMsg = Common.Resources.Messages.PhoneReValidationSMS;
         private static string _smsDefaultFromNumb = Config.SMSDefaultFromNumber;
 
         private const string _smsuri = "http://www.myvaluefirst.com/smpp/sendsms?";
@@ -75,7 +75,7 @@ namespace SOS.Service.Utility
 
         public static bool SendSMSBuddyNotification(string toNumber, string profileUserName, string profileMobileNumber, string subscribeURI, string UnsubscribeURI)
         {
-            string smsBody = ConfigManager.Resources.Messages.BuddyNotificationSMSBody;
+            string smsBody = Common.Resources.Messages.BuddyNotificationSMSBody;
             string message = string.Format(smsBody, profileUserName, profileMobileNumber, UnsubscribeURI);
             SendSMS(toNumber, message);
             return true;

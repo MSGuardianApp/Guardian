@@ -1,4 +1,4 @@
-﻿using SOS.ConfigManager;
+﻿using Guardian.Common;
 using SOS.Model;
 using System;
 using System.Collections.Generic;

@@ -62,7 +62,7 @@ namespace SOS.Service.Security
             int MaxNumber = 99999;
             try
             {
-                Digits = int.Parse(SOS.ConfigManager.Config.RandomNumberDigits);
+                Digits = int.Parse(Guardian.Common.Config.RandomNumberDigits);
                 MinNumber = (int)Math.Pow(10, Digits-1);
                 MaxNumber = (int)(Math.Pow(10, Digits) - 1);
             }

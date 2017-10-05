@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SOS.ConfigManager;
+using Guardian.Common;
 using SOS.Model;
 using SOS.Service.Utility;
 
@@ -11,11 +11,11 @@ namespace SOS.Service.Implementation
 {
     internal class ServiceUtility
     {
-        private static readonly string _smsSafeMessage = ConfigManager.Resources.Messages.SMSSafeMessage;
-        private static readonly string _emailSafeMessage = ConfigManager.Resources.Messages.EmailSafeMessage;
-        private static readonly string _facebookSafeMessage = ConfigManager.Resources.Messages.FacebookSafeMessage;
-        private static readonly string _emailSafeSubject = ConfigManager.Resources.Messages.EmailSafeSubject;
-        private static readonly string _facebookSafeSubject = ConfigManager.Resources.Messages.FacebookSafeSubject;
+        private static readonly string _smsSafeMessage = Common.Resources.Messages.SMSSafeMessage;
+        private static readonly string _emailSafeMessage = Common.Resources.Messages.EmailSafeMessage;
+        private static readonly string _facebookSafeMessage = Common.Resources.Messages.FacebookSafeMessage;
+        private static readonly string _emailSafeSubject = Common.Resources.Messages.EmailSafeSubject;
+        private static readonly string _facebookSafeSubject = Common.Resources.Messages.FacebookSafeSubject;
 
         private static string DecryptMobileNumbers(string encryptedMobileNumbers)
         {

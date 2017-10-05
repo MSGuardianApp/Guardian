@@ -84,7 +84,7 @@ namespace SOS.AzureStorageAccessLayer
 
         public StorageAccessBase()
         {
-            _StorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount.Parse(ConfigManager.Config.TableConnectionString);
+            _StorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount.Parse(Common.Config.TableConnectionString);
             _TableClient = StorageAccount.CreateCloudTableClient();
         }
     }

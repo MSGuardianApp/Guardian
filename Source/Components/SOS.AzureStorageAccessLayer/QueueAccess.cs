@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using SOS.AzureStorageAccessLayer.Entities;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using SOS.ConfigManager;
+using Guardian.Common;
 
 namespace SOS.AzureStorageAccessLayer
 {
