@@ -35,27 +35,27 @@ namespace Guardian.Webjob.Broadcaster
             //Parallelly send messages for multiple profiles
             try
             {
-                Guid processKey = Guid.NewGuid();
-
-                List<LiveSession> sosSessions =
-                    await new LiveSessionRepository()
-                    .GetSessionsForNotifications(RoleInstanceId, processKey, settings.SendSms, settings.SMSPostGap, settings.EmailPostGap, 9999);
-
-                if (sosSessions != null && sosSessions.Count > 0)
+                do
                 {
+                    Guid processKey = Guid.NewGuid();
+
+                    //Get top 50 records
+                    List<LiveSession> sosSessions =
+                        await new LiveSessionRepository()
+                        .GetSessionsForNotifications(RoleInstanceId, processKey, settings.SendSms, settings.SMSPostGap, settings.EmailPostGap, 9999);
+
+                    if (sosSessions == null || sosSessions.Count > 0)
+                        break;
+
                     var processedSessions = PostMessages.SendSOSNotifications(sosSessions, settings);
-
                     var liteSessions = processedSessions.ConvertToLiveSessionLite();
-
                     string liteSessionsXML = Serialize<List<LiveSessionLite>>(liteSessions, true, true);
+                    await new LiveSessionRepository().UpdateNotificationComplete(RoleInstanceId, processKey, liteSessionsXML);
 
-                    new LiveSessionRepository().UpdateNotificationComplete(RoleInstanceId, processKey, liteSessionsXML).Wait();
-                }
-                else
-                {
-                    Trace.TraceInformation($"Broadcasting messages has completed. Sleeping for {settings.BroadcastRunIntervalInSeconds.ToString()} seconds...", "Information");
-                    await Task.Delay(settings.BroadcastRunIntervalInSeconds * 1000);
-                }
+                } while (true);
+
+                Trace.TraceInformation($"Broadcasting messages has completed. Sleeping for {settings.BroadcastRunIntervalInSeconds.ToString()} seconds...", "Information");
+                await Task.Delay(settings.BroadcastRunIntervalInSeconds * 1000);
             }
 
             catch (Exception ex)
