@@ -1,4 +1,5 @@
-﻿using Microsoft.Azure.WebJobs;
+﻿using Guardian.Common.Configuration;
+using Microsoft.Azure.WebJobs;
 using System;
 using System.IO;
 using System.Threading;
@@ -8,6 +9,12 @@ namespace Guardian.Webjob.Broadcaster
 {
     public class Functions
     {
+        readonly IConfigManager configManager;
+        public Functions(IConfigManager configManager)
+        {
+            this.configManager = configManager;
+            SOS.Mappers.Mapper.InitializeMappers();
+        }
         //1. Broadcast messages - Check every 30 secs(or 1 minute, if two role instances are deployed)
         //   Broadcast SMS, Emails paralelly
         //      Broadcast by Profile Paralelly
@@ -23,27 +30,31 @@ namespace Guardian.Webjob.Broadcaster
         public async Task MessageBroadcaster([TimerTrigger("00:00:30", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("Broadcasting messages has started..." + DateTime.Now.ToLongTimeString());
-            await new MessageBroadcaster().Run();
+            await new MessageBroadcaster(configManager).Run();
         }
 
         public async Task PurgeLiveLocations([TimerTrigger("00:10:00", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("PurgeLiveLocations has started..." + DateTime.Now.ToLongTimeString());
+            await new PurgeLiveLocations(configManager).Run();
         }
 
         public async Task ArchiveStaleSessions([TimerTrigger("00:10:00", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("ArchiveStaleSessions has started..." + DateTime.Now.ToLongTimeString());
+            await new ArchiveStaleSessions(configManager).Run();
         }
 
         public void DynamicAllocationToSubGroups([TimerTrigger("00:05:00", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("DynamicAllocationToSubGroups has started..." + DateTime.Now.ToLongTimeString());
+            new DynamicAllocationToSubGroups(configManager).Run();
         }
 
-        public void ProcessEventHub([TimerTrigger("00:00:30", RunOnStartup = true)] TimerInfo timer, TextWriter log)
+        public async Task ProcessEventHub([TimerTrigger("00:00:30", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("ProcessEventHub has started..." + DateTime.Now.ToLongTimeString());
+            await new ProcessEventHub(configManager).Run();
         }
     }
 }

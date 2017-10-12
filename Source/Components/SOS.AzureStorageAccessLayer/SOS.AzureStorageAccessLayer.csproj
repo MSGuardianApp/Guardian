@@ -92,6 +92,14 @@
     <Compile Include="Entities\Incident.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="IncidentStorageAccess.cs" />
+    <Compile Include="Interfaces\IBlobAccess.cs" />
+    <Compile Include="Interfaces\ConfigurationStorageAccess.cs" />
+    <Compile Include="Interfaces\GroupStorageAccess.cs" />
+    <Compile Include="Interfaces\IncidentStorageAccess.cs" />
+    <Compile Include="Interfaces\LocationHistoryStorageAccess.cs" />
+    <Compile Include="Interfaces\MemberStorageAccess.cs" />
+    <Compile Include="Interfaces\QueueAccess.cs" />
+    <Compile Include="Interfaces\ISessionHistoryStorageAccess.cs" />
     <Compile Include="LocationHistoryStorageAccess.cs" />
     <Compile Include="GroupStorageAccess.cs" />
     <Compile Include="MemberStorageAccess.cs" />
@@ -102,6 +110,10 @@
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Guardian.Common\Guardian.Common.csproj">
+      <Project>{91da0955-dcf5-476b-af6a-050e3ca1c998}</Project>
+      <Name>Guardian.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Services\SOS.Service.Utility\SOS.Service.Utility.csproj">
       <Project>{90cbc4b1-c146-40eb-878a-291e4bbd7533}</Project>
       <Name>SOS.Service.Utility</Name>

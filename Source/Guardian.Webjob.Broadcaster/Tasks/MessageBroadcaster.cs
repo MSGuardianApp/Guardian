@@ -17,13 +17,14 @@ namespace Guardian.Webjob.Broadcaster
 {
     public class MessageBroadcaster
     {
+        readonly ILiveSessionRepository liveSessionRepository;
         string RoleInstanceId = string.Empty;
         readonly Settings settings;
         const int minute = 60 * 1000;
 
-        public MessageBroadcaster(IConfigManager configManager)
+        public MessageBroadcaster(ILiveSessionRepository liveSessionRepository, IConfigManager configManager)
         {
-            SOS.Mappers.Mapper.InitializeMappers();
+            this.liveSessionRepository = liveSessionRepository;
             this.settings = configManager.Settings;
             RoleInstanceId = RoleEnvironment.IsAvailable ? RoleEnvironment.CurrentRoleInstance.Id : string.Empty;
         }
@@ -41,7 +42,7 @@ namespace Guardian.Webjob.Broadcaster
 
                     //Get top 50 records
                     List<LiveSession> sosSessions =
-                        await new LiveSessionRepository()
+                        await liveSessionRepository
                         .GetSessionsForNotifications(RoleInstanceId, processKey, settings.SendSms, settings.SMSPostGap, settings.EmailPostGap, 9999);
 
                     if (sosSessions == null || sosSessions.Count > 0)
@@ -50,7 +51,7 @@ namespace Guardian.Webjob.Broadcaster
                     var processedSessions = PostMessages.SendSOSNotifications(sosSessions, settings);
                     var liteSessions = processedSessions.ConvertToLiveSessionLite();
                     string liteSessionsXML = Serialize<List<LiveSessionLite>>(liteSessions, true, true);
-                    await new LiveSessionRepository().UpdateNotificationComplete(RoleInstanceId, processKey, liteSessionsXML);
+                    await liveSessionRepository.UpdateNotificationComplete(RoleInstanceId, processKey, liteSessionsXML);
 
                 } while (true);
 

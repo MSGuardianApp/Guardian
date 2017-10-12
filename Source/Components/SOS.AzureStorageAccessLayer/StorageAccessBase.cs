@@ -1,14 +1,18 @@
 ﻿using System;
 using Microsoft.WindowsAzure.Storage.Table;
-
+using Guardian.Common.Configuration;
 
 namespace SOS.AzureStorageAccessLayer
 {
-
     public abstract class StorageAccessBase
     {
-
-        private Microsoft.WindowsAzure.Storage.CloudStorageAccount _StorageAccount = null;
+         Microsoft.WindowsAzure.Storage.CloudStorageAccount _StorageAccount = null;
+        public StorageAccessBase(IConfigManager configManager)
+        {
+            _StorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount.Parse(configManager.Settings.AzureStorageConnectionString);
+            _TableClient = StorageAccount.CreateCloudTableClient();
+        }
+        
 
         internal Microsoft.WindowsAzure.Storage.CloudStorageAccount StorageAccount
         {
@@ -80,12 +84,6 @@ namespace SOS.AzureStorageAccessLayer
                 LoadEntityTable(tableName);
 
             return IsTableLoaded;
-        }
-
-        public StorageAccessBase()
-        {
-            _StorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount.Parse(Common.Config.TableConnectionString);
-            _TableClient = StorageAccount.CreateCloudTableClient();
         }
     }
 }

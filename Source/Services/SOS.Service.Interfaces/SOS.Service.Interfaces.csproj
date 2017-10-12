@@ -59,7 +59,7 @@
     <Compile Include="Interfaces\DataContracts\PhoneValidation.cs" />
     <Compile Include="Interfaces\DataContracts\Security.cs" />
     <Compile Include="Interfaces\DataContracts\Settings.cs" />
-    <Compile Include="Interfaces\DataContracts\UnAssignMarshal.cs" />
+    <Compile Include="Interfaces\DataContracts\BuddyAndMarshalRelation.cs" />
     <Compile Include="Interfaces\Enums.cs" />
     <Compile Include="Interfaces\DataContracts\ActiveSOSReports.cs" />
     <Compile Include="Interfaces\DataContracts\DemographyReport.cs" />

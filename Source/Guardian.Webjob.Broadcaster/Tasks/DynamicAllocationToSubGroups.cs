@@ -2,6 +2,7 @@ using Guardian.Common.Configuration;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using SOS.AzureSQLAccessLayer;
 using SOS.Service.Implementation;
+using SOS.Service.Interfaces;
 using SOS.Service.Utility;
 using System;
 using System.Diagnostics;
@@ -14,19 +15,24 @@ namespace Guardian.Webjob.Broadcaster
     public class DynamicAllocationToSubGroups
     {
         readonly IConfigManager configManager;
+        readonly ILiveSessionRepository liveSessionRepository;
+        readonly IGroupRepository grouprepository;
+        readonly IGroupService grpService;
+
         const int minute = 60 * 1000;
 
-        public DynamicAllocationToSubGroups(IConfigManager configManager)
+        public DynamicAllocationToSubGroups(IGroupService grpService, ILiveSessionRepository liveSessionRepository, IGroupRepository grouprepository, IConfigManager configManager)
         {
+            this.grpService = grpService;
+            this.liveSessionRepository = liveSessionRepository;
+            this.grouprepository = grouprepository;
             this.configManager = configManager;
         }
 
         public void Run()
         {
             var allocationInterval = configManager.Settings.SubGroupAllocationIntervalInMinutes;
-            var liveSessionRepository = new LiveSessionRepository();
-            var grouprepository = new GroupRepository();
-            GroupService grpService = new GroupService();
+
             LocalResource myStorage = RoleEnvironment.GetLocalResource("LocalStorageWorkerRole");
 
             try

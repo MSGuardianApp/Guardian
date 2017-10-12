@@ -87,6 +87,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\Guardian.Common\Guardian.Common.csproj">
+      <Project>{91da0955-dcf5-476b-af6a-050e3ca1c998}</Project>
+      <Name>Guardian.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Services\SOS.Service.Utility\SOS.Service.Utility.csproj">
       <Project>{90cbc4b1-c146-40eb-878a-291e4bbd7533}</Project>
       <Name>SOS.Service.Utility</Name>

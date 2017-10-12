@@ -90,11 +90,16 @@
   <ItemGroup>
     <Compile Include="EventProcessor.cs" />
     <Compile Include="EventProcessorFactory.cs" />
+    <Compile Include="IReceiver.cs" />
     <Compile Include="LocationProcessor.cs" />
     <Compile Include="ReceiverHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Guardian.Common\Guardian.Common.csproj">
+      <Project>{91da0955-dcf5-476b-af6a-050e3ca1c998}</Project>
+      <Name>Guardian.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SOS.AzureSQLAccessLayer\SOS.AzureSQLAccessLayer.csproj">
       <Project>{e91699d0-8064-46f6-a368-16d3b0449f00}</Project>
       <Name>SOS.AzureSQLAccessLayer</Name>

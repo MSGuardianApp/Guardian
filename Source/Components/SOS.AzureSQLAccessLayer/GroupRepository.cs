@@ -1,4 +1,5 @@
-﻿using SOS.AzureSQLAccessLayer.Entities;
+﻿using Guardian.Common.Configuration;
+using SOS.AzureSQLAccessLayer.Entities;
 using SOS.Model;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,13 @@ namespace SOS.AzureSQLAccessLayer
 {
     public class GroupRepository : BaseRepository, IGroupRepository
     {
-        private readonly GuardianContext _guardianContext;
+        readonly GuardianContext _guardianContext;
+        readonly IConfigManager configManager;
 
-        public GroupRepository()
-            : this(new GuardianContext())
+        public GroupRepository(IConfigManager configManager)
+            : this(new GuardianContext(configManager.Settings.AzureSQLConnectionString))
         {
+            this.configManager = configManager;
         }
 
         public GroupRepository(GuardianContext guardianContext)
@@ -122,7 +125,7 @@ namespace SOS.AzureSQLAccessLayer
 
         public async Task<List<GroupMemberLiveSession>> GetAllGroupMembershipLite()
         {
-            bool includeActiveMembers = Common.Config.IncludeActiveMembers;
+            bool includeActiveMembers = configManager.Settings.IncludeActiveMembers;
 
             return await ((from ls in _guardianContext.LiveSessions
                            join pf in _guardianContext.Profiles on ls.ProfileID equals pf.ProfileID

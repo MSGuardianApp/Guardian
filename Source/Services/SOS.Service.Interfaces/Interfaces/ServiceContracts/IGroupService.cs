@@ -48,7 +48,9 @@ namespace SOS.Service.Interfaces
 
         //[OperationContract]
         //[WebGet(UriTemplate = "/ValidateGroupMarshal/{ValidationID}/{ProfileID}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<ResultInfo> ValidateGroupMarshal(string ValidationID, string ProfileID);  
+        Task<ResultInfo> ValidateGroupMarshal(string ValidationID, string ProfileID);
+
+        Task<List<GroupMemberLiveSession>> GetFilteredParentGroupLiveMemberSession();
     }
 
 }

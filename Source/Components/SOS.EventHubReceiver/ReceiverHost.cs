@@ -1,4 +1,5 @@
-﻿using Microsoft.ServiceBus;
+﻿using Guardian.Common.Configuration;
+using Microsoft.ServiceBus;
 using Microsoft.ServiceBus.Messaging;
 using System;
 using System.Diagnostics;
@@ -6,21 +7,28 @@ using System.Threading.Tasks;
 
 namespace SOS.EventHubReceiver
 {
-    public class ReceiverHost
+    public class ReceiverHost: IReceiver
     {
         const string hostName = "LocationReceiver";
 
-        static string consumerGroupName = EventHubConsumerGroup.DefaultGroupName;
+        string consumerGroupName = EventHubConsumerGroup.DefaultGroupName;
 
-        static EventProcessorHost host;
+        EventProcessorHost host;
 
-        static EventProcessorFactory factory;
+        EventProcessorFactory factory;
 
-        public static async Task Start()
+        IConfigManager configManager;
+
+        public ReceiverHost(IConfigManager configManager)
+        {
+            this.configManager = configManager;
+        }
+
+        public async Task Start()
         {
             var eventHubConnectionString = GetEventHubConnectionString();
-            var storageConnectionString = Common.Config.TableConnectionString;
-            var eventHubName = Common.Config.EventHubName;
+            var storageConnectionString = configManager.Settings.AzureStorageConnectionString;
+            var eventHubName = configManager.Settings.EventHubName;
 
             // here it's using eventhub as lease name. but it can be specified as any you want.
             // if the host is having same lease name, it will be shared between hosts.
@@ -55,15 +63,15 @@ namespace SOS.EventHubReceiver
         //    host.UnregisterEventProcessorAsync().Wait();
         //}
 
-        private static void OptionsOnExceptionReceived(object sender, ExceptionReceivedEventArgs exceptionReceivedEventArgs)
+        private void OptionsOnExceptionReceived(object sender, ExceptionReceivedEventArgs exceptionReceivedEventArgs)
         {
             // by receiving host exception, you could respond to the error, e.g. restart the host.
             Trace.WriteLine(string.Format("Received exception, action: {0}, messae： {1}.", exceptionReceivedEventArgs.Action, exceptionReceivedEventArgs.Exception.Message), "Error");
         }
 
-        static string GetEventHubConnectionString()
+        private string GetEventHubConnectionString()
         {
-            var connectionString = Common.Config.EventHubConnectionString;
+            var connectionString = configManager.Settings.EventHubConnectionString;
             try
             {
                 var builder = new ServiceBusConnectionStringBuilder(connectionString);

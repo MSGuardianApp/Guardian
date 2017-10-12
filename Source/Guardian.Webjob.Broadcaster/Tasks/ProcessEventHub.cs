@@ -1,4 +1,5 @@
 using Guardian.Common.Configuration;
+using SOS.EventHubReceiver;
 using System;
 using System.Diagnostics;
 using System.Threading;
@@ -11,11 +12,14 @@ namespace Guardian.Webjob.Broadcaster
         // readonly ManualResetEvent runCompleteEvent = new ManualResetEvent(false);
 
         readonly IConfigManager configManager;
+        IReceiver eventHubReceiverHost;
+
         const int minute = 60 * 1000;
 
-        public ProcessEventHub(IConfigManager configManager)
+        public ProcessEventHub(IReceiver eventHubReceiverHost, IConfigManager configManager)
         {
             this.configManager = configManager;
+            this.eventHubReceiverHost = eventHubReceiverHost;
         }
 
         public async Task Run()
@@ -29,8 +33,8 @@ namespace Guardian.Webjob.Broadcaster
             try
             {
                 Trace.TraceInformation("Processing Event Hub messages started...", "Information");
-
-                await SOS.EventHubReceiver.ReceiverHost.Start();
+                //TODO: Check whether this continues to listen to EventHub or not
+                await eventHubReceiverHost.Start();
 
                 //this.runCompleteEvent.WaitOne();
 

@@ -1,4 +1,5 @@
 ﻿using Guardian.Common;
+using Guardian.Common.Configuration;
 using SOS.Model;
 using System;
 using System.Collections.Generic;
@@ -9,13 +10,15 @@ using System.Threading.Tasks;
 
 namespace SOS.AzureSQLAccessLayer
 {
-    public class LiveSessionRepository: ILiveSessionRepository
+    public class LiveSessionRepository : ILiveSessionRepository
     {
-        private readonly GuardianContext _guardianContext;
+        readonly GuardianContext _guardianContext;
+        readonly IConfigManager configManager;
 
-        public LiveSessionRepository()
-            : this(new GuardianContext())
+        public LiveSessionRepository(IConfigManager configManager)
+            : this(new GuardianContext(configManager.Settings.AzureSQLConnectionString))
         {
+            this.configManager = configManager;
         }
 
         public LiveSessionRepository(GuardianContext guardianContext)
@@ -62,7 +65,7 @@ namespace SOS.AzureSQLAccessLayer
 
         public async Task<List<LiveSession>> GetLiveSessionsAsync()
         {
-            var lastArchivedTime = DateTime.UtcNow.AddMinutes(-Config.ArchiveTimeGapInMinutes);
+            var lastArchivedTime = DateTime.UtcNow.AddMinutes(-1 * configManager.Settings.ArchiveTimeGapInMinutes);
 
             return await _guardianContext.LiveSessions
                            .Where(w => w.LastModifiedDate < lastArchivedTime)
@@ -91,7 +94,7 @@ namespace SOS.AzureSQLAccessLayer
                             new SqlParameter("@UpdatedSessionXML", updatedSessionsXML));
             return result;
         }
-      
+
         public async Task<LiveSession> GetNotificationDetails(long profileID, string sessionID)
         {
             return await _guardianContext.LiveSessions

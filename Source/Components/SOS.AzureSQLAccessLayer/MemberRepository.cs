@@ -7,16 +7,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using SOS.Service.Utility;
 using SOS.AzureSQLAccessLayer.Entities;
+using Guardian.Common.Configuration;
 
 namespace SOS.AzureSQLAccessLayer
 {
     public class MemberRepository : BaseRepository, IMemberRepository
     {
-        private readonly GuardianContext _guardianContext;
+         readonly GuardianContext _guardianContext;
+        readonly IConfigManager configManager;
 
-        public MemberRepository()
-            : this(new GuardianContext())
+        public MemberRepository(IConfigManager configManager)
+            : this(new GuardianContext(configManager.Settings.AzureSQLConnectionString))
         {
+            this.configManager = configManager;
         }
 
         public MemberRepository(GuardianContext guardianContext)

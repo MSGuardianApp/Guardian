@@ -10,6 +10,9 @@
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using Newtonsoft.Json.Serialization;
+    using SOS.AzureSQLAccessLayer;
+    using SOS.AzureStorageAccessLayer;
+    using SOS.EventHubReceiver;
     using System.Collections.Generic;
 
     /// <summary>
@@ -38,6 +41,11 @@
 
             #endregion // Read Configuration
 
+            container.RegisterType<IReceiver, ReceiverHost>(new ContainerControlledLifetimeManager());
+            container.RegisterType<ILiveSessionRepository, LiveSessionRepository>();
+            container.RegisterType<ILocationRepository, LocationRepository>();
+
+            container.RegisterType<ISessionHistoryStorageAccess, SessionHistoryStorageAccess>();
             #region Initialize Web Jobs SDK
 
             config.DashboardConnectionString = configManager.Settings.AzureStorageConnectionString;

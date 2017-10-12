@@ -1,4 +1,4 @@
-﻿using Guardian.Common;
+﻿using Guardian.Common.Configuration;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -10,11 +10,6 @@ namespace SOS.Model
     [DbConfigurationType(typeof(GuardianDbConfiguration))]
     public class GuardianContext : DbContext
     {
-        public GuardianContext()
-            : this(Config.AzureSQLConnectionString)
-        {
-        }
-
         public GuardianContext(string connectionString)
             : base(connectionString)
         {

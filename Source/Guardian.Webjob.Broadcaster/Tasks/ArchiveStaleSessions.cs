@@ -13,11 +13,15 @@ namespace Guardian.Webjob.Broadcaster
 {
     public class ArchiveStaleSessions
     {
+        readonly ILiveSessionRepository liveSessionRepository;
+        readonly ISessionHistoryStorageAccess sessionHistoryStorageAccess;
         readonly IConfigManager configManager;
         const int minute = 60 * 1000;
 
-        public ArchiveStaleSessions(IConfigManager configManager)
+        public ArchiveStaleSessions(ILiveSessionRepository liveSessionRepository, ISessionHistoryStorageAccess sessionHistoryStorageAccess, IConfigManager configManager)
         {
+            this.liveSessionRepository = liveSessionRepository;
+            this.sessionHistoryStorageAccess = sessionHistoryStorageAccess;
             this.configManager = configManager;
         }
 
@@ -27,12 +31,12 @@ namespace Guardian.Webjob.Broadcaster
             {
                 Trace.TraceInformation("Archive Stale Sessions started...", "Information");
 
-                List<LiveSession> liveSessions = await new LiveSessionRepository().GetLiveSessionsAsync();
+                List<LiveSession> liveSessions = await liveSessionRepository.GetLiveSessionsAsync();
                 List<SessionHistory> historySessions = liveSessions.ConvertToHistory();
 
-                await new SessionHistoryStorageAccess().ArchiveSessionDetailsAsync(historySessions);
+                await sessionHistoryStorageAccess.ArchiveSessionDetailsAsync(historySessions);
 
-                await new LiveSessionRepository().PurgeStaleSessionsAsync(liveSessions);
+                await liveSessionRepository.PurgeStaleSessionsAsync(liveSessions);
 
                 Trace.TraceInformation("Archive Stale Sessions completed. Sleepin for " + configManager.Settings.ArchiveRunIntervalInMinutes.ToString() + " minutes", "Information");
                 await Task.Delay(configManager.Settings.ArchiveRunIntervalInMinutes * minute); // 1 hour

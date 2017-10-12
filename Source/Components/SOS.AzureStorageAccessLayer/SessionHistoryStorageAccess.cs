@@ -1,4 +1,5 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
+﻿using Guardian.Common.Configuration;
+using Microsoft.WindowsAzure.Storage.Table;
 using SOS.AzureStorageAccessLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,11 @@ using System.Threading.Tasks;
 
 namespace SOS.AzureStorageAccessLayer
 {
-    public class SessionHistoryStorageAccess : StorageAccessBase
+    public class SessionHistoryStorageAccess : StorageAccessBase, ISessionHistoryStorageAccess
     {
+        public SessionHistoryStorageAccess(IConfigManager configManager)
+            : base(configManager) { }
+
         public async Task ArchiveSessionDetailAsync(SessionHistory session)
         {
             if (session != null)
@@ -101,13 +105,11 @@ namespace SOS.AzureStorageAccessLayer
                                             UserName = sessionHist.Name,
                                             StartDate = Convert.ToString(sessionHist.SessionStartTime),
                                             TotalTimeinSOS = sessionHist.SessionEndTime != null ? Convert.ToString(sessionHist.SessionEndTime.Value.Ticks - sessionHist.SessionStartTime.Ticks) : "UnKnown",
-                                            SOSAlerts = sessionHist.NoOfSMSSent != null ? Convert.ToString(sessionHist.NoOfSMSSent) : "0",
-                                            EmailAlerts = sessionHist.NoOfEmailsSent != null ? Convert.ToString(sessionHist.NoOfEmailsSent) : "0",
-                                            EmailBuddies = sessionHist.NoOfEmailRecipients != null ? Convert.ToString(sessionHist.NoOfEmailRecipients) : "0",
-                                            SOSBuddies = sessionHist.NoOfSMSRecipients != null ? Convert.ToString(sessionHist.NoOfSMSRecipients) : "0"
-
+                                            SOSAlerts = Convert.ToString(sessionHist.NoOfSMSSent),
+                                            EmailAlerts = Convert.ToString(sessionHist.NoOfEmailsSent),
+                                            EmailBuddies = Convert.ToString(sessionHist.NoOfEmailRecipients),
+                                            SOSBuddies = Convert.ToString(sessionHist.NoOfSMSRecipients)
                                         });
-
 
                 return qryReturn.ToList<object>();
             }
@@ -169,9 +171,7 @@ namespace SOS.AzureStorageAccessLayer
             catch (Exception ex) { return null; }
 
         }
-
     }
-
 }
 
 
