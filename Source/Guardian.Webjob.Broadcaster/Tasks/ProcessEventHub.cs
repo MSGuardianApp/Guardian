@@ -12,7 +12,7 @@ namespace Guardian.Webjob.Broadcaster
         // readonly ManualResetEvent runCompleteEvent = new ManualResetEvent(false);
 
         readonly IConfigManager configManager;
-        IReceiver eventHubReceiverHost;
+        readonly IReceiver eventHubReceiverHost;
 
         const int minute = 60 * 1000;
 

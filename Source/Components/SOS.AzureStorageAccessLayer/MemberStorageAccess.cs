@@ -1,19 +1,18 @@
-﻿using System;
+﻿using Guardian.Common.Configuration;
+using Microsoft.WindowsAzure.Storage.Table;
+using SOS.AzureStorageAccessLayer.Entities;
+using SOS.Service.Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SOS.AzureStorageAccessLayer.Entities;
-using utility = SOS.Service.Utility;
-using Microsoft.WindowsAzure.Storage.Table;
-using SOS.Service.Utility;
 
 namespace SOS.AzureStorageAccessLayer
 {
-    public class MemberStorageAccess : StorageAccessBase
+    public class MemberStorageAccess : StorageAccessBase, IMemberStorageAccess
     {
-        public void CreateUserTable()
-        {
-        }
+        public MemberStorageAccess(IConfigManager configManager)
+            : base(configManager) { }
 
         /// <summary>
         /// 

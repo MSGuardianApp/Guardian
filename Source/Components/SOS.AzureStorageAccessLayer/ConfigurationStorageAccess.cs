@@ -1,12 +1,16 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
+﻿using Guardian.Common.Configuration;
+using Microsoft.WindowsAzure.Storage.Table;
 using SOS.AzureStorageAccessLayer.Entities;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace SOS.AzureStorageAccessLayer
 {
-    public class ConfigurationStorageAccess : StorageAccessBase
+    public class ConfigurationStorageAccess : StorageAccessBase, IConfigurationStorageAccess
     {
+        public ConfigurationStorageAccess(IConfigManager configManager)
+            : base(configManager) { }
+
         public string GetLatestAppVersion()
         {
             TableQuery<Configuration> UQuery = null;

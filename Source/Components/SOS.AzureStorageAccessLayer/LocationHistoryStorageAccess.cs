@@ -1,4 +1,5 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
+﻿using Guardian.Common.Configuration;
+using Microsoft.WindowsAzure.Storage.Table;
 using SOS.AzureStorageAccessLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace SOS.AzureStorageAccessLayer
 {
-    public class LocationHistoryStorageAccess : StorageAccessBase
+    public class LocationHistoryStorageAccess : StorageAccessBase, ILocationHistoryStorageAccess
     {
+        public LocationHistoryStorageAccess(IConfigManager configManager)
+            : base(configManager) { }
+
         public async Task SaveToLocationHistoryAsync(LocationHistory locData)
         {
             if (base.LoadTableSilent(Constants.LocationHistoryTableName))
@@ -22,7 +26,6 @@ namespace SOS.AzureStorageAccessLayer
                 await base.EntityTable.ExecuteAsync(insertLocation);
             }
         }
-
 
         public List<LocationHistory> GetLocationHistory(string profileID, DateTime startDate, DateTime endDate)
         {

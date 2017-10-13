@@ -1,10 +1,13 @@
 using Guardian.Common.Configuration;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using SOS.AzureSQLAccessLayer;
+using SOS.AzureStorageAccessLayer;
+using SOS.AzureStorageAccessLayer.Entities;
 using SOS.Service.Implementation;
 using SOS.Service.Interfaces;
 using SOS.Service.Utility;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
@@ -16,20 +19,21 @@ namespace Guardian.Webjob.Broadcaster
     {
         readonly IConfigManager configManager;
         readonly ILiveSessionRepository liveSessionRepository;
-        readonly IGroupRepository grouprepository;
-        readonly IGroupService grpService;
+        readonly IGroupRepository groupRepository;
+        readonly IGroupStorageAccess groupStorageAccess;
 
         const int minute = 60 * 1000;
 
-        public DynamicAllocationToSubGroups(IGroupService grpService, ILiveSessionRepository liveSessionRepository, IGroupRepository grouprepository, IConfigManager configManager)
+        public DynamicAllocationToSubGroups(ILiveSessionRepository liveSessionRepository, IGroupRepository groupRepository, 
+                IGroupStorageAccess groupStorageAccess, IConfigManager configManager)
         {
-            this.grpService = grpService;
             this.liveSessionRepository = liveSessionRepository;
-            this.grouprepository = grouprepository;
+            this.groupRepository = groupRepository;
+            this.groupStorageAccess = groupStorageAccess;
             this.configManager = configManager;
         }
 
-        public void Run()
+        public async Task Run()
         {
             var allocationInterval = configManager.Settings.SubGroupAllocationIntervalInMinutes;
 
@@ -46,13 +50,13 @@ namespace Guardian.Webjob.Broadcaster
                 //5. If GroupNotifications are enabled, then notify the Sub Group
                 //6. On SOS stop, Delete all dynamic SubGroup allocations
 
-                var GrpWithSession = grpService.GetFilteredParentGroupLiveMemberSession().Result;
+                var grpWithSession = await GetFilteredParentGroupLiveMemberSession();
 
                 //For debugging, please uncomment below
                 //ParallelOptions opt = new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount > 1 ? Environment.ProcessorCount - 1 : 1 };
                 //Parallel.ForEach(GrpWithSession, opt, s =>
 
-                Parallel.ForEach(GrpWithSession, s =>
+                Parallel.ForEach(grpWithSession, s =>
                 {
                     var DownloadedShapeFilePath = Utility.GetGrpIdGroupKeyAndShapePaths(configManager.Settings).FirstOrDefault(x => x.Item1.Equals(s.GrpId));
 
@@ -72,7 +76,7 @@ namespace Guardian.Webjob.Broadcaster
                                 {
                                     try
                                     {
-                                        int result = grouprepository.AutoSubscribeLiveUserToSubGroup(SubGroupObj.GroupID, s.LiveSessionObj.ProfileID, s.LiveSessionObj.Name, s.LiveSessionObj.SessionID, DownloadedShapeFilePath.Item1).Result;
+                                        int result = groupRepository.AutoSubscribeLiveUserToSubGroup(SubGroupObj.GroupID, s.LiveSessionObj.ProfileID, s.LiveSessionObj.Name, s.LiveSessionObj.SessionID, DownloadedShapeFilePath.Item1).Result;
                                     }
                                     catch (Exception ex)
                                     {
@@ -80,21 +84,40 @@ namespace Guardian.Webjob.Broadcaster
                                     }
                                 }
                             }
-
                         }
                     }
-
                 });
 
                 Trace.TraceInformation("Dynamic Allocation To Sub Groups completed. Going to sleep for " + allocationInterval.ToString() + " minutes", "Information");
                 Thread.Sleep(allocationInterval * minute);
             }
-
             catch (Exception ex)
             {
                 Trace.TraceError("WebJob Error: DynamicAllocationToSubGroups failed! " + ex.Message + " " + ex.InnerException + " " + ex.StackTrace, "Error");
                 Thread.Sleep(5 * minute);
             }
+        }
+        private async Task<List<GroupMemberLiveSession>> GetFilteredParentGroupLiveMemberSession()
+        {
+            List<GroupMemberLiveSession> sessions = await groupRepository.GetAllGroupMembershipLite();
+
+            List<Group> parentGrp = GetParentGroup();
+            IEnumerable<GroupMemberLiveSession> result =
+                sessions.ToList()
+                    .Where(
+                        x =>
+                            parentGrp.Exists(
+                                grp =>
+                                    grp.GroupID.Equals(x.GrpId) && !String.IsNullOrWhiteSpace(grp.ShapeFileID) &&
+                                    grp.NotifySubgroups));
+
+            return result.ToList();
+        }
+
+        private List<Group> GetParentGroup()
+        {
+            var allGroups = groupStorageAccess.GetAllGroups(null);
+            return allGroups.Where(x => (!x.ParentGroupID.HasValue || x.ParentGroupID.Value == 0)).ToList();
         }
     }
 }

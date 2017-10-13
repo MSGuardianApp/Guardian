@@ -131,6 +131,7 @@ namespace SOS.AzureSQLAccessLayer
                          new SqlParameter("@SMSPostedTime", SMSPostedTime));
         }
         #endregion
+
         #region Dispose Section
         private bool _disposed;
 

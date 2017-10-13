@@ -13,7 +13,7 @@ namespace Guardian.Webjob.Broadcaster
 
             try
             {
-                await new LiveSessionRepository().ClearProcessingAsync(roleInstanceId);
+                //await new LiveSessionRepository().ClearProcessingAsync(roleInstanceId);
             }
             catch (Exception ex)
             {

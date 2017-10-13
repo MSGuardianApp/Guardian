@@ -19,10 +19,10 @@ namespace SOS.Service.Implementation
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class GeoUpdate : IGeoUpdates
     {
-        private readonly LocationHistoryStorageAccess GpsaAccess = new LocationHistoryStorageAccess();
+        private readonly LocationHistoryStorageAccess GpsaAccess;
         private readonly Authorization _authService;
-        private readonly IncidentStorageAccess _incidentAccess = new IncidentStorageAccess();
-        private readonly LocationRepository _locRepository = new LocationRepository();
+        private readonly IncidentStorageAccess _incidentAccess;
+        private readonly LocationRepository _locRepository;
         private readonly MemberRepository _memberRepository;
         private MemberStorageAccess _memberStorage;
 
@@ -64,11 +64,11 @@ namespace SOS.Service.Implementation
                         {
                             PID = profileID,
                             Id = sessionID,
-                            Alt = new string[] {null},
-                            Lat = new[] {lat},
-                            Long = new[] {lng},
-                            TS = new[] {outticks},
-                            IsSOS = new[] {isSOS},
+                            Alt = new string[] { null },
+                            Lat = new[] { lat },
+                            Long = new[] { lng },
+                            TS = new[] { outticks },
+                            IsSOS = new[] { isSOS },
                             Accuracy = new double[] { 0 }
                             //Spd = new int[]{0}
                         };
@@ -221,7 +221,7 @@ namespace SOS.Service.Implementation
         {
             // Authenticate the Request from Token
 
-            var incidents = new IncidentList {List = new List<Incident>()};
+            var incidents = new IncidentList { List = new List<Incident>() };
 
             var Incidents = new List<entity.Incident>();
             try
@@ -243,7 +243,7 @@ namespace SOS.Service.Implementation
         {
             // Authenticate the Request from Token
 
-            var incidents = new IncidentList {List = new List<Incident>()};
+            var incidents = new IncidentList { List = new List<Incident>() };
 
             DateTime vStartTime;
             DateTime vEndTime;
@@ -275,7 +275,7 @@ namespace SOS.Service.Implementation
         {
             // Authenticate the Request from Token
 
-            var incidents = new IncidentList {List = new List<Incident>()};
+            var incidents = new IncidentList { List = new List<Incident>() };
 
             string mobileNumber = string.Empty;
 

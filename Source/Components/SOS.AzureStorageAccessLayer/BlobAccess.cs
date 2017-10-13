@@ -2,13 +2,15 @@
 using System;
 using System.IO;
 using Guardian.Common;
+using Guardian.Common.Configuration;
+
 namespace SOS.AzureStorageAccessLayer
 {
-    public class BlobAccess
+    public class BlobAccess : IBlobAccess
     {
-        public BlobAccess()
+        public BlobAccess(IConfigManager configManager)
         {
-            _StorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount.Parse(Config.BlobConnectionString);
+            _StorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount.Parse(configManager.Settings.AzureStorageConnectionString);
             _BlobClient = StorageAccount.CreateCloudBlobClient();
         }
         private Microsoft.WindowsAzure.Storage.CloudStorageAccount _StorageAccount = null;
@@ -28,7 +30,7 @@ namespace SOS.AzureStorageAccessLayer
         }
 
         private CloudBlobContainer _imageContainer = null;
-       
+
         internal bool IsImageContainerLoaded = false;
         internal void LoadImagesContainer()
         {
@@ -39,9 +41,9 @@ namespace SOS.AzureStorageAccessLayer
                 _imageContainer.CreateIfNotExists();
 
                 _imageContainer.SetPermissions(new BlobContainerPermissions
-                    {
-                        PublicAccess = BlobContainerPublicAccessType.Blob
-                    });
+                {
+                    PublicAccess = BlobContainerPublicAccessType.Blob
+                });
                 IsImageContainerLoaded = true;
             }
             catch (Exception ex)
@@ -55,7 +57,7 @@ namespace SOS.AzureStorageAccessLayer
             try
             {
                 _shapeContainer = _BlobClient.GetContainerReference("shapes");
-                _shapeContainer.CreateIfNotExists();               
+                _shapeContainer.CreateIfNotExists();
             }
             catch (Exception ex)
             {
@@ -65,7 +67,7 @@ namespace SOS.AzureStorageAccessLayer
         }
 
 
-        public bool UploadShapeFiles(Stream InputStream,String FileName)
+        public bool UploadShapeFiles(Stream InputStream, String FileName)
         {
             bool flag = false;
             try
@@ -77,7 +79,7 @@ namespace SOS.AzureStorageAccessLayer
             }
             catch (Exception)
             {
-                
+
             }
             return flag;
         }
@@ -102,7 +104,7 @@ namespace SOS.AzureStorageAccessLayer
                 LoadImagesContainer();
             CloudBlockBlob blockBlob = _imageContainer.GetBlockBlobReference(FileName);
             blockBlob.DeleteIfExists();
-            
+
         }
     }
 }

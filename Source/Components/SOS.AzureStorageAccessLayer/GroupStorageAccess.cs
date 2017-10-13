@@ -4,11 +4,15 @@ using System.Linq;
 using SOS.AzureStorageAccessLayer.Entities;
 using Microsoft.WindowsAzure.Storage.Table;
 using SOS.Service.Utility;
+using Guardian.Common.Configuration;
 
 namespace SOS.AzureStorageAccessLayer
 {
-    public class GroupStorageAccess : StorageAccessBase
+    public class GroupStorageAccess : StorageAccessBase, IGroupStorageAccess
     {
+        public GroupStorageAccess(IConfigManager configManager)
+            : base(configManager) { }
+
         int zeroValue = 0;
         public void CreateGroup(Group grp)
         {

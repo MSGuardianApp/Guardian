@@ -1,4 +1,5 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
+﻿using Guardian.Common.Configuration;
+using Microsoft.WindowsAzure.Storage.Table;
 using SOS.AzureStorageAccessLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -6,8 +7,11 @@ using System.Linq;
 
 namespace SOS.AzureStorageAccessLayer
 {
-    public class IncidentStorageAccess : StorageAccessBase
+    public class IncidentStorageAccess : StorageAccessBase, IIncidentStorageAccess
     {
+        public IncidentStorageAccess(IConfigManager configManager)
+            : base(configManager) { }
+
         public void RecordIncident(Incident report)
         {
             if (base.LoadTableSilent(Constants.IncidentsTableName))
@@ -85,9 +89,9 @@ namespace SOS.AzureStorageAccessLayer
             //VR , we need to provide full incidentID to get data now, 
             //otherwsise we cant compare as QueryComparisons having only Equal comparison but we discussed, user will provide only end part of ID in UI, 
             //in that case we need to have either contains comparison.Kindly suggest, how I can do.
-          
+
             string filterTimeStamp = TableQuery.GenerateFilterCondition("ID", QueryComparisons.Equal, incidentID);
-                                       
+
             TableQuery<Incident> UQuery = new TableQuery<Incident>().Where(filterTimeStamp);
 
             base.LoadTable(Constants.IncidentsTableName);

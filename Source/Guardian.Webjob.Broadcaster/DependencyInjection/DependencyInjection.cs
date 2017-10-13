@@ -13,6 +13,8 @@
     using SOS.AzureSQLAccessLayer;
     using SOS.AzureStorageAccessLayer;
     using SOS.EventHubReceiver;
+    using SOS.Service.Implementation;
+    using SOS.Service.Interfaces;
     using System.Collections.Generic;
 
     /// <summary>
@@ -44,8 +46,16 @@
             container.RegisterType<IReceiver, ReceiverHost>(new ContainerControlledLifetimeManager());
             container.RegisterType<ILiveSessionRepository, LiveSessionRepository>();
             container.RegisterType<ILocationRepository, LocationRepository>();
+            container.RegisterType<IGroupRepository, GroupRepository>();
 
             container.RegisterType<ISessionHistoryStorageAccess, SessionHistoryStorageAccess>();
+            container.RegisterType<IGroupStorageAccess, GroupStorageAccess>();
+
+            container.RegisterType<IGroupService, GroupService>();
+            container.RegisterType<IReceiver, ReceiverHost>();
+
+            container.AddNewExtension<ImplementationDependencyInjection>();
+
             #region Initialize Web Jobs SDK
 
             config.DashboardConnectionString = configManager.Settings.AzureStorageConnectionString;

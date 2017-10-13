@@ -1,17 +1,42 @@
 ﻿using Guardian.Common.Configuration;
 using Microsoft.Azure.WebJobs;
+using SOS.AzureSQLAccessLayer;
+using SOS.AzureStorageAccessLayer;
+using SOS.EventHubReceiver;
+using SOS.Service.Interfaces;
 using System;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Guardian.Webjob.Broadcaster
 {
     public class Functions
     {
+        readonly ILiveSessionRepository liveSessionRepository;
+        readonly ISessionHistoryStorageAccess sessionHistoryStorageAccess;
+        readonly IGroupRepository groupRepository;
+        readonly ILocationRepository locationRepository;
+
+        readonly IGroupService grpService;
+        readonly IReceiver eventHubReceiverHost;
+
         readonly IConfigManager configManager;
-        public Functions(IConfigManager configManager)
+        public Functions(ILiveSessionRepository liveSessionRepository,
+                    ISessionHistoryStorageAccess sessionHistoryStorageAccess,
+                    IGroupRepository groupRepository,
+                    ILocationRepository locationRepository,
+                    IGroupService grpService,
+                    IReceiver eventHubReceiverHost,
+                    IConfigManager configManager)
         {
+            this.liveSessionRepository = liveSessionRepository;
+            this.sessionHistoryStorageAccess = sessionHistoryStorageAccess;
+            this.groupRepository = groupRepository;
+            this.locationRepository = locationRepository;
+
+            this.grpService = grpService;
+            this.eventHubReceiverHost = eventHubReceiverHost;
+
             this.configManager = configManager;
             SOS.Mappers.Mapper.InitializeMappers();
         }
@@ -30,31 +55,31 @@ namespace Guardian.Webjob.Broadcaster
         public async Task MessageBroadcaster([TimerTrigger("00:00:30", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("Broadcasting messages has started..." + DateTime.Now.ToLongTimeString());
-            await new MessageBroadcaster(configManager).Run();
+            await new MessageBroadcaster(liveSessionRepository, configManager).Run();
         }
 
         public async Task PurgeLiveLocations([TimerTrigger("00:10:00", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("PurgeLiveLocations has started..." + DateTime.Now.ToLongTimeString());
-            await new PurgeLiveLocations(configManager).Run();
+            await new PurgeLiveLocations(locationRepository, configManager).Run();
         }
 
         public async Task ArchiveStaleSessions([TimerTrigger("00:10:00", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("ArchiveStaleSessions has started..." + DateTime.Now.ToLongTimeString());
-            await new ArchiveStaleSessions(configManager).Run();
+            await new ArchiveStaleSessions(liveSessionRepository, sessionHistoryStorageAccess, configManager).Run();
         }
 
         public void DynamicAllocationToSubGroups([TimerTrigger("00:05:00", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("DynamicAllocationToSubGroups has started..." + DateTime.Now.ToLongTimeString());
-            new DynamicAllocationToSubGroups(configManager).Run();
+            new DynamicAllocationToSubGroups(grpService, liveSessionRepository, groupRepository, configManager).Run();
         }
 
         public async Task ProcessEventHub([TimerTrigger("00:00:30", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("ProcessEventHub has started..." + DateTime.Now.ToLongTimeString());
-            await new ProcessEventHub(configManager).Run();
+            await new ProcessEventHub(eventHubReceiverHost, configManager).Run();
         }
     }
 }

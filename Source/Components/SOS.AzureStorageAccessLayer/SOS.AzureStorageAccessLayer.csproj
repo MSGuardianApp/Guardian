@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SOS.AzureStorageAccessLayer</RootNamespace>
     <AssemblyName>SOS.AzureStorageAccessLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -93,12 +93,12 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="IncidentStorageAccess.cs" />
     <Compile Include="Interfaces\IBlobAccess.cs" />
-    <Compile Include="Interfaces\ConfigurationStorageAccess.cs" />
-    <Compile Include="Interfaces\GroupStorageAccess.cs" />
-    <Compile Include="Interfaces\IncidentStorageAccess.cs" />
-    <Compile Include="Interfaces\LocationHistoryStorageAccess.cs" />
-    <Compile Include="Interfaces\MemberStorageAccess.cs" />
-    <Compile Include="Interfaces\QueueAccess.cs" />
+    <Compile Include="Interfaces\IConfigurationStorageAccess.cs" />
+    <Compile Include="Interfaces\IGroupStorageAccess.cs" />
+    <Compile Include="Interfaces\IIncidentStorageAccess.cs" />
+    <Compile Include="Interfaces\ILocationHistoryStorageAccess.cs" />
+    <Compile Include="Interfaces\IMemberStorageAccess.cs" />
+    <Compile Include="Interfaces\IQueueAccess.cs" />
     <Compile Include="Interfaces\ISessionHistoryStorageAccess.cs" />
     <Compile Include="LocationHistoryStorageAccess.cs" />
     <Compile Include="GroupStorageAccess.cs" />

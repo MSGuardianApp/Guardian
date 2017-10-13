@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SOS.Service.Interfaces
 {
     [ServiceContract(Namespace = "http://www.microsoft.com/sos/2013/02", Name = "GroupService")]
-    public interface IGroupService 
+    public interface IGroupService
     {
         [OperationContract]
         [WebGet(UriTemplate = "/GetListOfGroups/{SearchKey}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -29,14 +29,14 @@ namespace SOS.Service.Interfaces
         //[OperationContract]
         //[WebGet(UriTemplate = "/GetMarshalList/{GroupID}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<MarshalList> GetMarshalList(string GroupID);
-         
+
         //[OperationContract]
         //[WebGet(UriTemplate = "/AssignBuddyToMarshal/{AdminID}/{GroupID}/{MarshalProfileID}/{MarshalUserID}/{TargetUserProfileID}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<ResultInfo> AssignBuddyToMarshal(string AdminID, string GroupID, string MarshalProfileID, string MarshalUserID, string TargetUserProfileID);
-       
+
         //[OperationContract]
         //[WebGet(UriTemplate = "/RemoveBuddyFromMarshal/{AdminID}/{GroupID}/{MarshalProfileID}/{MarshalUserID}/{TargetUserProfileID}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<ResultInfo> RemoveBuddyFromMarshal(string AdminID, string GroupID, string MarshalProfileID,string MarshalUserID, string TargetUserProfileID);
+        Task<ResultInfo> RemoveBuddyFromMarshal(string AdminID, string GroupID, string MarshalProfileID, string MarshalUserID, string TargetUserProfileID);
 
         //[OperationContract]
         //[WebGet(UriTemplate = "/DeleteMarshal/{AdminID}/{GroupID}/{MarshalProfileID}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -50,7 +50,7 @@ namespace SOS.Service.Interfaces
         //[WebGet(UriTemplate = "/ValidateGroupMarshal/{ValidationID}/{ProfileID}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<ResultInfo> ValidateGroupMarshal(string ValidationID, string ProfileID);
 
-        Task<List<GroupMemberLiveSession>> GetFilteredParentGroupLiveMemberSession();
+        //Task<List<GroupMemberLiveSession>> GetFilteredParentGroupLiveMemberSession();
     }
 
 }
