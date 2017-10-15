@@ -11,7 +11,7 @@ using Guardian.Common.Configuration;
 
 namespace SOS.AzureSQLAccessLayer
 {
-    public class MemberRepository : BaseRepository, IMemberRepository
+    public class MemberRepository : IMemberRepository
     {
          readonly GuardianContext _guardianContext;
         readonly IConfigManager configManager;

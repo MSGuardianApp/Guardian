@@ -3,16 +3,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Xml.Linq;
-
+using Guardian.Common.Configuration;
 
 namespace SOS.Service.Utility
 {
-    public static class BingService
+    public class BingService
     {
         private const string _BingUri = "http://dev.virtualearth.net/REST/v1/Locations/";
-        private static string _BingKey = Guardian.Common.Config.BingKey;
-
-        public async static Task<string> GetAddressByPointAsync(string lat, string lng)
+        private string _BingKey;
+        public BingService(Settings settings)
+        {
+            _BingKey = settings.BingKey;
+        }
+        public async Task<string> GetAddressByPointAsync(string lat, string lng)
         {
             string _UriParameters = string.Format("{0},{1}?o=xml&key={2}", lat, lng, _BingKey);
             _UriParameters = Uri.EscapeUriString(_UriParameters);
@@ -29,7 +32,7 @@ namespace SOS.Service.Utility
             return GetAddressFromBXml(response, lat, lng);
         }
 
-        public static string GetAddressFromBXml(string xmlAddress, string latitude, string longitude)
+        private string GetAddressFromBXml(string xmlAddress, string latitude, string longitude)
         {
             string address = string.Empty;
             try

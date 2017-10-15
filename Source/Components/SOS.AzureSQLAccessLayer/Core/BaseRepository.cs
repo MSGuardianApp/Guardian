@@ -31,7 +31,7 @@ namespace SOS.AzureSQLAccessLayer
         #region Connection
         public SqlConnection GetConnection()
         {
-            return (new SqlConnection(Config.AzureSQLConnectionString));
+            return null;// TODO (new SqlConnection(Config.AzureSQLConnectionString));
         }
 
         /// <summary>

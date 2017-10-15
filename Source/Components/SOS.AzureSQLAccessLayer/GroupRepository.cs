@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SOS.AzureSQLAccessLayer
 {
-    public class GroupRepository : BaseRepository, IGroupRepository
+    public class GroupRepository : IGroupRepository
     {
         readonly GuardianContext _guardianContext;
         readonly IConfigManager configManager;

@@ -1,4 +1,5 @@
-﻿using SOS.Model;
+﻿using Guardian.Common.Configuration;
+using SOS.Model;
 using System;
 using System.Data.Entity;
 using System.Linq;
@@ -8,11 +9,13 @@ namespace SOS.AzureSQLAccessLayer
 {
     public class AuthRepository
     {
-        private readonly GuardianContext _guardianContext;
+        readonly GuardianContext _guardianContext;
+        readonly IConfigManager configManager;
 
-        public AuthRepository()
-            : this(new GuardianContext())
+        public AuthRepository(IConfigManager configManager)
+            : this(new GuardianContext(configManager.Settings.AzureSQLConnectionString))
         {
+            this.configManager = configManager;
         }
 
         public AuthRepository(GuardianContext guardianContext)

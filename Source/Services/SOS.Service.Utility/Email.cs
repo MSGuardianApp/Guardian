@@ -1,54 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Mail;
-using System.Net;
+﻿using Guardian.Common.Configuration;
+using Guardian.Common.Resources;
 using SendGrid;
+using System;
+using System.Collections.Generic;
 //using SendGridMail;
 //using SendGridMail.Transport;
 using System.Diagnostics;
-using Common = Guardian.Common;
+using System.Net;
+using System.Net.Mail;
 
 namespace SOS.Service.Utility
 {
-    public static class Email
+    public class Email
     {
         private const string DisplayName = "Guardian";
         private const string FromAddress = "guardianapp@outlook.com";
 
-        private static string sendGridUserID;
-        private static string sendGridPassword;
+        private string sendGridUserID;
+        private string sendGridPassword;
 
-        private static readonly string GuardianPortalUri = Config.GuardianPortalUri;
+        private readonly string guardianPortalUri;
 
-        static Email()
+        public Email(Settings settings)
         {
-            sendGridUserID = Config.sendGridUserID;
-            sendGridPassword = Config.sendGridPassword;
+            sendGridUserID = settings.SendGridUserID;
+            sendGridPassword = settings.SendGridPassword;
+            guardianPortalUri = settings.GuardianPortalUri;
         }
 
-        public static bool SendGroupValidationMail(string to, string validationKey, string profileId, string validationType)
+        public bool SendGroupValidationMail(string to, string validationKey, string profileId, string validationType)
         {
             string messageBody;
             string messageSubject;
 
             if (validationType == "GroupMember")
             {
-                messageBody = Common.Resources.Messages.EmailGroupValidationMsgTmp;
-                messageSubject = Common.Resources.Messages.EmailGroupValidationSubj;
+                messageBody = Messages.EmailGroupValidationMsgTmp;
+                messageSubject = Messages.EmailGroupValidationSubj;
             }
             else
             {
-                messageBody = Common.Resources.Messages.EmailMarshalValidationMsgTmp;
-                messageSubject = Common.Resources.Messages.EmailMarshalValidationSubj;
+                messageBody = Messages.EmailMarshalValidationMsgTmp;
+                messageSubject = Messages.EmailMarshalValidationSubj;
             }
 
-            string message = string.Format(messageBody, validationKey, profileId, GuardianPortalUri);
+            string message = string.Format(messageBody, validationKey, profileId, guardianPortalUri);
             var toList = new List<string>();
             toList.Add(to);
             return SendEmail(toList, message, messageSubject);
         }
 
-        public static bool SendEmail(List<string> To, string Body, string Subject)
+        public bool SendEmail(List<string> To, string Body, string Subject)
         {
             try
             {
@@ -62,7 +64,7 @@ namespace SOS.Service.Utility
             return true;
         }
 
-        public static bool SendEmailUsingSendGrid(List<string> to, string subject, string body)
+        public bool SendEmailUsingSendGrid(List<string> to, string subject, string body)
         {
             //create a new message object 
             var message = new SendGridMessage();
@@ -83,10 +85,10 @@ namespace SOS.Service.Utility
             return true;
         }
 
-        public static bool SendEmailBuddyNotification(string emailTo, string profileUserName, string profileMobileNumber, string subscribeUri, string UnsubscribeURI)
+        public bool SendEmailBuddyNotification(string emailTo, string profileUserName, string profileMobileNumber, string subscribeUri, string UnsubscribeURI)
         {
-            string messageBody = Common.Resources.Messages.BuddyNotificationEmailBody;
-            string messageSubject = Common.Resources.Messages.BuddyNotificationEmailSubject;
+            string messageBody = Messages.BuddyNotificationEmailBody;
+            string messageSubject = Messages.BuddyNotificationEmailSubject;
 
             string body = string.Format(messageBody, profileUserName, profileMobileNumber, UnsubscribeURI);
             string subjectLine = string.Format(messageSubject, profileUserName, profileMobileNumber);
@@ -97,10 +99,10 @@ namespace SOS.Service.Utility
             return true;
         }
 
-        public static bool SendUnRegisterEmailNotification(string emailTo)
+        public bool SendUnRegisterEmailNotification(string emailTo)
         {
-            string messageBody = Common.Resources.Messages.UnRegisterNotificationEmailBody;
-            string messageSubject = Common.Resources.Messages.UnRegisterNotificationEmailSubject;
+            string messageBody = Messages.UnRegisterNotificationEmailBody;
+            string messageSubject = Messages.UnRegisterNotificationEmailSubject;
 
             List<string> tos = new List<string>();
             tos.Add(emailTo);

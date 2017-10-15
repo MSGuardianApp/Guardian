@@ -1,22 +1,35 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Net;
-using Guardian.Common;
+using Guardian.Common.Configuration;
+using Guardian.Common.Resources;
 using Twilio;
 
 namespace SOS.Service.Utility
 {
-    public static class SMS
+    public class SMS
     {
-        private static string _smsServiceUserID = Config.SMSServiceUserID;
-        private static string _smsServicePassword = Config.SMSServicePassword;
-        private static string _intlsmsServiceUserID = Config.IntlSMSServiceUserID;
-        private static string _intlsmsServicePassword = Config.IntlSMSServicePassword;
-        private static string _smsPhoneValidMsg = Common.Resources.Messages.PhoneValidationSMS;
-        private static string _smsPhoneReValidMsg = Common.Resources.Messages.PhoneReValidationSMS;
-        private static string _smsDefaultFromNumb = Config.SMSDefaultFromNumber;
+        Settings settings;
+
+        private static string _smsServiceUserID;
+        private static string _smsServicePassword;
+        private static string _intlsmsServiceUserID;
+        private static string _intlsmsServicePassword;
+        private static string _smsPhoneValidMsg = Messages.PhoneValidationSMS;
+        private static string _smsPhoneReValidMsg = Messages.PhoneReValidationSMS;
+        private static string _smsDefaultFromNumb;
 
         private const string _smsuri = "http://www.myvaluefirst.com/smpp/sendsms?";
+        public SMS(Settings settings)
+        {
+            this.settings = settings;
+
+            _smsServiceUserID = settings.SMSServiceUserID;
+            _smsServicePassword = settings.SMSServicePassword;
+            _intlsmsServiceUserID = settings.IntlSMSServiceUserID;
+            _intlsmsServicePassword = settings.IntlSMSServicePassword;
+            _smsDefaultFromNumb = settings.SMSDefaultFromNumber;
+        }
 
         /// <summary>
         /// Send SMS
@@ -25,7 +38,7 @@ namespace SOS.Service.Utility
         /// <param name="fromNumber">Number of user on whose behalf message is being sent</param>
         /// <param name="Message">Contents of SMS</param>
         /// <returns>Success</returns>
-        public static bool SendSMS(string ToNumbers, string Message,bool IsInternational = false)
+        public bool SendSMS(string ToNumbers, string Message, bool IsInternational = false)
         {
 
             var _uriParameterString = string.Format("category=bulk&username={0}&password={1}&to={2}&from={3}&text={4}", IsInternational ? _intlsmsServiceUserID : _smsServiceUserID, IsInternational ? _intlsmsServicePassword : _smsServicePassword, ToNumbers, _smsDefaultFromNumb, Message);
@@ -43,7 +56,7 @@ namespace SOS.Service.Utility
             return true;
         }
 
-        public static bool SendSMSViaTwilio(string ToNumbers, string Message)
+        public bool SendSMSViaTwilio(string ToNumbers, string Message)
         {
             string AccountSid = _smsServiceUserID;
             string AuthToken = _smsServicePassword;
@@ -64,20 +77,20 @@ namespace SOS.Service.Utility
         /// <param name="Token"></param>
         /// <param name="IsReSend"></param>
         /// <returns></returns>
-        public static bool SendPhoneValidatorMessage(string ToNumber, string Token, bool IsReSend, bool IsInternational=false)
+        public bool SendPhoneValidatorMessage(string ToNumber, string Token, bool IsReSend, bool IsInternational = false)
         {
             string Message = (!IsReSend) ? _smsPhoneValidMsg : _smsPhoneReValidMsg;
             string Last4Dig = ToNumber.Substring(ToNumber.Length - 4, 4);
             Message = string.Format(Message, Token, Last4Dig);
 
-            return SendSMS(ToNumber, Message, IsInternational);
+            return new SMS(settings).SendSMS(ToNumber, Message, IsInternational);
         }
 
-        public static bool SendSMSBuddyNotification(string toNumber, string profileUserName, string profileMobileNumber, string subscribeURI, string UnsubscribeURI)
+        public bool SendSMSBuddyNotification(string toNumber, string profileUserName, string profileMobileNumber, string subscribeURI, string UnsubscribeURI)
         {
-            string smsBody = Common.Resources.Messages.BuddyNotificationSMSBody;
+            string smsBody = Messages.BuddyNotificationSMSBody;
             string message = string.Format(smsBody, profileUserName, profileMobileNumber, UnsubscribeURI);
-            SendSMS(toNumber, message);
+            new SMS(settings).SendSMS(toNumber, message);
             return true;
         }
     }

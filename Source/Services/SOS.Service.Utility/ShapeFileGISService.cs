@@ -1,5 +1,6 @@
 ﻿using DotSpatial.Data;
 using DotSpatial.Projections;
+using Guardian.Common.Configuration;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,17 @@ namespace SOS.Service.Utility
 {
     public class ShapeFileGISutility
     {
+        Settings settings;
+        public ShapeFileGISutility(Settings settings)
+        {
+            this.settings = settings;
+        }
         public CloudBlobContainer container { get; set; }
 
         public List<string> GetAllWardNames(string PathPrefix, string SubGroupIdentificationKey)
         {
 
-            string connectionString = Common.Config.TableConnectionString;
+            string connectionString = settings.AzureStorageConnectionString;
             var _StorageAccount = Microsoft.WindowsAzure.Storage.CloudStorageAccount.Parse(connectionString);
             var blobClient = _StorageAccount.CreateCloudBlobClient();
             container = blobClient.GetContainerReference("shapes");

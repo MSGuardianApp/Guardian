@@ -3,8 +3,6 @@ using Microsoft.WindowsAzure.ServiceRuntime;
 using SOS.AzureSQLAccessLayer;
 using SOS.AzureStorageAccessLayer;
 using SOS.AzureStorageAccessLayer.Entities;
-using SOS.Service.Implementation;
-using SOS.Service.Interfaces;
 using SOS.Service.Utility;
 using System;
 using System.Collections.Generic;
@@ -24,7 +22,7 @@ namespace Guardian.Webjob.Broadcaster
 
         const int minute = 60 * 1000;
 
-        public DynamicAllocationToSubGroups(ILiveSessionRepository liveSessionRepository, IGroupRepository groupRepository, 
+        public DynamicAllocationToSubGroups(ILiveSessionRepository liveSessionRepository, IGroupRepository groupRepository,
                 IGroupStorageAccess groupStorageAccess, IConfigManager configManager)
         {
             this.liveSessionRepository = liveSessionRepository;
@@ -71,7 +69,7 @@ namespace Guardian.Webjob.Broadcaster
                             Trace.WriteLine(String.Format("{0} found.", wardName));
                             if (!string.IsNullOrWhiteSpace(wardName))
                             {
-                                var SubGroupObj = GroupService.SubGroups.Where(x => x.SubGroupIdentificationKey.Equals(wardName, StringComparison.OrdinalIgnoreCase) && x.ParentGroupID == DownloadedShapeFilePath.Item1).FirstOrDefault();
+                                var SubGroupObj = GetSubGroups().Where(x => x.SubGroupIdentificationKey.Equals(wardName, StringComparison.OrdinalIgnoreCase) && x.ParentGroupID == DownloadedShapeFilePath.Item1).FirstOrDefault();
                                 if (SubGroupObj != null)
                                 {
                                     try
@@ -119,5 +117,12 @@ namespace Guardian.Webjob.Broadcaster
             var allGroups = groupStorageAccess.GetAllGroups(null);
             return allGroups.Where(x => (!x.ParentGroupID.HasValue || x.ParentGroupID.Value == 0)).ToList();
         }
+
+        private List<Group> GetSubGroups()
+        {
+            var allGroups = groupStorageAccess.GetAllGroups(null);
+            return allGroups.Where(x => (x.ParentGroupID.HasValue && x.ParentGroupID.Value != 0)).ToList();
+        }
+
     }
 }

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SOS.Service.Utility</RootNamespace>
     <AssemblyName>SOS.Service.Utility</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -95,6 +95,10 @@
     <Compile Include="TokenManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Guardian.Common\Guardian.Common.csproj">
+      <Project>{91da0955-dcf5-476b-af6a-050e3ca1c998}</Project>
+      <Name>Guardian.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SOS.Service.Interfaces\SOS.Service.Interfaces.csproj">
       <Project>{6b0d9b6c-df95-46ac-a4cb-e4c3cd604130}</Project>
       <Name>SOS.Service.Interfaces</Name>

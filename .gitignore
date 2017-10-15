@@ -102,3 +102,5 @@ Temporary Items
 /Source/Database/SOS.GuardianDatabase/SOS.GuardianDatabase.dbmdl
 /Source/Guardian.Webjob.Broadcaster/obj/Debug
 /Source/Guardian.Webjob.Broadcaster/bin/Debug
+/Source/Guardian.Common/obj/Debug
+/Source/Guardian.Common/bin/Debug

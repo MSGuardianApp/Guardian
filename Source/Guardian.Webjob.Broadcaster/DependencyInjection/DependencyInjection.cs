@@ -2,20 +2,16 @@
 {
     using Guardian.Common.Configuration;
     using Guardian.Common.Helpers;
-    using Guardian.Common.Instrumentation;
     using Microsoft.ApplicationInsights;
     using Microsoft.Azure;
     using Microsoft.Azure.WebJobs;
     using Microsoft.Practices.Unity;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
     using Newtonsoft.Json.Serialization;
     using SOS.AzureSQLAccessLayer;
     using SOS.AzureStorageAccessLayer;
     using SOS.EventHubReceiver;
-    using SOS.Service.Implementation;
     using SOS.Service.Interfaces;
-    using System.Collections.Generic;
 
     /// <summary>
     /// Dependency Injection configuration.
@@ -51,10 +47,10 @@
             container.RegisterType<ISessionHistoryStorageAccess, SessionHistoryStorageAccess>();
             container.RegisterType<IGroupStorageAccess, GroupStorageAccess>();
 
-            container.RegisterType<IGroupService, GroupService>();
+            //container.RegisterType<IGroupService, GroupService>();
             container.RegisterType<IReceiver, ReceiverHost>();
 
-            container.AddNewExtension<ImplementationDependencyInjection>();
+            //container.AddNewExtension<ImplementationDependencyInjection>();
 
             #region Initialize Web Jobs SDK
 

@@ -1,28 +1,32 @@
-﻿using System;
+﻿using Guardian.Common.Configuration;
+using SOS.Model;
+using SOS.Service.Utility;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using SOS.Service.Utility;
-using Entity = SOS.AzureStorageAccessLayer.Entities;
 using System.Threading.Tasks;
-using SOS.Model;
-using Guardian.Common;
-using Guardian.Common.Configuration;
-using System.Diagnostics;
 
 namespace Guardian.Webjob.Broadcaster
 {
-    internal static class PostMessages
+    internal class PostMessages
     {
-        public static bool SendSMS = false;
-        private static Dictionary<string, string> TinyUris = new Dictionary<string, string>();
+        Settings settings;
 
-        private static string GetTinyUri(string profileID, string Token)
+        //public bool SendSMS = false;
+
+        public PostMessages(Settings settings)
         {
-            return Shortify.CreateDynamicLocateMeURI(profileID, Token);
+            this.settings = settings;
+        }
+        
+        private string GetTinyUri(string profileID, string Token)
+        {
+            return new Shortify(settings).CreateDynamicLocateMeURI(profileID, Token).Result;
         }
 
-        private static string DecryptMobileNumbers(string encryptedMobileNumbers)
+        private string DecryptMobileNumbers(string encryptedMobileNumbers)
         {
             string[] encryptedNumberList = encryptedMobileNumbers.Split(',');
             StringBuilder decryptedNumbers = new StringBuilder();
@@ -32,7 +36,7 @@ namespace Guardian.Webjob.Broadcaster
             return decryptedNumbers.ToString().TrimEnd(',');
         }
 
-        public static List<LiveSession> SendSOSNotifications(List<LiveSession> sessions, Settings settings)
+        public async Task<List<LiveSession>> SendSOSNotifications(List<LiveSession> sessions, Settings settings)
         {
             Parallel.ForEach(sessions, session =>
             {
@@ -47,7 +51,7 @@ namespace Guardian.Webjob.Broadcaster
                         {
                             try
                             {
-                                address = BingService.GetAddressByPointAsync(session.Lat, session.Long).Result;
+                                address = new BingService(settings).GetAddressByPointAsync(session.Lat, session.Long).Result;
                             }
                             catch (Exception ex)
                             {
@@ -70,7 +74,7 @@ namespace Guardian.Webjob.Broadcaster
                                 if (!session.SMSRecipientsList.StartsWith("DM"))
                                     session.SMSRecipientsList = "DM" + DecryptMobileNumbers(session.SMSRecipientsList);
 
-                                SMS.SendSMS(session.SMSRecipientsList.Substring(2), Utility.GetSMSBody(tinyUri, session.Name, address, mobileNumber));
+                                new SMS(settings).SendSMS(session.SMSRecipientsList.Substring(2), Utility.GetSMSBody(tinyUri, session.Name, address, mobileNumber));
                                 session.LastSMSPostTime = System.DateTime.UtcNow;
                                 session.NoOfSMSSent++;
                             }
@@ -86,7 +90,7 @@ namespace Guardian.Webjob.Broadcaster
                         {
                             try
                             {
-                                Email.SendEmail(session.EmailRecipientsList.Split(',').ToList(),
+                                new Email(settings).SendEmail(session.EmailRecipientsList.Split(',').ToList(),
                                     Utility.GetEmailBody(tinyUri, session.Name, address, mobileNumber, session.LastCapturedDate.Value),
                                     Utility.GetEmailSubject(session.Name));
                                 session.LastEmailPostTime = DateTime.UtcNow;

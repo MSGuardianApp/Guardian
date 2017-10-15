@@ -145,10 +145,6 @@
       <Project>{91da0955-dcf5-476b-af6a-050e3ca1c998}</Project>
       <Name>Guardian.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Services\SOS.Service.Implementation\SOS.Service.Implementation.csproj">
-      <Project>{ce8d1af2-5f9e-4b43-bd01-ab1240ec7105}</Project>
-      <Name>SOS.Service.Implementation</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Services\SOS.Service.Interfaces\SOS.Service.Interfaces.csproj">
       <Project>{6b0d9b6c-df95-46ac-a4cb-e4c3cd604130}</Project>
       <Name>SOS.Service.Interfaces</Name>
