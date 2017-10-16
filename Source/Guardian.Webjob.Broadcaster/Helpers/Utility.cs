@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Guardian.Common.Configuration;
+using Microsoft.WindowsAzure.ServiceRuntime;
+using SOS.AzureStorageAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using Guardian.Common;
-using SOS.Service.Implementation;
-using SOS.AzureStorageAccessLayer;
-using Microsoft.WindowsAzure.ServiceRuntime;
-using Guardian.Common.Configuration;
 
 namespace Guardian.Webjob.Broadcaster
 {
@@ -108,56 +106,58 @@ namespace Guardian.Webjob.Broadcaster
 
         static List<Tuple<int, string, string>> GetGroupIdWithKeysAndShapeIds()
         {
-            GroupService grpService = new GroupService();
-            BlobAccess blobAccess = new BlobAccess();
-            var container = blobAccess.LoadShapeFiles();
-            LocalResource myStorage = RoleEnvironment.GetLocalResource("LocalStorageWorkerRole");
+            //TODO
+            //GroupService grpService = new GroupService();
+            //BlobAccess blobAccess = new BlobAccess();
+            //var container = blobAccess.LoadShapeFiles();
+            //LocalResource myStorage = RoleEnvironment.GetLocalResource("LocalStorageWorkerRole");
             List<Tuple<int, string, string>> GrpIdGroupKeyAndShapePaths = new List<Tuple<int, string, string>>();
-
-            GroupService.ParentGroup.ForEach(ParentGroup =>
-            {
-
-                if (!String.IsNullOrWhiteSpace(ParentGroup.ShapeFileID) && ParentGroup.NotifySubgroups) //
-                {
-
-                    string shapeIndex = LocalPath(myStorage, ParentGroup.ShapeFileID + ".shx");
-                    string describeFile = LocalPath(myStorage, ParentGroup.ShapeFileID + ".dbf");
-                    string shapeFile = LocalPath(myStorage, ParentGroup.ShapeFileID + ".shp");
-                    string projectionFile = LocalPath(myStorage, ParentGroup.ShapeFileID + ".prj");
-
-                    if (File.Exists(shapeIndex))
-                        File.Delete(shapeIndex);
-
-                    if (File.Exists(describeFile))
-                        File.Delete(describeFile);
-
-
-                    if (File.Exists(shapeFile))
-                        File.Delete(shapeFile);
-
-                    if (File.Exists(projectionFile))
-                        File.Delete(projectionFile);
-
-                    var ShxBlockBlobReference = container.GetBlockBlobReference(GetPath(FileType.IndexFile, ParentGroup.ShapeFileID));
-                    ShxBlockBlobReference.DownloadToFile(shapeIndex, FileMode.Create);
-
-
-                    var DescribeBlockBlobReference = container.GetBlockBlobReference(GetPath(FileType.DescribeFile, ParentGroup.ShapeFileID));
-                    DescribeBlockBlobReference.DownloadToFile(describeFile, FileMode.Create);
-
-
-                    var ShapeBlockBlobReference = container.GetBlockBlobReference(GetPath(FileType.ShapeFile, ParentGroup.ShapeFileID));
-                    ShapeBlockBlobReference.DownloadToFile(shapeFile, FileMode.Create);
-
-                    var BlockBlobReference = container.GetBlockBlobReference(GetPath(FileType.ProjectionFile, ParentGroup.ShapeFileID));
-                    BlockBlobReference.DownloadToFile(projectionFile, FileMode.Create);
-
-                    GrpIdGroupKeyAndShapePaths.Add(new Tuple<int, string, string>(ParentGroup.GroupID, ParentGroup.SubGroupIdentificationKey, Path.Combine(myStorage.RootPath, ParentGroup.ShapeFileID)));
-                }
-
-            });
-
             return GrpIdGroupKeyAndShapePaths;
+
+            //GroupService.ParentGroup.ForEach(ParentGroup =>
+            //{
+
+            //    if (!String.IsNullOrWhiteSpace(ParentGroup.ShapeFileID) && ParentGroup.NotifySubgroups) //
+            //    {
+
+            //        string shapeIndex = LocalPath(myStorage, ParentGroup.ShapeFileID + ".shx");
+            //        string describeFile = LocalPath(myStorage, ParentGroup.ShapeFileID + ".dbf");
+            //        string shapeFile = LocalPath(myStorage, ParentGroup.ShapeFileID + ".shp");
+            //        string projectionFile = LocalPath(myStorage, ParentGroup.ShapeFileID + ".prj");
+
+            //        if (File.Exists(shapeIndex))
+            //            File.Delete(shapeIndex);
+
+            //        if (File.Exists(describeFile))
+            //            File.Delete(describeFile);
+
+
+            //        if (File.Exists(shapeFile))
+            //            File.Delete(shapeFile);
+
+            //        if (File.Exists(projectionFile))
+            //            File.Delete(projectionFile);
+
+            //        var ShxBlockBlobReference = container.GetBlockBlobReference(GetPath(FileType.IndexFile, ParentGroup.ShapeFileID));
+            //        ShxBlockBlobReference.DownloadToFile(shapeIndex, FileMode.Create);
+
+
+            //        var DescribeBlockBlobReference = container.GetBlockBlobReference(GetPath(FileType.DescribeFile, ParentGroup.ShapeFileID));
+            //        DescribeBlockBlobReference.DownloadToFile(describeFile, FileMode.Create);
+
+
+            //        var ShapeBlockBlobReference = container.GetBlockBlobReference(GetPath(FileType.ShapeFile, ParentGroup.ShapeFileID));
+            //        ShapeBlockBlobReference.DownloadToFile(shapeFile, FileMode.Create);
+
+            //        var BlockBlobReference = container.GetBlockBlobReference(GetPath(FileType.ProjectionFile, ParentGroup.ShapeFileID));
+            //        BlockBlobReference.DownloadToFile(projectionFile, FileMode.Create);
+
+            //        GrpIdGroupKeyAndShapePaths.Add(new Tuple<int, string, string>(ParentGroup.GroupID, ParentGroup.SubGroupIdentificationKey, Path.Combine(myStorage.RootPath, ParentGroup.ShapeFileID)));
+            //    }
+
+            //});
+
+            //return GrpIdGroupKeyAndShapePaths;
         }
     }
 }

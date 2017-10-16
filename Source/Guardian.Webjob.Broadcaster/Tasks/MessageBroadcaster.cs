@@ -48,7 +48,7 @@ namespace Guardian.Webjob.Broadcaster
                     if (sosSessions == null || sosSessions.Count > 0)
                         break;
 
-                    var processedSessions = new PostMessages(settings).SendSOSNotifications(sosSessions, settings);
+                    var processedSessions = await new PostMessages(settings).SendSOSNotifications(sosSessions, settings);
                     var liteSessions = processedSessions.ConvertToLiveSessionLite();
                     string liteSessionsXML = Serialize<List<LiveSessionLite>>(liteSessions, true, true);
                     await liveSessionRepository.UpdateNotificationComplete(RoleInstanceId, processKey, liteSessionsXML);

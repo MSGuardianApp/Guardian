@@ -2,7 +2,6 @@
 {
     using Guardian.Common.Configuration;
     using Guardian.Common.Helpers;
-    using Microsoft.ApplicationInsights;
     using Microsoft.Azure;
     using Microsoft.Azure.WebJobs;
     using Microsoft.Practices.Unity;
@@ -11,7 +10,6 @@
     using SOS.AzureSQLAccessLayer;
     using SOS.AzureStorageAccessLayer;
     using SOS.EventHubReceiver;
-    using SOS.Service.Interfaces;
 
     /// <summary>
     /// Dependency Injection configuration.
@@ -50,7 +48,7 @@
             //container.RegisterType<IGroupService, GroupService>();
             container.RegisterType<IReceiver, ReceiverHost>();
 
-            //container.AddNewExtension<ImplementationDependencyInjection>();
+            container.AddNewExtension<EventHubReceiverDependencyInjection>();
 
             #region Initialize Web Jobs SDK
 
@@ -78,7 +76,7 @@
 
             #region Logging/ Telemetry
 
-            container.RegisterInstance(new TelemetryClient());
+            //container.RegisterInstance(new TelemetryClient());
             //container.RegisterType<ILogger, TelemetryClient>(new ContainerControlledLifetimeManager());
 
             #endregion

@@ -12,6 +12,12 @@ namespace SOS.EventHubReceiver
 {
     public class EventProcessor : IEventProcessor
     {
+        readonly ILocationProcessor locationProcessor;
+        public EventProcessor(ILocationProcessor locationProcessor)
+        {
+            this.locationProcessor = locationProcessor;
+        }
+
         #region Private Members and Properties
 
         private int totalMessages = 0;
@@ -65,7 +71,7 @@ namespace SOS.EventHubReceiver
                         DateTime.Now.ToString(), loc.ProfileID.ToString() + "-" + loc.SessionID + "-" + loc.ClientTimeStamp.ToString(),
                         context.Lease.PartitionId, message.Offset), "Information");
 
-                        LocationProcessor.ProcessLocation(loc);
+                        locationProcessor.ProcessLocation(loc);
                     }
                     // increase the total events count.
                     Interlocked.Increment(ref this.totalMessages);

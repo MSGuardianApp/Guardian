@@ -17,7 +17,7 @@ namespace Guardian.Webjob.Broadcaster
         readonly IGroupRepository groupRepository;
         readonly ILocationRepository locationRepository;
 
-        readonly IGroupService grpService;
+        readonly IGroupStorageAccess groupStorageAccess;
         readonly IReceiver eventHubReceiverHost;
 
         readonly IConfigManager configManager;
@@ -25,7 +25,7 @@ namespace Guardian.Webjob.Broadcaster
                     ISessionHistoryStorageAccess sessionHistoryStorageAccess,
                     IGroupRepository groupRepository,
                     ILocationRepository locationRepository,
-                    IGroupService grpService,
+                    IGroupStorageAccess groupStorageAccess,
                     IReceiver eventHubReceiverHost,
                     IConfigManager configManager)
         {
@@ -34,7 +34,7 @@ namespace Guardian.Webjob.Broadcaster
             this.groupRepository = groupRepository;
             this.locationRepository = locationRepository;
 
-            this.grpService = grpService;
+            this.groupStorageAccess = groupStorageAccess;
             this.eventHubReceiverHost = eventHubReceiverHost;
 
             this.configManager = configManager;
@@ -73,7 +73,7 @@ namespace Guardian.Webjob.Broadcaster
         public void DynamicAllocationToSubGroups([TimerTrigger("00:05:00", RunOnStartup = true)] TimerInfo timer, TextWriter log)
         {
             log.WriteLine("DynamicAllocationToSubGroups has started..." + DateTime.Now.ToLongTimeString());
-            new DynamicAllocationToSubGroups(grpService, liveSessionRepository, groupRepository, configManager).Run();
+            new DynamicAllocationToSubGroups(liveSessionRepository, groupRepository, groupStorageAccess, configManager).Run();
         }
 
         public async Task ProcessEventHub([TimerTrigger("00:00:30", RunOnStartup = true)] TimerInfo timer, TextWriter log)
